@@ -8,12 +8,7 @@ import { ScrollTrigger } from 'gsap/all';
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
-    const [isLoading, setIsLoading] = useState(true);
     const [countdown, setCountdown] = useState({ days: "00", hours: "00", minutes: "00" });
-
-    const handleVideoLoad = () => {
-        setIsLoading(false);
-    };
 
     useEffect(() => {
         const eventStart = new Date('2026-02-21T00:00:00');
@@ -59,18 +54,6 @@ const Hero = () => {
 
     return (
         <div className='relative h-dvh w-screen overflow-x-hidden'>
-            {
-                isLoading && (
-                    <div className='flex-center absolute z-[100] h-dvh w-screen overflow-y-hidden bg-violet-50'>
-                        <div className='three-body'>
-                            <div className="three-body__dot"></div>
-                            <div className="three-body__dot"></div>
-                            <div className="three-body__dot"></div>
-                        </div>
-                    </div>
-                )
-            }
-
             <div id='video-frame' className='relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75'>
                 <video
                     src='videos/hero-4.mp4'
@@ -78,7 +61,6 @@ const Hero = () => {
                     loop
                     muted
                     className='absolute left-0 top-0 size-full object-cover object-center'
-                    onLoadedData={handleVideoLoad}
                 />
 
                 <h1 className='special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75'>
