@@ -185,6 +185,7 @@ const EventDetails = () => {
         y: 18,
         opacity: 0,
         duration: 0.6,
+        delay: 0.25,
         ease: "power2.out",
         stagger: 0.08,
         scrollTrigger: {

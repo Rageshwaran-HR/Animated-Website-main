@@ -95,6 +95,7 @@ const Features = () => {
           y: 16,
           opacity: 0,
           duration: 0.65,
+          delay: 0.25,
           ease: "power2.out",
           scrollTrigger: {
             trigger: sectionRef.current,

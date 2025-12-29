@@ -27,13 +27,10 @@ const Navbar = () => {
   useEffect(() => {
     if (currentScrollY === 0) {
       setIsNavVisible(true);
-      navContainerRef.current.classList.remove("floating-nav");
     } else if (currentScrollY > lastScrollY) {
       setIsNavVisible(false);
-      navContainerRef.current.classList.add("floating-nav");
     } else if (currentScrollY < lastScrollY) {
       setIsNavVisible(true);
-      navContainerRef.current.classList.add("floating-nav");
     }
 
     setLastScrollY(currentScrollY);
@@ -170,13 +167,15 @@ const Navbar = () => {
   };
 
   return (
-    <div ref={navContainerRef} className='fixed inset-x-0 top-4 z-50 h-16 border-none transition-all duration-700 sm:inset-x-6'>
+    <div ref={navContainerRef} className='floating-nav fixed inset-x-0 top-4 z-50 h-16 transition-all duration-700 sm:inset-x-6'>
 
       <header className='absolute top-1/2 w-full -translate-y-1/2'>
 
         <nav className='flex size-full items-center justify-between p-4'>
           <div className='flex items-center gap-7'>
-            <img src="/img/logo.jpeg" alt="logo" className='w-10' />
+            <button type='button' onClick={goHome} className='cursor-pointer' aria-label='Go to home'>
+              <img src="/img/logo.png" alt="logo" className='w-20' />
+            </button>
 
             <span className='border-hsla rounded-full px-3 py-1 font-general text-[15px] uppercase tracking-widest text-blue-300'>VEC</span>
 

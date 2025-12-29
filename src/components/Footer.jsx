@@ -30,6 +30,7 @@ const Footer = () => {
           y: 18,
           opacity: 0,
           duration: 0.7,
+          delay: 0.25,
           ease: 'power2.out',
           scrollTrigger: {
             trigger: locationRef.current,
@@ -42,6 +43,7 @@ const Footer = () => {
           y: 12,
           opacity: 0,
           duration: 0.65,
+          delay: 0.25,
           ease: 'power2.out',
           stagger: 0.08,
           scrollTrigger: {

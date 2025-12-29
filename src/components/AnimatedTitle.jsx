@@ -19,6 +19,7 @@ const AnimatedTitle = ({ title, containerClass, align = 'center', lineClassName 
             });
 
             titleAnimation.to(".animated-word", {
+                delay: 0.25,
                 opacity: 1,
                 transform: "translate3d(0,0,0) rotateY(0deg) rotateX(0deg)",
                 ease: "power2.inOut",

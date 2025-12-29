@@ -4,6 +4,16 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   width: 100dvw;
   overflow-x: hidden;
@@ -48,7 +58,7 @@ body {
   }
 
   .floating-nav {
-    @apply bg-black rounded-lg border;
+    @apply rounded-lg border bg-black/60 backdrop-blur-lg;
   }
 
   .absolute-center {

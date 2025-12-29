@@ -8,7 +8,7 @@ import { ScrollTrigger } from 'gsap/all';
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
-    const [countdown, setCountdown] = useState({ days: "00", hours: "00", minutes: "00" });
+    const [countdown, setCountdown] = useState({ days: "00", hours: "00", minutes: "00", seconds: "00" });
 
     useEffect(() => {
         const eventStart = new Date('2026-02-21T00:00:00');
@@ -19,12 +19,18 @@ const Hero = () => {
             const now = new Date();
             const diffMs = Math.max(0, eventStart.getTime() - now.getTime());
 
-            const totalMinutes = Math.floor(diffMs / 60000);
-            const days = Math.floor(totalMinutes / (60 * 24));
-            const hours = Math.floor((totalMinutes % (60 * 24)) / 60);
-            const minutes = totalMinutes % 60;
+            const totalSeconds = Math.floor(diffMs / 1000);
+            const days = Math.floor(totalSeconds / (60 * 60 * 24));
+            const hours = Math.floor((totalSeconds % (60 * 60 * 24)) / (60 * 60));
+            const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
+            const seconds = totalSeconds % 60;
 
-            setCountdown({ days: pad2(days), hours: pad2(hours), minutes: pad2(minutes) });
+            setCountdown({
+                days: pad2(days),
+                hours: pad2(hours),
+                minutes: pad2(minutes),
+                seconds: pad2(seconds),
+            });
         };
 
         update();
@@ -87,7 +93,6 @@ const Hero = () => {
                             <div className='mt-3 flex items-stretch gap-2'>
                                 <div className='border-hsla rounded-md bg-black/20 px-4 py-3'>
                                     <p className='font-zentry text-3xl leading-none text-blue-50 md:text-4xl'>{countdown.days}</p>
-                                    <p className='mt-1 font-general text-[10px] uppercase tracking-widest text-blue-50/70'>dd</p>
                                 </div>
 
                                 <div className='flex items-center px-1'>
@@ -96,7 +101,6 @@ const Hero = () => {
 
                                 <div className='border-hsla rounded-md bg-black/20 px-4 py-3'>
                                     <p className='font-zentry text-3xl leading-none text-blue-50 md:text-4xl'>{countdown.hours}</p>
-                                    <p className='mt-1 font-general text-[10px] uppercase tracking-widest text-blue-50/70'>hh</p>
                                 </div>
 
                                 <div className='flex items-center px-1'>
@@ -105,7 +109,14 @@ const Hero = () => {
 
                                 <div className='border-hsla rounded-md bg-black/20 px-4 py-3'>
                                     <p className='font-zentry text-3xl leading-none text-blue-50 md:text-4xl'>{countdown.minutes}</p>
-                                    <p className='mt-1 font-general text-[10px] uppercase tracking-widest text-blue-50/70'>mm</p>
+                                </div>
+
+                                <div className='flex items-center px-1'>
+                                    <span className='font-zentry text-3xl leading-none text-blue-50/70 md:text-4xl'>:</span>
+                                </div>
+
+                                <div className='border-hsla rounded-md bg-black/20 px-4 py-3'>
+                                    <p className='font-zentry text-3xl leading-none text-blue-50 md:text-4xl'>{countdown.seconds}</p>
                                 </div>
                             </div>
                         </div>
