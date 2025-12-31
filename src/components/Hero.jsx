@@ -62,11 +62,16 @@ const Hero = () => {
         <div className='relative h-dvh w-screen overflow-x-hidden'>
             <div id='video-frame' className='relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75'>
                 <video
-                    src='videos/hero-4.mp4'
+                    src='videos/heron.mp4'
                     autoPlay
                     loop
                     muted
-                    className='absolute left-0 top-0 size-full object-cover object-center'
+                    className='absolute left-0 top-0 z-0 size-full object-cover object-center'
+                />
+
+                <div
+                    aria-hidden="true"
+                    className='pointer-events-none absolute inset-0 z-20 bg-gradient-to-b from-black/55 via-black/25 to-black/55'
                 />
 
                 <h1 className='special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75'>
@@ -74,49 +79,56 @@ const Hero = () => {
                 </h1>
 
                 <div className='absolute left-0 top-0 z-40 size-full'>
-                    <div className='mt-24 px-5 sm:px-10'>
-                        <h1 className='special-font hero-heading text-blue-100'>Ozm<b>e</b>nta&apos;26</h1>
+                    <div className='pt-24 px-5 sm:pt-28 sm:px-10'>
+                        <div className='max-w-xl'>
+                            <h1 className='special-font hero-heading text-blue-100'>Ozm<b>e</b>nta&apos;26</h1>
 
-                        <p className="mb-6 max-w-md font-circular-web text-lg text-blue-100/80">
-                            Velammal Engineering College (VEC) · Department of CSE
-                            <br />
-                            Ozmenta&apos;26 · Feb 21, 2026
-                        </p>
-
-                        <Button
-                            id="watch-trailer" title="Register Now" leftIcon={<TiLocationArrow />}
-                            containerClass="!bg-yellow-300 flex-center gap-1"
-                        />
-
-                        <div className='mt-6 w-fit rounded-md border-hsla bg-black/30 px-4 py-4 text-blue-50'>
-                            <p className='font-general text-[10px] uppercase tracking-widest text-blue-50/80'>Event Countdown</p>
-                            <div className='mt-3 flex items-stretch gap-2'>
-                                <div className='border-hsla rounded-md bg-black/20 px-4 py-3'>
-                                    <p className='font-zentry text-3xl leading-none text-blue-50 md:text-4xl'>{countdown.days}</p>
+                            <div className='mt-3 flex max-w-xl flex-col gap-5'>
+                                <div className='w-fit rounded-md border-hsla bg-black/25 px-3 py-2 backdrop-blur-sm'>
+                                    <p className='special-font font-zentry font-black uppercase leading-[0.95] text-blue-50 sm:text-xl md:text-2xl'>
+                                        Velammal Engineering College 
+                                    </p>
+                                    <p className='mt-1 font-general text-xs uppercase tracking-widest text-blue-50/85 sm:text-sm'>
+                                        Department of CSE · Feb 21, 2026
+                                    </p>
                                 </div>
 
-                                <div className='flex items-center px-1'>
-                                    <span className='font-zentry text-3xl leading-none text-blue-50/70 md:text-4xl'>:</span>
-                                </div>
+                                <Button
+                                    id="watch-trailer" title="Register Now" leftIcon={<TiLocationArrow />}
+                                    containerClass="!bg-yellow-300 flex-center gap-1"
+                                />
 
-                                <div className='border-hsla rounded-md bg-black/20 px-4 py-3'>
-                                    <p className='font-zentry text-3xl leading-none text-blue-50 md:text-4xl'>{countdown.hours}</p>
-                                </div>
+                                <div className='w-fit rounded-md border-hsla bg-black/30 px-4 py-4 text-blue-50'>
+                                    <p className='font-general text-[10px] uppercase tracking-widest text-blue-50/80'>Event Countdown</p>
+                                    <div className='mt-3 flex items-stretch gap-2'>
+                                        <div className='border-hsla rounded-md bg-black/20 px-4 py-3'>
+                                            <p className='font-zentry text-3xl leading-none text-blue-50 md:text-4xl'>{countdown.days}</p>
+                                        </div>
 
-                                <div className='flex items-center px-1'>
-                                    <span className='font-zentry text-3xl leading-none text-blue-50/70 md:text-4xl'>:</span>
-                                </div>
+                                        <div className='flex items-center px-1'>
+                                            <span className='font-zentry text-3xl leading-none text-blue-50/70 md:text-4xl'>:</span>
+                                        </div>
 
-                                <div className='border-hsla rounded-md bg-black/20 px-4 py-3'>
-                                    <p className='font-zentry text-3xl leading-none text-blue-50 md:text-4xl'>{countdown.minutes}</p>
-                                </div>
+                                        <div className='border-hsla rounded-md bg-black/20 px-4 py-3'>
+                                            <p className='font-zentry text-3xl leading-none text-blue-50 md:text-4xl'>{countdown.hours}</p>
+                                        </div>
 
-                                <div className='flex items-center px-1'>
-                                    <span className='font-zentry text-3xl leading-none text-blue-50/70 md:text-4xl'>:</span>
-                                </div>
+                                        <div className='flex items-center px-1'>
+                                            <span className='font-zentry text-3xl leading-none text-blue-50/70 md:text-4xl'>:</span>
+                                        </div>
 
-                                <div className='border-hsla rounded-md bg-black/20 px-4 py-3'>
-                                    <p className='font-zentry text-3xl leading-none text-blue-50 md:text-4xl'>{countdown.seconds}</p>
+                                        <div className='border-hsla rounded-md bg-black/20 px-4 py-3'>
+                                            <p className='font-zentry text-3xl leading-none text-blue-50 md:text-4xl'>{countdown.minutes}</p>
+                                        </div>
+
+                                        <div className='flex items-center px-1'>
+                                            <span className='font-zentry text-3xl leading-none text-blue-50/70 md:text-4xl'>:</span>
+                                        </div>
+
+                                        <div className='border-hsla rounded-md bg-black/20 px-4 py-3'>
+                                            <p className='font-zentry text-3xl leading-none text-blue-50 md:text-4xl'>{countdown.seconds}</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
