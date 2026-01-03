@@ -8,8 +8,8 @@ const ImageClipBox = ({ src, clipClass }) => (
 
 const Contact = () => {
     return (
-        <div id="contact" className="my-20 min-h-96 w-screen px-10">
-            <div className="relative rounded-lg bg-slate-950 py-24 text-blue-50 sm:overflow-hidden">
+        <div id="contact" className="my-20 min-h-96 w-screen px-5 sm:px-10">
+            <div className="relative rounded-lg bg-slate-950 py-16 sm:py-24 text-blue-50 sm:overflow-hidden">
                 <div className='absolute -left-10 top-0 hidden h-full w-72 overflow-hidden sm:block lg:left-10 lg:w-96'>
                     <ImageClipBox
                         clipClass="contact-clip-path-1"
@@ -21,7 +21,7 @@ const Contact = () => {
                     />
                 </div>
 
-                <div className='absolute -top-40 left-5 w-60 sm:top-1/2 sm:left-1/2 md:left-auto md:right-10 lg:top-20 lg:w-80'>
+                <div className='absolute -top-40 left-5 hidden w-60 sm:block sm:top-1/2 sm:left-1/2 md:left-auto md:right-10 lg:top-20 lg:w-80'>
                
                     <ImageClipBox
                         src="/img/swordmann.png"
@@ -34,7 +34,7 @@ const Contact = () => {
                         Join Ozmenta&apos;26
                     </p>
 
-                    <p className='special-font mt-10 w-full font-zentry text-5xl leading-[0.9] md:text-[6rem] z-10'>
+                    <p className='special-font mt-8 w-full font-zentry text-4xl leading-[0.95] sm:text-5xl md:text-[6rem] z-10'>
                         Let&apos;s sh<b>a</b>pe the <br /> f<b>u</b>ture of <br /> comp<b>u</b>ting toge<b>t</b>her
                     </p>
 

@@ -58,16 +58,28 @@ const Story = () => {
           <div className='story-img-container'>
             <div className='story-img-mask'>
               <div className='story-img-content'>
+                <div className='relative h-full w-full'>
                 <img
                   ref={frameRef}
                   src="/img/entrance.png"
                   alt="entrance"
-                  className='object-contain'
+                  className='h-full w-full object-cover md:h-auto md:w-auto md:object-contain'
                   onMouseLeave={handleMouseLeave}
                   onMouseUp={handleMouseLeave}
                   onMouseEnter={handleMouseLeave}
                   onMouseMove={handleMouseMove}
                 />
+                <div className='pointer-events-none absolute inset-x-0 bottom-0 md:hidden'>
+                  <div className='bg-gradient-to-t from-slate-950/80 via-slate-950/35 to-transparent px-5 pb-5 pt-10'>
+                    <p className='font-general text-[10px] uppercase tracking-widest text-blue-300'>
+                      Campus Entrance
+                    </p>
+                    <p className='mt-1 font-circular-web text-sm text-blue-50/85'>
+                      Velammal Engineering College · Ozmenta&apos;26
+                    </p>
+                  </div>
+                </div>
+                </div>
               </div>
             </div>
 
@@ -75,7 +87,7 @@ const Story = () => {
           </div>
         </div>
         
-        <div className='-mt-20 md:-mt-40 flex w-full justify-center lg:-mt-80 md:me-44 md:justify-end'>
+        <div className='mt-10 md:-mt-40 flex w-full justify-center lg:-mt-80 md:me-44 md:justify-end'>
           <div className='flex h-full w-fit flex-col items-center md:items-start'>
             <p className='mt-3 max-w-sm text-center font-circular-web text-violet-50 md:text-start px-3'>
               Join us in exploring groundbreaking research, connecting with industry leaders, and discovering the innovations that will define tomorrow&apos;s computing landscape.
