@@ -386,34 +386,68 @@ export const EVENTS = [
       registerTo: "/#register",
     },
   },
-  {
-    name: "Game Tournament",
-    slug: "game-tournament",
-    track: "Non-Tech",
-    short: "Competitive Gaming",
-    videoSrc:
-      "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445097/feature-9n_mt6ajv.mp4",
-    details: {
-      overview:
-        "A competitive gaming bracket. Show up ready, respect the rules, and aim for the top of the leaderboard.",
-      timings: ["01:30 PM – 02:45 PM"],
-      contacts: [{ role: "Coordinator", name: "Event Desk", phone: "555-0111" }],
-      format: [
-        "Bracket or points league (based on participation).",
-        "Knockouts / finals.",
-      ],
-      rules: [
-        "No cheating, exploits, or unfair advantages.",
-        "Follow the match schedule.",
-      ],
-      judging: [
-        "Match wins",
-        "Tie-breakers per organizer rules",
-      ],
-      registration: "Click Register to enter the tournament bracket.",
-      registerTo: "/#contact",
-    },
+ {
+  name: "Funtrix",
+  slug: "funtrix",
+  track: "Non-Tech",
+  short: "Sports precision × combat intensity",
+  videoSrc:
+    "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445097/feature-9n_mt6ajv.mp4",
+  details: {
+    date: "21-02-2026",
+    time: "To be announced",
+    teamSize: "Individual / Duo",
+    overview:
+      "Funtrix at OZMENTA ’26 is a high-octane competitive zone combining sports precision and combat intensity. Step in, compete, and prove your dominance in the digital arena.",
+    rounds: [
+      {
+        name: "Open Qualifiers",
+        duration: "Varies per match",
+        objective: "Shortlist top contenders through knockout matches",
+        judging: [
+          "Match performance",
+          "Basic strategy",
+          "Rule adherence",
+          "Fair play",
+        ],
+      },
+      {
+        name: "Semi-Finals",
+        duration: "Varies per match",
+        objective: "Test advanced gameplay under higher competitive pressure",
+        judging: [
+          "Advanced strategy",
+          "Technical skill",
+          "Consistency",
+          "Discipline",
+        ],
+      },
+      {
+        name: "Championship Showdown",
+        duration: "Final match",
+        objective: "Compete for the Funtrix Ultimate Arena Champion title",
+        judging: [
+          "Overall dominance",
+          "Decision making",
+          "Composure under pressure",
+          "Rule compliance",
+        ],
+      },
+    ],
+    rules: [
+      "Matches will follow standardized game settings decided by the organizers",
+      "Strictly no cheating, hacking, or unfair gameplay",
+      "Participants must be present at the venue before match call-out",
+      "Organizer’s decision is final and binding",
+    ],
+    contacts: [
+      { role: "Support", name: "Event Desk", phone: "Will be announced" },
+    ],
+    registration: "Registration details will be shared through the official announcement link.",
+    registerTo: "/#register",
   },
+},
+
 ].map((event) => ({
   ...event,
   slug: event.slug || slugify(event.name),
