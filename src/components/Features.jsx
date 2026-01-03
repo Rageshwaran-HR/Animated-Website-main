@@ -134,9 +134,13 @@ const Features = () => {
   const renderGrid = (events, layout) => (
     <div className="mt-10 grid grid-cols-1 gap-6 auto-rows-[14rem] sm:grid-cols-2 sm:auto-rows-[16rem] md:grid-cols-12 md:auto-rows-[18rem]">
       {events.map((event, i) => (
+        (() => {
+          const layoutClass = layout?.[i] ?? "md:col-span-6 md:row-span-1";
+
+          return (
         <BentoTilt
           key={event.name}
-          className={`border border-white/10 bg-slate-950 ${layout[i]} cursor-pointer`}
+          className={`border border-white/10 bg-slate-950 ${layoutClass} cursor-pointer`}
         >
           <div
             role="button"
@@ -157,6 +161,8 @@ const Features = () => {
             />
           </div>
         </BentoTilt>
+          );
+        })()
       ))}
     </div>
   );

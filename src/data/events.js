@@ -159,7 +159,7 @@ export const EVENTS = [
   {
     name: "Hot Seat",
     slug: "hot-seat",
-    track: "Non-Tech",
+    track: "Technical",
     short: "High-pressure quiz showdown",
     videoSrc:
       "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445107/feature-12n_wg4xyu.mp4",

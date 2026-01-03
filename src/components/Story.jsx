@@ -72,7 +72,7 @@ const Story = () => {
                 <div className='pointer-events-none absolute inset-x-0 bottom-0 md:hidden'>
                   <div className='bg-gradient-to-t from-slate-950/80 via-slate-950/35 to-transparent px-5 pb-5 pt-10'>
                     <p className='font-general text-[10px] uppercase tracking-widest text-blue-300'>
-                      Campus Entrance
+                      National Level Symposium
                     </p>
                     <p className='mt-1 font-circular-web text-sm text-blue-50/85'>
                       Velammal Engineering College · Ozmenta&apos;26
