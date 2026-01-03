@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { EVENTS } from "../data/events";
 import AnimatedTitle from "./AnimatedTitle";
@@ -65,7 +65,7 @@ const BentoCard = ({ src, title, description }) => {
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/45 to-transparent" />
 
       <div className="relative z-10 flex h-full flex-col justify-end p-6 text-blue-50">
         <h3 className="text-xl md:text-2xl font-bold tracking-tight">
@@ -128,6 +128,7 @@ const Features = () => {
     "md:col-span-4 md:row-span-1",
     "md:col-span-4 md:row-span-1",
     "md:col-span-4 md:row-span-1",
+    "md:col-span-12 md:row-span-1",
   ];
 
   const renderGrid = (events, layout) => (
@@ -135,7 +136,7 @@ const Features = () => {
       {events.map((event, i) => (
         <BentoTilt
           key={event.name}
-          className={`border border-white/10 bg-black ${layout[i]} cursor-pointer`}
+          className={`border border-white/10 bg-slate-950 ${layout[i]} cursor-pointer`}
         >
           <div
             role="button"
@@ -161,7 +162,7 @@ const Features = () => {
   );
 
   return (
-    <section ref={sectionRef} id="tracks" className="bg-black pb-52">
+    <section ref={sectionRef} id="tracks" className="bg-slate-950 pb-16">
       <div className="mx-auto max-w-7xl px-6">
         <div className="py-32">
           <AnimatedTitle

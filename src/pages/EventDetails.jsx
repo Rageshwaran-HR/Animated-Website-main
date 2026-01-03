@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import Button from "../components/Button";
 import { getEventBySlug } from "../data/events";
@@ -9,16 +9,37 @@ import { ScrollTrigger } from "gsap/all";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const InfoCard = ({ label, value }) => (
-  <div className="border-hsla rounded-2xl bg-black/30 p-5">
-    <p className="font-general text-[10px] uppercase tracking-widest text-blue-50/70">
+const MetaItem = ({ label, value }) => (
+  <div className="min-w-0">
+    <p className="font-general text-[10px] uppercase tracking-widest text-blue-50/60">
       {label}
     </p>
-    <p className="mt-2 font-zentry text-2xl leading-[0.95] text-blue-50 md:text-3xl">
+    <p className="mt-1 truncate font-zentry text-xl leading-[0.95] text-blue-50 md:text-2xl">
       {value || "TBA"}
     </p>
   </div>
 );
+
+const isMeaningfulValue = (value) => {
+  if (value == null) return false;
+  if (Array.isArray(value)) return value.some(isMeaningfulValue);
+  if (typeof value === "string") {
+    const trimmed = value.trim();
+    if (!trimmed) return false;
+    return !/^(tba|tbd)$/i.test(trimmed);
+  }
+  return true;
+};
+
+const getPrimaryTimeValue = (details) => {
+  if (isMeaningfulValue(details?.time)) return details.time;
+  if (Array.isArray(details?.timings)) {
+    const first = details.timings.find(isMeaningfulValue);
+    return first;
+  }
+  if (isMeaningfulValue(details?.timings)) return details.timings;
+  return undefined;
+};
 
 const EventDetails = () => {
   const { slug } = useParams();
@@ -242,8 +263,31 @@ const EventDetails = () => {
     );
   }
 
+  const metaItems = [
+    { label: "Date", value: event.details?.date },
+    { label: "Time", value: getPrimaryTimeValue(event.details) },
+    { label: "Team Size", value: event.details?.teamSize },
+  ].filter((item) => isMeaningfulValue(item.value));
+
+  const timings = event.details?.timings;
+  const showTimingsSection =
+    (Array.isArray(timings) &&
+      timings.filter(isMeaningfulValue).length &&
+      (timings.filter(isMeaningfulValue).length > 1 ||
+        !isMeaningfulValue(event.details?.time))) ||
+    (!Array.isArray(timings) &&
+      !isMeaningfulValue(event.details?.time) &&
+      isMeaningfulValue(timings));
+
+  const contacts = Array.isArray(event.details?.contacts)
+    ? event.details.contacts
+    : [];
+  const displayedContacts = contacts
+    .filter((c) => isMeaningfulValue(c?.phone) || isMeaningfulValue(c?.email))
+    .slice(0, 2);
+
   return (
-    <section ref={pageRef} className="min-h-dvh w-screen bg-black text-blue-50">
+    <section ref={pageRef} className="min-h-dvh w-screen bg-slate-950 text-blue-50">
       <div className="relative">
         <div className="absolute inset-0">
           <video
@@ -256,7 +300,7 @@ const EventDetails = () => {
             playsInline
             className="h-[46vh] w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/45 to-black" />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/50 to-slate-950" />
         </div>
 
         <div className="relative mx-auto max-w-5xl px-6 pt-28">
@@ -286,122 +330,175 @@ const EventDetails = () => {
             />
           </div>
 
-          <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2">
-            <div data-animate="card">
-              <InfoCard label="Prize" value={event.details?.prize} />
+          {metaItems.length ? (
+            <div
+              data-animate="card"
+              className="border-hsla mt-12 rounded-2xl bg-slate-950/35 p-5 md:p-6"
+            >
+              <div className="grid gap-6 sm:grid-cols-3">
+                {metaItems.map((item) => (
+                  <MetaItem key={item.label} label={item.label} value={item.value} />
+                ))}
+              </div>
             </div>
-            <div data-animate="card">
-              <InfoCard
-                label="Timings"
-                value={
-                  Array.isArray(event.details?.timings)
-                    ? event.details.timings[0]
-                    : event.details?.timings
-                }
-              />
-            </div>
-          </div>
+          ) : null}
 
           <div className="mt-12 grid grid-cols-1 gap-10 pb-24 md:grid-cols-2">
             <div>
               <p className="text-xs uppercase tracking-widest text-blue-50">
                 Overview
               </p>
-              <p className="mt-3 font-circular-web text-blue-50/70">
-                {event.details?.overview}
-              </p>
-
-              <p className="mt-10 text-xs uppercase tracking-widest text-blue-50">
-                Format
-              </p>
-              <ul className="mt-3 space-y-2 font-circular-web text-blue-50/70">
-                {(event.details?.format || []).map((line) => (
-                  <li key={line} className="flex gap-3">
-                    <span className="text-blue-300">▸</span>
-                    <span>{line}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <p className="mt-10 text-xs uppercase tracking-widest text-blue-50">
-                Timings
-              </p>
-              {Array.isArray(event.details?.timings) && event.details.timings.length ? (
-                <ul className="mt-3 space-y-2 font-circular-web text-blue-50/70">
-                  {event.details.timings.map((line) => (
-                    <li key={line} className="flex gap-3">
-                      <span className="text-blue-300">▸</span>
-                      <span>{line}</span>
-                    </li>
-                  ))}
-                </ul>
-              ) : (
+              {isMeaningfulValue(event.details?.overview) ? (
                 <p className="mt-3 font-circular-web text-blue-50/70">
-                  {event.details?.timings || "TBA"}
+                  {event.details?.overview}
                 </p>
-              )}
+              ) : null}
+
+              {Array.isArray(event.details?.rounds) && event.details.rounds.length ? (
+                <>
+                  <p className="mt-10 text-xs uppercase tracking-widest text-blue-50">
+                    Rounds
+                  </p>
+                  <div className="mt-4 space-y-6">
+                    {event.details.rounds.map((round) => (
+                      <div key={round.name} className="border-l border-white/10 pl-4">
+                        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                          <p className="font-zentry text-xl leading-[0.95] text-blue-50">
+                            {round.name}
+                          </p>
+                          {round.duration ? (
+                            <p className="font-general text-[10px] uppercase tracking-widest text-blue-50/60">
+                              {round.duration}
+                            </p>
+                          ) : null}
+                        </div>
+
+                        {round.objective ? (
+                          <p className="mt-2 font-circular-web text-sm text-blue-50/70">
+                            {round.objective}
+                          </p>
+                        ) : null}
+
+                        {Array.isArray(round.judging) && round.judging.length ? (
+                          <ul className="mt-3 space-y-2 font-circular-web text-sm text-blue-50/70">
+                            {round.judging.map((line) => (
+                              <li key={line} className="flex gap-3">
+                                <span className="text-blue-300">▸</span>
+                                <span>{line}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        ) : null}
+                      </div>
+                    ))}
+                  </div>
+                </>
+              ) : null}
+
+              {Array.isArray(event.details?.format) && event.details.format.length ? (
+                <>
+                  <p className="mt-10 text-xs uppercase tracking-widest text-blue-50">
+                    Format
+                  </p>
+                  <ul className="mt-3 space-y-2 font-circular-web text-blue-50/70">
+                    {event.details.format.map((line) => (
+                      <li key={line} className="flex gap-3">
+                        <span className="text-blue-300">▸</span>
+                        <span>{line}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              ) : null}
+
+              {showTimingsSection ? (
+                <>
+                  <p className="mt-10 text-xs uppercase tracking-widest text-blue-50">
+                    Timings
+                  </p>
+                  {Array.isArray(timings) ? (
+                    <ul className="mt-3 space-y-2 font-circular-web text-blue-50/70">
+                      {timings.filter(isMeaningfulValue).map((line) => (
+                        <li key={line} className="flex gap-3">
+                          <span className="text-blue-300">▸</span>
+                          <span>{line}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="mt-3 font-circular-web text-blue-50/70">
+                      {timings}
+                    </p>
+                  )}
+                </>
+              ) : null}
             </div>
 
             <div>
-              <p className="text-xs uppercase tracking-widest text-blue-50">
-                Rules
-              </p>
-              <ul className="mt-3 space-y-2 font-circular-web text-blue-50/70">
-                {(event.details?.rules || []).map((line) => (
-                  <li key={line} className="flex gap-3">
-                    <span className="text-blue-300">▸</span>
-                    <span>{line}</span>
-                  </li>
-                ))}
-              </ul>
+              {Array.isArray(event.details?.rules) && event.details.rules.length ? (
+                <>
+                  <p className="text-xs uppercase tracking-widest text-blue-50">
+                    Rules
+                  </p>
+                  <ul className="mt-3 space-y-2 font-circular-web text-blue-50/70">
+                    {event.details.rules.map((line) => (
+                      <li key={line} className="flex gap-3">
+                        <span className="text-blue-300">▸</span>
+                        <span>{line}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              ) : null}
 
-              <p className="mt-10 text-xs uppercase tracking-widest text-blue-50">
-                Judging
-              </p>
-              <ul className="mt-3 space-y-2 font-circular-web text-blue-50/70">
-                {(event.details?.judging || []).map((line) => (
-                  <li key={line} className="flex gap-3">
-                    <span className="text-blue-300">▸</span>
-                    <span>{line}</span>
-                  </li>
-                ))}
-              </ul>
+              {Array.isArray(event.details?.judging) && event.details.judging.length ? (
+                <>
+                  <p className="mt-10 text-xs uppercase tracking-widest text-blue-50">
+                    Judging
+                  </p>
+                  <ul className="mt-3 space-y-2 font-circular-web text-blue-50/70">
+                    {event.details.judging.map((line) => (
+                      <li key={line} className="flex gap-3">
+                        <span className="text-blue-300">▸</span>
+                        <span>{line}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              ) : null}
 
-              <p className="mt-10 text-xs uppercase tracking-widest text-blue-50">
-                Registration
-              </p>
-              <p className="mt-3 font-circular-web text-blue-50/70">
-                {event.details?.registration}
-              </p>
-
-              <p className="mt-10 text-xs uppercase tracking-widest text-blue-50">
-                Contacts
-              </p>
-              {Array.isArray(event.details?.contacts) && event.details.contacts.length ? (
-                <div className="mt-3 grid gap-3">
-                  {event.details.contacts.map((c) => (
-                    <div
-                      key={`${c.name}-${c.phone || c.email || "contact"}`}
-                      className="border-hsla rounded-2xl bg-black/25 p-4"
-                    >
-                      <p className="font-general text-[10px] uppercase tracking-widest text-blue-50/70">
-                        {c.role || "Coordinator"}
-                      </p>
-                      <p className="mt-2 font-zentry text-xl leading-[0.95] text-blue-50">
-                        {c.name}
-                      </p>
-                      <div className="mt-2 font-circular-web text-sm text-blue-50/70">
-                        {c.phone ? <p>Phone: {c.phone}</p> : null}
-                        {c.email ? <p>Email: {c.email}</p> : null}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <p className="mt-3 font-circular-web text-blue-50/70">
-                  Contacts will be announced soon.
-                </p>
-              )}
+              {displayedContacts.length ? (
+                <>
+                  <p className="mt-10 text-xs uppercase tracking-widest text-blue-50">
+                    Contacts
+                  </p>
+                  <div className="border-hsla mt-3 overflow-hidden rounded-2xl bg-black/20">
+                    <ul className="divide-y divide-white/10">
+                      {displayedContacts.map((c) => (
+                        <li
+                          key={`${c.name}-${c.phone || c.email || "contact"}`}
+                          className="p-4"
+                        >
+                          <p className="font-general text-[10px] uppercase tracking-widest text-blue-50/60">
+                            {c.role || "Coordinator"}
+                          </p>
+                          <p className="mt-2 font-zentry text-xl leading-[0.95] text-blue-50">
+                            {c.name}
+                          </p>
+                          <div className="mt-2 font-circular-web text-sm text-blue-50/70">
+                            {isMeaningfulValue(c.phone) ? (
+                              <p>Phone: {c.phone}</p>
+                            ) : null}
+                            {isMeaningfulValue(c.email) ? (
+                              <p>Email: {c.email}</p>
+                            ) : null}
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </>
+              ) : null}
             </div>
           </div>
         </div>

@@ -6,39 +6,76 @@ const slugify = (value) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
 
+const withCloudinaryAuto = (src) => {
+  if (!src || typeof src !== "string") return src;
+  if (!src.includes("res.cloudinary.com") || !src.includes("/video/upload/")) return src;
+  if (src.includes("/video/upload/q_auto,f_auto/")) return src;
+  return src.replace("/video/upload/", "/video/upload/q_auto,f_auto/");
+};
+
 export const EVENTS = [
   {
     name: "Vibe Coding",
     slug: "vibe-coding",
     track: "Technical",
-    short: "Open → Topic → Twist Finale",
-    videoSrc: "/videos/feature-1n.mp4",
+    short: "Creativity-first rapid coding showdown",
+    videoSrc:
+      "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445104/feature-1n_boxizj.mp4",
     details: {
+      date: "21-02-2026",
+      time: "9:30 AM – 4:00 PM",
+      teamSize: "2–3",
       overview:
-        "A fast-paced coding challenge where the problem evolves as you go. You start with an open prompt, then get a topic constraint, and finish with a twist round that changes the target.",
-      prize: "2000",
-      timings: ["08:00 AM – 10:00 AM"],
-      contacts: [{ role: "Coordinator", name: "Event Desk", phone: "555-0101" }],
-      format: [
-        "Round 1: Open build — create a working baseline.",
-        "Round 2: Topic lock — align with the revealed theme.",
-        "Finale: Twist — adapt quickly to a new constraint or feature request.",
+        "High-energy coding event focused on creativity, execution, and adaptability. Any tech stack allowed, AI-friendly, judged via live demos.",
+      rounds: [
+        {
+          name: "Open Round",
+          duration: "60–90 mins + 2 min demo",
+          objective: "Build anything impressive",
+          judging: [
+            "Creativity (35)",
+            "Innovation (25)",
+            "Technical Execution (30)",
+            "Demo Clarity (10)",
+          ],
+        },
+        {
+          name: "Topic Round",
+          duration: "60–90 mins + demo + Q&A",
+          objective: "Build under topic constraints",
+          judging: [
+            "Topic Fit (25)",
+            "Functional MVP (30)",
+            "Technical Execution (25)",
+            "UX & Presentation (20)",
+          ],
+        },
+        {
+          name: "Twist Finale",
+          duration: "30–45 mins + demo",
+          objective: "Adapt & upgrade with surprise twist",
+          judging: [
+            "Twist Completion (40)",
+            "Demo Stability (25)",
+            "Quality of Improvement (20)",
+            "Explanation (15)",
+          ],
+        },
       ],
       rules: [
-        "Bring your own laptop (and chargers).",
-        "Internet usage depends on organizer announcement at the venue.",
-        "Plagiarism or copying pre-built solutions may lead to disqualification.",
-        "Judges’ decision is final.",
+        "No pre-done projects",
+        "Live demo mandatory",
+        "Mention real vs mocked features",
+        "No plagiarism",
       ],
-      judging: [
-        "Correctness and completeness",
-        "Creativity / vibe factor",
-        "Code clarity and approach",
-        "How well you handle the twist",
+      contacts: [
+        { role: "Coordinator", name: "Yokeskumar N", phone: "8056264811" },
+        { role: "Coordinator", name: "Jagan S", phone: "9344561541" },
+        { role: "Coordinator", name: "Lakshmikanthan C", phone: "9344647710" },
+        { role: "Coordinator", name: "Vaaheesan S", phone: "9499941994" },
       ],
-      registration:
-        "Click Register to continue to the registration section and secure your slot.",
-      registerTo: "/#contact",
+      registration: "Click Register to continue to the registration section.",
+      registerTo: "/#register",
     },
   },
   {
@@ -46,11 +83,11 @@ export const EVENTS = [
     slug: "tech-marathon",
     track: "Technical",
     short: "Coding From Hell → Glitch Verse",
-    videoSrc: "/videos/feature-2n.mp4",
+    videoSrc:
+      "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445115/feature-2n_whzlao.mp4",
     details: {
       overview:
         "An endurance-style challenge with escalating difficulty. Expect unpredictable constraints and a final ‘glitch’ phase that tests debugging and resilience.",
-      prize: "2000",
       timings: ["09:00 AM – 11:00 AM"],
       contacts: [{ role: "Coordinator", name: "Event Desk", phone: "555-0102" }],
       format: [
@@ -77,90 +114,123 @@ export const EVENTS = [
     name: "It Takes Two",
     slug: "it-takes-two",
     track: "Technical",
-    short: "2 Members · Alternate Levels",
-    videoSrc: "/videos/feature-3.mp4",
+    short: "Two-player code relay challenge",
+    videoSrc:
+      "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445093/feature-3_jrqk1k.mp4",
     details: {
+      date: "21-02-2026",
+      time: "10:00 AM – 12:00 PM",
+      teamSize: "2",
       overview:
-        "A duo event where teamwork is the real mechanic. Members alternate responsibilities across mini-levels so both participants contribute meaningfully.",
-      prize: "1000",
-      timings: ["10:30 AM – 12:00 PM"],
-      contacts: [{ role: "Coordinator", name: "Event Desk", phone: "555-0103" }],
-      format: [
-        "Teams of 2.",
-        "Alternating levels: one member codes while the other plans/tests, then swap.",
+        "A teamwork-based coding relay where coordination and speed decide the winner.",
+      rounds: [
+        {
+          name: "Relay Challenge",
+          objective: "Solve coding tasks collaboratively",
+          judging: [
+            "Accuracy",
+            "Execution efficiency",
+            "Team coordination",
+            "Time taken",
+          ],
+        },
       ],
       rules: [
-        "Exactly 2 members per team.",
-        "Both members must participate in alternating rounds.",
-        "External collaboration outside the team isn’t allowed.",
+        "No pre-written code",
+        "Internet limited to documentation",
+        "Event structure revealed one day prior",
       ],
-      judging: [
-        "Overall completion",
-        "Team coordination",
-        "Testing approach",
-        "Edge-case handling",
+      contacts: [
+        {
+          role: "Coordinator",
+          name: "Canosa R Krucy",
+          email: "canosarkrucycse@gmail.com",
+        },
+        {
+          role: "Coordinator",
+          name: "Gladis Keziah",
+          email: "gladiskeziah@gmail.com",
+        },
       ],
-      registration: "Click Register and mention your teammate at sign-up.",
-      registerTo: "/#contact",
+      registration: "Click Register to continue to the registration section.",
+      registerTo: "/#register",
     },
   },
   {
     name: "Hot Seat",
     slug: "hot-seat",
-    track: "Technical",
-    short: "Rapid MCQ Ladder",
-    videoSrc: "/videos/feature-12n.mp4",
+    track: "Non-Tech",
+    short: "High-pressure quiz showdown",
+    videoSrc:
+      "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445107/feature-12n_wg4xyu.mp4",
     details: {
+      date: "21-02-2026",
+      time: "10:00 AM – 11:00 AM",
+      teamSize: "1–2",
       overview:
-        "A rapid-fire MCQ ladder round that rewards clarity and composure. Questions span fundamentals, CS concepts, and practical dev knowledge.",
-      prize: "1000",
-      timings: ["11:00 AM – 12:00 PM"],
-      contacts: [{ role: "Coordinator", name: "Event Desk", phone: "555-0104" }],
-      format: [
-        "Timed ladder — each correct answer advances you.",
-        "Difficulty increases as you climb.",
-      ],
-      rules: [
-        "No devices unless explicitly permitted.",
-        "Answer within the time limit to score.",
+        "Multi-round quiz event inspired by Who Wants to Be a Millionaire.",
+      rounds: [
+        { name: "Elite 5", duration: "20 mins" },
+        { name: "Fastest Finger First", duration: "20 mins" },
+        { name: "Hot Seat Finale", duration: "20 mins" },
       ],
       judging: [
-        "Correct answers",
-        "Speed (tie-breaker)",
+        "Accuracy",
+        "Speed",
+        "Strategy",
+        "Lifeline usage",
       ],
-      registration: "Click Register to reserve a seat for the ladder round.",
-      registerTo: "/#contact",
+      contacts: [
+        { role: "Coordinator", name: "Akaash Srinivasan", phone: "73054887743" },
+        { role: "Coordinator", name: "Abinand P", phone: "9445920529" },
+      ],
+      registration: "Click Register to continue to the registration section.",
+      registerTo: "/#register",
     },
   },
   {
-    name: "Paper Presentation",
-    slug: "paper-presentation",
+    name: "Project Expo",
+    slug: "project-expo",
     track: "Technical",
-    short: "Research & Innovation",
-    videoSrc: "/videos/feature-2.mp4",
+    short: "Innovation & real-world impact",
+    videoSrc:
+      "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445104/feature-2_tbxum9.mp4",
     details: {
+      date: "21-02-2026",
+      teamSize: "1–4",
       overview:
-        "Present your research or innovative project idea to a panel. Focus on problem clarity, novelty, and real-world impact.",
-      prize: "2000",
-      timings: ["12:00 PM – 01:30 PM"],
-      contacts: [{ role: "Coordinator", name: "Event Desk", phone: "555-0105" }],
-      format: [
-        "Talk + Q&A session.",
-        "Slides recommended.",
-      ],
-      rules: [
-        "Submit topic/title as per organizer instructions.",
-        "Avoid copyrighted material you don’t own rights to.",
+        "Showcase innovative software or hardware projects with PPT and live demo.",
+      rounds: [
+        {
+          name: "Presentation + Demo",
+          duration: "8–10 mins + Q&A",
+        },
       ],
       judging: [
-        "Novelty",
+        "Innovation",
         "Technical depth",
-        "Clarity of communication",
-        "Q&A handling",
+        "Practical impact",
+        "Presentation skills",
       ],
-      registration:
-        "Click Register to submit your title/topic and confirm your slot.",
-      registerTo: "/#contact",
+      rules: [
+        "PPT mandatory",
+        "Original projects only",
+        "Strict time limits",
+      ],
+      contacts: [
+        {
+          role: "Coordinator",
+          name: "Merlyne Margarte Christinal D",
+          email: "merlynemargartechristinalcse@gmail.com",
+        },
+        {
+          role: "Coordinator",
+          name: "Chandn S",
+          email: "chandnveccseb@gmail.com",
+        },
+      ],
+      registration: "Click Register to continue to the registration section.",
+      registerTo: "/#register",
     },
   },
   {
@@ -168,11 +238,11 @@ export const EVENTS = [
     slug: "build-in-60",
     track: "Technical",
     short: "UI/UX + Website Sprint",
-    videoSrc: "/videos/feature-10n.mp4",
+    videoSrc:
+      "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445097/feature-10n_indhwt.mp4",
     details: {
       overview:
         "A 60-minute sprint to design and ship a clean UI. Balance visuals and usability — build something that feels like a product.",
-      prize: "2000",
       timings: ["60 minutes (Sprint)", "Theme/brief announced at start"],
       contacts: [{ role: "Coordinator", name: "Event Desk", phone: "555-0106" }],
       format: [
@@ -199,11 +269,10 @@ export const EVENTS = [
     slug: "bid-war",
     track: "Non-Tech",
     short: "IPL Style Auction",
-    videoSrc: "/videos/feature-7n.mp4",
+    videoSrc: "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445577/feature-7n_ee8jru.mp4",
     details: {
       overview:
         "A strategy and quick-thinking auction event with an IPL-style twist. Build the best squad/stack within your budget.",
-      prize: "1000",
       timings: ["08:30 AM – 10:00 AM"],
       contacts: [{ role: "Coordinator", name: "Event Desk", phone: "555-0107" }],
       format: [
@@ -227,11 +296,11 @@ export const EVENTS = [
     slug: "connect-tone",
     track: "Non-Tech",
     short: "Connection → Sonic Sense",
-    videoSrc: "/videos/feature-13n.mp4",
+    videoSrc:
+      "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445101/feature-13n_fyshgw.mp4",
     details: {
       overview:
         "A fun, gamified connection challenge where patterns and ‘tone’ are everything. Connect clues and react to audio/visual prompts.",
-      prize: "2000",
       timings: ["10:00 AM – 11:30 AM"],
       contacts: [{ role: "Coordinator", name: "Event Desk", phone: "555-0108" }],
       format: [
@@ -251,33 +320,39 @@ export const EVENTS = [
     },
   },
   {
-    name: "Meme Creation",
-    slug: "meme-creation",
+    name: "Meme Relay",
+    slug: "meme-relay",
     track: "Non-Tech",
-    short: "Creativity Challenge",
-    videoSrc: "/videos/feature-11n.mp4",
+    short: "Humor meets creativity",
+    videoSrc:
+      "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445096/feature-11n_jjjgrl.mp4",
     details: {
+      date: "21-02-2026",
+      time: "Approx 2 Hours",
+      teamSize: "1–2",
       overview:
-        "Create memes based on prompts — the goal is humor + relevance + originality. Keep it clean, clever, and on-theme.",
-      prize: "1000",
-      timings: ["12:30 PM – 01:30 PM"],
-      contacts: [{ role: "Coordinator", name: "Event Desk", phone: "555-0109" }],
-      format: [
-        "Prompt reveal.",
-        "Creation window.",
-        "Showcase + scoring.",
+        "Fast-paced meme creation event testing humor, relevance, and explanation skills.",
+      rounds: [
+        { name: "Meme Sense Check", duration: "20 mins" },
+        { name: "Situation Meme", duration: "30 mins" },
+        { name: "Meme Battle (Final)", duration: "30 mins" },
       ],
       rules: [
-        "Original creations only.",
-        "No hateful, explicit, or harassing content.",
+        "No offensive or political content",
+        "Memes must be created during event",
+        "Internet only for templates",
       ],
       judging: [
-        "Originality",
-        "Prompt relevance",
-        "Presentation",
+        "Relevance",
+        "Humor & relatability",
+        "Explanation quality",
       ],
-      registration: "Click Register to get the meme prompt pack.",
-      registerTo: "/#contact",
+      contacts: [
+        { role: "Coordinator", name: "Pranesh S", email: "praneshjd2004@gmail.com" },
+        { role: "Coordinator", name: "T.S. Nidhelaaa", email: "nidhelaavec@gmail.com" },
+      ],
+      registration: "Click Register to continue to the registration section.",
+      registerTo: "/#register",
     },
   },
   {
@@ -285,27 +360,30 @@ export const EVENTS = [
     slug: "switch-saga",
     track: "Non-Tech",
     short: "Positive ↔ Negative Switch",
-    videoSrc: "/videos/feature-14n.mp4",
+    videoSrc:
+      "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445107/feature-14n_ehmj6j.mp4",
     details: {
+      date: "21-03-2026",
+      time: "11:15 AM – 12:00 PM",
+      teamSize: "2–4",
       overview:
-        "A playful challenge where the rules flip mid-game. Adapt your responses when the polarity switches — positive becomes negative and vice versa.",
-      prize: "1000",
-      timings: ["01:00 PM – 02:00 PM"],
-      contacts: [{ role: "Coordinator", name: "Event Desk", phone: "555-0110" }],
-      format: [
-        "Standard round.",
-        "Switch round (rule flip).",
-      ],
-      rules: [
-        "Listen carefully — the switch is part of the game.",
-        "Follow facilitator instructions.",
+        "Speaking event where teams instantly switch viewpoints on a topic.",
+      rounds: [
+        { name: "Basic Switch" },
+        { name: "Switch with New Points" },
+        { name: "Rapid Switch" },
       ],
       judging: [
-        "Correctness under the switch",
-        "Consistency",
+        "Communication clarity",
+        "Presence of mind",
+        "Confidence & relevance",
       ],
-      registration: "Click Register to join the switch saga.",
-      registerTo: "/#contact",
+      contacts: [
+        { role: "Coordinator", name: "Cindrella", email: "cindrella22cse@gmail.com" },
+        { role: "Coordinator", name: "Mahalakshmi", email: "mahalakshmi02cse@gmail.com" },
+      ],
+      registration: "Click Register to continue to the registration section.",
+      registerTo: "/#register",
     },
   },
   {
@@ -313,11 +391,11 @@ export const EVENTS = [
     slug: "game-tournament",
     track: "Non-Tech",
     short: "Competitive Gaming",
-    videoSrc: "/videos/feature-9n.mp4",
+    videoSrc:
+      "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445097/feature-9n_mt6ajv.mp4",
     details: {
       overview:
         "A competitive gaming bracket. Show up ready, respect the rules, and aim for the top of the leaderboard.",
-      prize: "2000",
       timings: ["01:30 PM – 02:45 PM"],
       contacts: [{ role: "Coordinator", name: "Event Desk", phone: "555-0111" }],
       format: [
@@ -336,7 +414,11 @@ export const EVENTS = [
       registerTo: "/#contact",
     },
   },
-].map((event) => ({ ...event, slug: event.slug || slugify(event.name) }));
+].map((event) => ({
+  ...event,
+  slug: event.slug || slugify(event.name),
+  videoSrc: withCloudinaryAuto(event.videoSrc),
+}));
 
 export const getEventBySlug = (slug) =>
   EVENTS.find((event) => event.slug === slug);

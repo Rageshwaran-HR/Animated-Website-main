@@ -58,7 +58,7 @@ body {
   }
 
   .floating-nav {
-    @apply rounded-lg border bg-black/60 backdrop-blur-lg;
+    @apply rounded-lg border bg-slate-950/70 backdrop-blur-lg;
   }
 
   .absolute-center {

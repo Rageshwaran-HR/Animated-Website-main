@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Button from './Button';
 import { TiLocationArrow } from 'react-icons/ti';
 import { useWindowScroll } from 'react-use';
@@ -15,7 +15,6 @@ const navToId = (label) => {
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
   const [isIndicatorActive, setIsIndicatorActive] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isNavVisible, setIsNavVisible] = useState(true);
@@ -70,7 +69,6 @@ const Navbar = () => {
 
       const sync = () => {
         const playing = isPlaying(el);
-        setIsAudioPlaying(playing);
         setIsIndicatorActive(playing);
       };
 
@@ -91,7 +89,6 @@ const Navbar = () => {
       const next = source === 'video' ? getEventVideo() : getBgAudio();
       if (next !== boundEl) bindTo(next);
       const playing = isPlaying(next);
-      setIsAudioPlaying(playing);
       setIsIndicatorActive(playing);
     };
 

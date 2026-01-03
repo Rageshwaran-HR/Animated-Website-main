@@ -1,4 +1,3 @@
-import React from 'react'
 import Button from './Button'
 
 const ImageClipBox = ({ src, clipClass }) => (
@@ -10,7 +9,7 @@ const ImageClipBox = ({ src, clipClass }) => (
 const Contact = () => {
     return (
         <div id="contact" className="my-20 min-h-96 w-screen px-10">
-            <div className="relative rounded-lg bg-black py-24 text-blue-50 sm:overflow-hidden">
+            <div className="relative rounded-lg bg-slate-950 py-24 text-blue-50 sm:overflow-hidden">
                 <div className='absolute -left-10 top-0 hidden h-full w-72 overflow-hidden sm:block lg:left-10 lg:w-96'>
                     <ImageClipBox
                         clipClass="contact-clip-path-1"
@@ -36,7 +35,7 @@ const Contact = () => {
                     </p>
 
                     <p className='special-font mt-10 w-full font-zentry text-5xl leading-[0.9] md:text-[6rem] z-10'>
-                        Let's sh<b>a</b>pe the <br /> f<b>u</b>ture of <br /> comp<b>u</b>ting toge<b>t</b>her
+                        Let&apos;s sh<b>a</b>pe the <br /> f<b>u</b>ture of <br /> comp<b>u</b>ting toge<b>t</b>her
                     </p>
 
                     <Button 

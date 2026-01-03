@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import { FaDiscord, FaGithub, FaTwitch, FaTwitter } from 'react-icons/fa'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
@@ -84,7 +84,7 @@ const Footer = () => {
   return (
     <footer className='w-screen bg-violet-300 py-6 text-black'>
       <div className='container mx-auto px-4'>
-        <div ref={locationRef} className='footer-location-card mx-auto mb-6 max-w-7xl rounded-lg border border-white/10 bg-black px-5 py-6 text-blue-50 md:px-8 md:py-8'>
+        <div ref={locationRef} className='footer-location-card mx-auto mb-6 max-w-7xl rounded-lg border border-white/10 bg-slate-950 px-5 py-6 text-blue-50 md:px-8 md:py-8'>
           <div className='grid grid-cols-1 items-center gap-6 md:grid-cols-12'>
             <div className='footer-location-copy md:col-span-5'>
               <p className='font-general text-[10px] uppercase tracking-widest text-blue-50/80'>College Location</p>
@@ -94,7 +94,7 @@ const Footer = () => {
                 href={COLLEGE_MAP_URL}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='mt-5 inline-flex w-fit items-center rounded-md border-hsla bg-black/20 px-4 py-3 font-general text-[10px] uppercase tracking-widest text-blue-50 transition-colors duration-300 hover:bg-black/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300/70'
+                className='mt-5 inline-flex w-fit items-center rounded-md border-hsla bg-slate-950/35 px-4 py-3 font-general text-[10px] uppercase tracking-widest text-blue-50 transition-colors duration-300 hover:bg-slate-950/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300/70'
               >
                 Open in Google Maps
               </a>
@@ -113,7 +113,7 @@ const Footer = () => {
                 className='cyber-map group relative block overflow-hidden rounded-md border border-white/10 transition-shadow duration-300 hover:ring-2 hover:ring-blue-300/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300/70'
                 aria-label='Open college location in Google Maps'
               >
-                <div className='absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-50' />
+                <div className='absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/25 to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-50' />
                 <div className='pointer-events-none absolute inset-0 bg-blue-300/20 opacity-0 mix-blend-screen transition-opacity duration-300 group-hover:opacity-100' />
                 <div className='aspect-[16/9] w-full'>
                   <img

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Button from './Button';
 import { TiLocationArrow } from 'react-icons/ti';
 import { useGSAP } from '@gsap/react';
@@ -62,7 +62,7 @@ const Hero = () => {
         <div className='relative h-dvh w-screen overflow-x-hidden'>
             <div id='video-frame' className='relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75'>
                 <video
-                    src='videos/heron.mp4'
+                    src='https://res.cloudinary.com/domxvnuqp/video/upload/q_auto,f_auto/v1767445104/heron_fq37uh.mp4'
                     autoPlay
                     loop
                     muted
@@ -71,7 +71,7 @@ const Hero = () => {
 
                 <div
                     aria-hidden="true"
-                    className='pointer-events-none absolute inset-0 z-20 bg-gradient-to-b from-black/55 via-black/25 to-black/55'
+                    className='pointer-events-none absolute inset-0 z-20 bg-gradient-to-b from-slate-950/65 via-slate-950/30 to-slate-950/65'
                 />
 
                 <h1 className='special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75'>
@@ -84,7 +84,10 @@ const Hero = () => {
                             <h1 className='special-font hero-heading text-blue-100'>Ozm<b>e</b>nta&apos;26</h1>
 
                             <div className='mt-3 flex max-w-xl flex-col gap-5'>
-                                <div className='w-fit rounded-md border-hsla bg-black/25 px-3 py-2 backdrop-blur-sm'>
+                                <div className='w-fit rounded-md border-hsla bg-slate-950/30 px-3 py-2 backdrop-blur-sm'>
+                                    <div className='mb-2 inline-flex rounded-full border-hsla bg-slate-950/35 px-3 py-1 font-general text-[10px] uppercase tracking-widest text-blue-300'>
+                                        National Level Symposium
+                                    </div>
                                     <p className='special-font font-zentry font-black uppercase leading-[0.95] text-blue-50 sm:text-xl md:text-2xl'>
                                         Velammal Engineering College 
                                     </p>
@@ -98,10 +101,10 @@ const Hero = () => {
                                     containerClass="!bg-yellow-300 flex-center gap-1"
                                 />
 
-                                <div className='w-fit rounded-md border-hsla bg-black/30 px-4 py-4 text-blue-50'>
+                                <div className='w-fit rounded-md border-hsla bg-slate-950/35 px-4 py-4 text-blue-50'>
                                     <p className='font-general text-[10px] uppercase tracking-widest text-blue-50/80'>Event Countdown</p>
                                     <div className='mt-3 flex items-stretch gap-2'>
-                                        <div className='border-hsla rounded-md bg-black/20 px-4 py-3'>
+                                        <div className='border-hsla rounded-md bg-slate-950/30 px-4 py-3'>
                                             <p className='font-zentry text-3xl leading-none text-blue-50 md:text-4xl'>{countdown.days}</p>
                                         </div>
 
@@ -109,7 +112,7 @@ const Hero = () => {
                                             <span className='font-zentry text-3xl leading-none text-blue-50/70 md:text-4xl'>:</span>
                                         </div>
 
-                                        <div className='border-hsla rounded-md bg-black/20 px-4 py-3'>
+                                        <div className='border-hsla rounded-md bg-slate-950/30 px-4 py-3'>
                                             <p className='font-zentry text-3xl leading-none text-blue-50 md:text-4xl'>{countdown.hours}</p>
                                         </div>
 
@@ -117,7 +120,7 @@ const Hero = () => {
                                             <span className='font-zentry text-3xl leading-none text-blue-50/70 md:text-4xl'>:</span>
                                         </div>
 
-                                        <div className='border-hsla rounded-md bg-black/20 px-4 py-3'>
+                                        <div className='border-hsla rounded-md bg-slate-950/30 px-4 py-3'>
                                             <p className='font-zentry text-3xl leading-none text-blue-50 md:text-4xl'>{countdown.minutes}</p>
                                         </div>
 
@@ -125,7 +128,7 @@ const Hero = () => {
                                             <span className='font-zentry text-3xl leading-none text-blue-50/70 md:text-4xl'>:</span>
                                         </div>
 
-                                        <div className='border-hsla rounded-md bg-black/20 px-4 py-3'>
+                                        <div className='border-hsla rounded-md bg-slate-950/30 px-4 py-3'>
                                             <p className='font-zentry text-3xl leading-none text-blue-50 md:text-4xl'>{countdown.seconds}</p>
                                         </div>
                                     </div>
