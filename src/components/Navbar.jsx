@@ -5,11 +5,11 @@ import { useWindowScroll } from 'react-use';
 import { Link, useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
 
-const navItems = ["Tracks", "Speakers", "Schedule", "About", "Contact"];
+const navItems = ["Events", "About", "Contact"];
 
 const navToId = (label) => {
   const v = label.toLocaleLowerCase();
-  if (v === 'tracks') return 'tracks';
+  if (v === 'events' || v === 'tracks') return 'tracks';
   return v;
 };
 
