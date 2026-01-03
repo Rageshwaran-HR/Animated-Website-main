@@ -5,7 +5,7 @@ import { useWindowScroll } from 'react-use';
 import { Link, useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
 
-const navItems = ["Events", "About", "Contact"];
+const navItems = ["About","Events" , "Contact"];
 
 const navToId = (label) => {
   const v = label.toLocaleLowerCase();
