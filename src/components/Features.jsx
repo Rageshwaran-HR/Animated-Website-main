@@ -177,10 +177,12 @@ const Features = () => {
             containerClass="pointer-events-none relative z-10 !text-blue-50 !px-0 sm:!px-0 !text-5xl md:!text-6xl"
           />
 
-          <p className="features-subtext mt-6 max-w-2xl font-circular-web text-blue-50/70">
-            Ozmenta&apos;26 brings together intense technical battles and fun
-            non-technical challenges.
-          </p>
+          <p className="features-subtext mt-6 max-w-3xl font-circular-web text-blue-50/70 
+            text-1xl sm:text-2xl md:text-3xl font-bold">
+              Ozmenta&apos;26 brings together intense technical battles and fun
+              non-technical challenges.
+            </p>
+
 
           {/* Technical */}
           <AnimatedTitle

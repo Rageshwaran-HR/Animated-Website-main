@@ -321,14 +321,6 @@ const EventDetails = () => {
             {event.short}
           </p>
 
-          <div className="mt-10">
-            <Button
-              id="event-register"
-              title="Register"
-              containerClass="bg-blue-300"
-              onClick={onRegister}
-            />
-          </div>
 
           {metaItems.length ? (
             <div

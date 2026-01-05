@@ -23,7 +23,7 @@ export const EVENTS = [
       "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445104/feature-1n_boxizj.mp4",
     details: {
       date: "21-02-2026",
-      time: "9:30 AM – 4:00 PM",
+      time: "10:30 AM – 12:00 PM",
       teamSize: "2–3",
       overview:
         "High-energy coding event focused on creativity, execution, and adaptability. Any tech stack allowed, AI-friendly, judged via live demos.",
@@ -88,7 +88,7 @@ export const EVENTS = [
     details: {
       overview:
         "An endurance-style challenge with escalating difficulty. Expect unpredictable constraints and a final ‘glitch’ phase that tests debugging and resilience.",
-      timings: ["09:00 AM – 11:00 AM"],
+      timings: ["09:00 AM – 10:30 AM"],
       contacts: [{ role: "Coordinator", name: "Event Desk", phone: "555-0102" }],
       format: [
         "Stage 1: Warm-up problems",
@@ -119,7 +119,7 @@ export const EVENTS = [
       "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445093/feature-3_jrqk1k.mp4",
     details: {
       date: "21-02-2026",
-      time: "10:00 AM – 12:00 PM",
+      time: "10:30 AM – 12:00 PM",
       teamSize: "2",
       overview:
         "A teamwork-based coding relay where coordination and speed decide the winner.",
@@ -165,7 +165,7 @@ export const EVENTS = [
       "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445107/feature-12n_wg4xyu.mp4",
     details: {
       date: "21-02-2026",
-      time: "10:00 AM – 11:00 AM",
+      time: "10:30 AM – 12:00 PM",
       teamSize: "1–2",
       overview:
         "Multi-round quiz event inspired by Who Wants to Be a Millionaire.",
@@ -243,7 +243,7 @@ export const EVENTS = [
     details: {
       overview:
         "A 60-minute sprint to design and ship a clean UI. Balance visuals and usability — build something that feels like a product.",
-      timings: ["60 minutes (Sprint)", "Theme/brief announced at start"],
+      timings: ["09:00 AM – 10:30 AM"],
       contacts: [{ role: "Coordinator", name: "Event Desk", phone: "555-0106" }],
       format: [
         "Time-boxed sprint (60 minutes).",
@@ -273,7 +273,7 @@ export const EVENTS = [
     details: {
       overview:
         "A strategy and quick-thinking auction event with an IPL-style twist. Build the best squad/stack within your budget.",
-      timings: ["08:30 AM – 10:00 AM"],
+      timings: ["01:00 PM – 02:00 PM"],
       contacts: [{ role: "Coordinator", name: "Event Desk", phone: "555-0107" }],
       format: [
         "Budget-based bidding rounds.",
@@ -301,7 +301,7 @@ export const EVENTS = [
     details: {
       overview:
         "A fun, gamified connection challenge where patterns and ‘tone’ are everything. Connect clues and react to audio/visual prompts.",
-      timings: ["10:00 AM – 11:30 AM"],
+      timings: ["01:00 PM – 02:00 PM"],
       contacts: [{ role: "Coordinator", name: "Event Desk", phone: "555-0108" }],
       format: [
         "Connection round (link the clues).",
@@ -328,7 +328,7 @@ export const EVENTS = [
       "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445096/feature-11n_jjjgrl.mp4",
     details: {
       date: "21-02-2026",
-      time: "Approx 2 Hours",
+      time: "2:00 PM – 3:00 PM",
       teamSize: "1–2",
       overview:
         "Fast-paced meme creation event testing humor, relevance, and explanation skills.",
@@ -364,7 +364,7 @@ export const EVENTS = [
       "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445107/feature-14n_ehmj6j.mp4",
     details: {
       date: "21-03-2026",
-      time: "11:15 AM – 12:00 PM",
+      time: "02:00 PM – 03:00 PM",
       teamSize: "2–4",
       overview:
         "Speaking event where teams instantly switch viewpoints on a topic.",
@@ -395,7 +395,7 @@ export const EVENTS = [
     "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445097/feature-9n_mt6ajv.mp4",
   details: {
     date: "21-02-2026",
-    time: "To be announced",
+    time: "02:00 PM – 03:00 PM",
     teamSize: "Individual / Duo",
     overview:
       "Funtrix at OZMENTA ’26 is a high-octane competitive zone combining sports precision and combat intensity. Step in, compete, and prove your dominance in the digital arena.",
