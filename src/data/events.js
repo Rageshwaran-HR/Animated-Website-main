@@ -8,7 +8,8 @@ const slugify = (value) =>
 
 const withCloudinaryAuto = (src) => {
   if (!src || typeof src !== "string") return src;
-  if (!src.includes("res.cloudinary.com") || !src.includes("/video/upload/")) return src;
+  if (!src.includes("res.cloudinary.com") || !src.includes("/video/upload/"))
+    return src;
   if (src.includes("/video/upload/q_auto,f_auto/")) return src;
   return src.replace("/video/upload/", "/video/upload/q_auto,f_auto/");
 };
@@ -89,7 +90,9 @@ export const EVENTS = [
       overview:
         "An endurance-style challenge with escalating difficulty. Expect unpredictable constraints and a final ‘glitch’ phase that tests debugging and resilience.",
       timings: ["09:00 AM – 10:30 AM"],
-      contacts: [{ role: "Coordinator", name: "Event Desk", phone: "555-0102" }],
+      contacts: [
+        { role: "Coordinator", name: "Event Desk", phone: "555-0102" },
+      ],
       format: [
         "Stage 1: Warm-up problems",
         "Stage 2: Constraint mode (time/memory/limits)",
@@ -174,14 +177,13 @@ export const EVENTS = [
         { name: "Fastest Finger First", duration: "20 mins" },
         { name: "Hot Seat Finale", duration: "20 mins" },
       ],
-      judging: [
-        "Accuracy",
-        "Speed",
-        "Strategy",
-        "Lifeline usage",
-      ],
+      judging: ["Accuracy", "Speed", "Strategy", "Lifeline usage"],
       contacts: [
-        { role: "Coordinator", name: "Akaash Srinivasan", phone: "73054887743" },
+        {
+          role: "Coordinator",
+          name: "Akaash Srinivasan",
+          phone: "73054887743",
+        },
         { role: "Coordinator", name: "Abinand P", phone: "9445920529" },
       ],
       registration: "Click Register to continue to the registration section.",
@@ -189,44 +191,60 @@ export const EVENTS = [
     },
   },
   {
-    name: "Project Expo",
-    slug: "project-expo",
+    name: "Paper Presentation",
+    slug: "paper-presentation",
     track: "Technical",
-    short: "Innovation & real-world impact",
+    short: "Innovation & originality in research ideas",
     videoSrc:
       "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445104/feature-2_tbxum9.mp4",
     details: {
       date: "21-02-2026",
-      teamSize: "1–4",
+      teamSize: "1–3",
       overview:
-        "Showcase innovative software or hardware projects with PPT and live demo.",
+        "A platform to showcase your ideas, innovation, and technical thinking. Present your paper, defend your concept, and impress the judges with clarity, creativity, and confidence.",
       rounds: [
         {
-          name: "Presentation + Demo",
-          duration: "8–10 mins + Q&A",
+          name: "Presentation + Q&A",
+          duration: "8–10 mins presentation + 2 mins Q&A",
         },
       ],
       judging: [
-        "Innovation",
-        "Technical depth",
-        "Practical impact",
+        "Innovation & originality",
+        "Technical knowledge",
         "Presentation skills",
+        "Clarity & confidence",
       ],
       rules: [
-        "PPT mandatory",
-        "Original projects only",
-        "Strict time limits",
+        "PPT format is mandatory",
+        "Plagiarism is strictly prohibited",
+        "Judges’ decision is final",
+        "One paper per team",
       ],
       contacts: [
         {
           role: "Coordinator",
-          name: "Merlyne Margarte Christinal D",
-          email: "merlynemargartechristinalcse@gmail.com",
+          name: "Shyleja S",
+          email: "shyleja.s@gmail.com",
         },
         {
           role: "Coordinator",
-          name: "Chandn S",
-          email: "chandnveccseb@gmail.com",
+          name: "Ashwin Nandagopal",
+          email: "ashwinnandacool@gmail.com",
+        },
+        {
+          role: "Coordinator",
+          name: "Yesudoss S",
+          email: "dossyesu54@gmail.com",
+        },
+        {
+          role: "Coordinator",
+          name: "Anuvarshini V",
+          email: "anuvarshiniv139@gmail.com",
+        },
+        {
+          role: "Coordinator",
+          name: "Maheswari M",
+          email: "maheswarimathi2004@gmail.com",
         },
       ],
       registration: "Click Register to continue to the registration section.",
@@ -244,7 +262,9 @@ export const EVENTS = [
       overview:
         "A 60-minute sprint to design and ship a clean UI. Balance visuals and usability — build something that feels like a product.",
       timings: ["09:00 AM – 10:30 AM"],
-      contacts: [{ role: "Coordinator", name: "Event Desk", phone: "555-0106" }],
+      contacts: [
+        { role: "Coordinator", name: "Event Desk", phone: "555-0106" },
+      ],
       format: [
         "Time-boxed sprint (60 minutes).",
         "Theme/brief announced at start.",
@@ -269,24 +289,21 @@ export const EVENTS = [
     slug: "bid-war",
     track: "Non-Tech",
     short: "IPL Style Auction",
-    videoSrc: "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445577/feature-7n_ee8jru.mp4",
+    videoSrc:
+      "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445577/feature-7n_ee8jru.mp4",
     details: {
       overview:
         "A strategy and quick-thinking auction event with an IPL-style twist. Build the best squad/stack within your budget.",
       timings: ["01:00 PM – 02:00 PM"],
-      contacts: [{ role: "Coordinator", name: "Event Desk", phone: "555-0107" }],
+      contacts: [
+        { role: "Coordinator", name: "Event Desk", phone: "555-0107" },
+      ],
       format: [
         "Budget-based bidding rounds.",
         "Point system based on your final picks.",
       ],
-      rules: [
-        "Stick to the allocated budget.",
-        "No collusion between teams.",
-      ],
-      judging: [
-        "Final score",
-        "Budget efficiency",
-      ],
+      rules: ["Stick to the allocated budget.", "No collusion between teams."],
+      judging: ["Final score", "Budget efficiency"],
       registration: "Click Register to join the auction lobby.",
       registerTo: "/#contact",
     },
@@ -302,7 +319,9 @@ export const EVENTS = [
       overview:
         "A fun, gamified connection challenge where patterns and ‘tone’ are everything. Connect clues and react to audio/visual prompts.",
       timings: ["01:00 PM – 02:00 PM"],
-      contacts: [{ role: "Coordinator", name: "Event Desk", phone: "555-0108" }],
+      contacts: [
+        { role: "Coordinator", name: "Event Desk", phone: "555-0108" },
+      ],
       format: [
         "Connection round (link the clues).",
         "Sonic sense round (identify/react quickly).",
@@ -311,10 +330,7 @@ export const EVENTS = [
         "Follow the facilitator’s instructions for each mini-round.",
         "No external help/devices unless allowed.",
       ],
-      judging: [
-        "Accuracy",
-        "Speed",
-      ],
+      judging: ["Accuracy", "Speed"],
       registration: "Click Register to enter the connect-tone arena.",
       registerTo: "/#contact",
     },
@@ -342,14 +358,18 @@ export const EVENTS = [
         "Memes must be created during event",
         "Internet only for templates",
       ],
-      judging: [
-        "Relevance",
-        "Humor & relatability",
-        "Explanation quality",
-      ],
+      judging: ["Relevance", "Humor & relatability", "Explanation quality"],
       contacts: [
-        { role: "Coordinator", name: "Pranesh S", email: "praneshjd2004@gmail.com" },
-        { role: "Coordinator", name: "T.S. Nidhelaaa", email: "nidhelaavec@gmail.com" },
+        {
+          role: "Coordinator",
+          name: "Pranesh S",
+          email: "praneshjd2004@gmail.com",
+        },
+        {
+          role: "Coordinator",
+          name: "T.S. Nidhelaaa",
+          email: "nidhelaavec@gmail.com",
+        },
       ],
       registration: "Click Register to continue to the registration section.",
       registerTo: "/#register",
@@ -379,75 +399,83 @@ export const EVENTS = [
         "Confidence & relevance",
       ],
       contacts: [
-        { role: "Coordinator", name: "Cindrella", email: "cindrella22cse@gmail.com" },
-        { role: "Coordinator", name: "Mahalakshmi", email: "mahalakshmi02cse@gmail.com" },
+        {
+          role: "Coordinator",
+          name: "Cindrella",
+          email: "cindrella22cse@gmail.com",
+        },
+        {
+          role: "Coordinator",
+          name: "Mahalakshmi",
+          email: "mahalakshmi02cse@gmail.com",
+        },
       ],
       registration: "Click Register to continue to the registration section.",
       registerTo: "/#register",
     },
   },
- {
-  name: "Funtrix",
-  slug: "funtrix",
-  track: "Non-Tech",
-  short: "Sports precision × combat intensity",
-  videoSrc:
-    "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445097/feature-9n_mt6ajv.mp4",
-  details: {
-    date: "21-02-2026",
-    time: "02:00 PM – 03:00 PM",
-    teamSize: "Individual / Duo",
-    overview:
-      "Funtrix at OZMENTA ’26 is a high-octane competitive zone combining sports precision and combat intensity. Step in, compete, and prove your dominance in the digital arena.",
-    rounds: [
-      {
-        name: "Open Qualifiers",
-        duration: "Varies per match",
-        objective: "Shortlist top contenders through knockout matches",
-        judging: [
-          "Match performance",
-          "Basic strategy",
-          "Rule adherence",
-          "Fair play",
-        ],
-      },
-      {
-        name: "Semi-Finals",
-        duration: "Varies per match",
-        objective: "Test advanced gameplay under higher competitive pressure",
-        judging: [
-          "Advanced strategy",
-          "Technical skill",
-          "Consistency",
-          "Discipline",
-        ],
-      },
-      {
-        name: "Championship Showdown",
-        duration: "Final match",
-        objective: "Compete for the Funtrix Ultimate Arena Champion title",
-        judging: [
-          "Overall dominance",
-          "Decision making",
-          "Composure under pressure",
-          "Rule compliance",
-        ],
-      },
-    ],
-    rules: [
-      "Matches will follow standardized game settings decided by the organizers",
-      "Strictly no cheating, hacking, or unfair gameplay",
-      "Participants must be present at the venue before match call-out",
-      "Organizer’s decision is final and binding",
-    ],
-    contacts: [
-      { role: "Support", name: "Event Desk", phone: "Will be announced" },
-    ],
-    registration: "Registration details will be shared through the official announcement link.",
-    registerTo: "/#register",
+  {
+    name: "Funtrix",
+    slug: "funtrix",
+    track: "Non-Tech",
+    short: "Sports precision × combat intensity",
+    videoSrc:
+      "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445097/feature-9n_mt6ajv.mp4",
+    details: {
+      date: "21-02-2026",
+      time: "02:00 PM – 03:00 PM",
+      teamSize: "Individual / Duo",
+      overview:
+        "Funtrix at OZMENTA ’26 is a high-octane competitive zone combining sports precision and combat intensity. Step in, compete, and prove your dominance in the digital arena.",
+      rounds: [
+        {
+          name: "Open Qualifiers",
+          duration: "Varies per match",
+          objective: "Shortlist top contenders through knockout matches",
+          judging: [
+            "Match performance",
+            "Basic strategy",
+            "Rule adherence",
+            "Fair play",
+          ],
+        },
+        {
+          name: "Semi-Finals",
+          duration: "Varies per match",
+          objective: "Test advanced gameplay under higher competitive pressure",
+          judging: [
+            "Advanced strategy",
+            "Technical skill",
+            "Consistency",
+            "Discipline",
+          ],
+        },
+        {
+          name: "Championship Showdown",
+          duration: "Final match",
+          objective: "Compete for the Funtrix Ultimate Arena Champion title",
+          judging: [
+            "Overall dominance",
+            "Decision making",
+            "Composure under pressure",
+            "Rule compliance",
+          ],
+        },
+      ],
+      rules: [
+        "Matches will follow standardized game settings decided by the organizers",
+        "Strictly no cheating, hacking, or unfair gameplay",
+        "Participants must be present at the venue before match call-out",
+        "Organizer’s decision is final and binding",
+      ],
+      contacts: [
+        { role: "Support", name: "Event Desk", phone: "Will be announced" },
+      ],
+      registration:
+        "Registration details will be shared through the official announcement link.",
+      registerTo: "/#register",
+    },
   },
-},
-
 ].map((event) => ({
   ...event,
   slug: event.slug || slugify(event.name),
