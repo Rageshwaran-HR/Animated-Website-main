@@ -104,7 +104,7 @@ const EventDetails = () => {
     const activateVideoAudio = async () => {
       if (!videoEl || disposed) return;
       videoEl.muted = false;
-      videoEl.volume = 0.9;
+      videoEl.volume = 0.5;
       await tryPlay(videoEl);
     };
 
