@@ -8,6 +8,7 @@ import Story from './components/Story'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import EventDetails from './pages/EventDetails'
+import BackgroundAudio from './components/BackgroundAudio'
 
 const ScrollToHash = () => {
   const { hash, pathname } = useLocation();
@@ -130,6 +131,7 @@ const Home = () => {
 const App = () => {
   return (
     <main className='relative min-h-screen w-screen overflow-x-hidden'>
+      <BackgroundAudio />
       <Navbar />
       <ScrollToHash />
       <Routes>
