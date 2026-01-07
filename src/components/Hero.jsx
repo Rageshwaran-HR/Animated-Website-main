@@ -97,8 +97,13 @@ const Hero = () => {
                                 </div>
 
                                 <Button
-                                    id="watch-trailer" title="Register Now" leftIcon={<TiLocationArrow />}
+                                    id="watch-trailer" 
+                                    title="Register Now" 
+                                    leftIcon={<TiLocationArrow />}
                                     containerClass="!bg-yellow-300 flex-center gap-1"
+                                    onClick={() => {
+                                        window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfHHf-ixnm_ej1KKgZUmUb6opoGqwmY3j8XLe-jT7zpTPXJAg/viewform?usp=sharing&ouid=117566611305738243195';
+                                    }}
                                 />
 
                                 <div className='w-fit rounded-md border-hsla bg-slate-950/35 px-4 py-4 text-blue-50'>

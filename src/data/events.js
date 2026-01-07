@@ -476,6 +476,83 @@ export const EVENTS = [
       registerTo: "/#register",
     },
   },
+  {
+    name: "Project Expo",
+    slug: "project-expo",
+    track: "Non-Tech",
+    short: "Showcase your innovative projects",
+    videoSrc:
+      "https://res.cloudinary.com/dbe1m52oz/video/upload/v1767781724/Make_a_animated_1080p_202601071550_anqson.mp4",
+    details: {
+      date: "21-02-2026",
+      time: "10:30 AM – 12:00 PM",
+      teamSize: "2–3",
+      overview:
+        "Showcase your innovative projects in a creative exhibition. Present your work, demonstrate functionality, and inspire others with your innovative solutions.",
+      rounds: [
+        {
+          name: "Project Showcase",
+          duration: "60–90 mins + 2 min demo",
+          objective: "Display your innovative project",
+          judging: [
+            "Innovation (35)",
+            "Presentation (25)",
+            "Functionality (30)",
+            "Impact Clarity (10)",
+          ],
+        },
+      ],
+      rules: [
+        "Projects must be original",
+        "Live demo or interactive display required",
+        "Clear documentation preferred",
+        "No plagiarism",
+      ],
+      contacts: [
+        { role: "Coordinator", name: "Project Team", phone: "Contact organizers" },
+      ],
+      registration: "Click Register to showcase your project.",
+      registerTo: "/#register",
+    },
+  },
+  {
+    name: "Workshop",
+    slug: "workshop",
+    track: "Non-Tech",
+    short: "Hands-on learning sessions",
+    videoSrc:
+      "https://res.cloudinary.com/dbe1m52oz/video/upload/v1767781652/something_baqfhk.mp4",
+    details: {
+      date: "21-02-2026",
+      time: "09:00 AM – 10:30 AM",
+      teamSize: "Individual",
+      overview:
+        "Interactive hands-on workshop designed for practical learning. Build skills through guided sessions and real-world applications.",
+      rounds: [
+        {
+          name: "Hands-On Session",
+          duration: "90 mins",
+          objective: "Learn practical skills through interactive guidance",
+          judging: [
+            "Participation (30)",
+            "Learning Outcome (30)",
+            "Practical Application (25)",
+            "Engagement (15)",
+          ],
+        },
+      ],
+      rules: [
+        "Active participation required",
+        "Follow facilitator guidance",
+        "Bring required materials",
+      ],
+      contacts: [
+        { role: "Instructor", name: "Workshop Lead", phone: "Contact organizers" },
+      ],
+      registration: "Click Register to join the workshop.",
+      registerTo: "/#register",
+    },
+  },
 ].map((event) => ({
   ...event,
   slug: event.slug || slugify(event.name),

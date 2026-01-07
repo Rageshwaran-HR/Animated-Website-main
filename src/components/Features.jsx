@@ -128,7 +128,8 @@ const Features = () => {
     "md:col-span-4 md:row-span-1",
     "md:col-span-4 md:row-span-1",
     "md:col-span-4 md:row-span-1",
-    "md:col-span-12 md:row-span-1",
+    "md:col-span-6 md:row-span-2",
+    "md:col-span-6 md:row-span-2",
   ];
 
   const renderGrid = (events, layout) => (
@@ -198,7 +199,15 @@ const Features = () => {
             align="start"
             containerClass="mt-20 pointer-events-none relative z-10 !text-blue-50 !px-0 sm:!px-0 !text-3xl md:!text-4xl !leading-[.9]"
           />
-          {renderGrid(nonTechEvents, nonTechLayout)}
+          {renderGrid(nonTechEvents.slice(0, 5), nonTechLayout.slice(0, 5))}
+
+          {/* Featured Events Section */}
+          <AnimatedTitle
+            title="Feat<b>u</b>red Events"
+            align="start"
+            containerClass="mt-20 pointer-events-none relative z-10 !text-blue-50 !px-0 sm:!px-0 !text-3xl md:!text-4xl !leading-[.9]"
+          />
+          {renderGrid(nonTechEvents.slice(5, 7), nonTechLayout.slice(5, 7))}
         </div>
       </div>
     </section>
