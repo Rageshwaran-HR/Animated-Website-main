@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 
 const BackgroundAudio = () => {
   const audioRef = useRef(null);
@@ -17,26 +17,28 @@ const BackgroundAudio = () => {
 
     const onFirstInteraction = () => {
       tryPlay();
-      window.removeEventListener('pointerdown', onFirstInteraction);
+      window.removeEventListener("pointerdown", onFirstInteraction);
     };
 
     // Attempt immediate play; if blocked, play on first click/tap.
     tryPlay();
-    window.addEventListener('pointerdown', onFirstInteraction, { passive: true });
+    window.addEventListener("pointerdown", onFirstInteraction, {
+      passive: true,
+    });
 
     return () => {
-      window.removeEventListener('pointerdown', onFirstInteraction);
+      window.removeEventListener("pointerdown", onFirstInteraction);
     };
   }, []);
 
   return (
     <audio
-      id='hero-audio'
+      id="hero-audio"
       ref={audioRef}
-      className='hidden'
-      src='/audio/hero-4.mp3'
-      loop
-      preload='auto'
+      className="hidden"
+      src="/audio/hero-4.mp3"
+      preload="auto"
+      volume={0.9}
     />
   );
 };

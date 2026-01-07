@@ -7,6 +7,12 @@ const ImageClipBox = ({ src, clipClass }) => (
 );
 
 const Contact = () => {
+  const handleRegisterClick = () => {
+    window.open(
+      "https://docs.google.com/forms/d/e/1FAIpQLSfHHf-ixnm_ej1KKgZUmUb6opoGqwmY3j8XLe-jT7zpTPXJAg/viewform?usp=sharing&ouid=117566611305738243195",
+      "_blank"
+    );
+  };
   return (
     <div id="register" className="my-20 min-h-96 w-screen px-5 sm:px-10">
       <div className="relative rounded-lg bg-slate-950 py-16 sm:py-24 text-blue-50 sm:overflow-hidden">
@@ -38,7 +44,11 @@ const Contact = () => {
             <b>u</b>ting toge<b>t</b>her
           </p>
 
-          <Button title="Register Now" containerClass="mt-10 cursor-pointer" />
+          <Button
+            title="Register Now"
+            containerClass="mt-10 cursor-pointer"
+            onClick={handleRegisterClick}
+          />
         </div>
       </div>
     </div>

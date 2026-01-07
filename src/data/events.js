@@ -76,7 +76,8 @@ export const EVENTS = [
         { role: "Coordinator", name: "Vaaheesan S", phone: "9499941994" },
       ],
       registration: "Click Register to continue to the registration section.",
-      registerTo: "/#register",
+      registerTo:
+        "https://docs.google.com/forms/d/e/1FAIpQLSfHHf-ixnm_ej1KKgZUmUb6opoGqwmY3j8XLe-jT7zpTPXJAg/viewform?usp=sharing&ouid=117566611305738243195",
     },
   },
   {
@@ -110,7 +111,8 @@ export const EVENTS = [
       ],
       registration:
         "Click Register to join the marathon and receive updates on the rule-set.",
-      registerTo: "/#contact",
+      registerTo:
+        "https://docs.google.com/forms/d/e/1FAIpQLSfHHf-ixnm_ej1KKgZUmUb6opoGqwmY3j8XLe-jT7zpTPXJAg/viewform?usp=sharing&ouid=117566611305738243195",
     },
   },
   {
@@ -156,7 +158,8 @@ export const EVENTS = [
         },
       ],
       registration: "Click Register to continue to the registration section.",
-      registerTo: "/#register",
+      registerTo:
+        "https://docs.google.com/forms/d/e/1FAIpQLSfHHf-ixnm_ej1KKgZUmUb6opoGqwmY3j8XLe-jT7zpTPXJAg/viewform?usp=sharing&ouid=117566611305738243195",
     },
   },
   {
@@ -187,7 +190,8 @@ export const EVENTS = [
         { role: "Coordinator", name: "Abinand P", phone: "9445920529" },
       ],
       registration: "Click Register to continue to the registration section.",
-      registerTo: "/#register",
+      registerTo:
+        "https://docs.google.com/forms/d/e/1FAIpQLSfHHf-ixnm_ej1KKgZUmUb6opoGqwmY3j8XLe-jT7zpTPXJAg/viewform?usp=sharing&ouid=117566611305738243195",
     },
   },
   {
@@ -248,7 +252,8 @@ export const EVENTS = [
         },
       ],
       registration: "Click Register to continue to the registration section.",
-      registerTo: "/#register",
+      registerTo:
+        "https://docs.google.com/forms/d/e/1FAIpQLSfHHf-ixnm_ej1KKgZUmUb6opoGqwmY3j8XLe-jT7zpTPXJAg/viewform?usp=sharing&ouid=117566611305738243195",
     },
   },
   {
@@ -280,7 +285,8 @@ export const EVENTS = [
         "Completeness",
       ],
       registration: "Click Register to join the sprint and get the brief.",
-      registerTo: "/#contact",
+      registerTo:
+        "https://docs.google.com/forms/d/e/1FAIpQLSfHHf-ixnm_ej1KKgZUmUb6opoGqwmY3j8XLe-jT7zpTPXJAg/viewform?usp=sharing&ouid=117566611305738243195",
     },
   },
 
@@ -305,7 +311,8 @@ export const EVENTS = [
       rules: ["Stick to the allocated budget.", "No collusion between teams."],
       judging: ["Final score", "Budget efficiency"],
       registration: "Click Register to join the auction lobby.",
-      registerTo: "/#contact",
+      registerTo:
+        "https://docs.google.com/forms/d/e/1FAIpQLSfHHf-ixnm_ej1KKgZUmUb6opoGqwmY3j8XLe-jT7zpTPXJAg/viewform?usp=sharing&ouid=117566611305738243195",
     },
   },
   {
@@ -332,7 +339,8 @@ export const EVENTS = [
       ],
       judging: ["Accuracy", "Speed"],
       registration: "Click Register to enter the connect-tone arena.",
-      registerTo: "/#contact",
+      registerTo:
+        "https://docs.google.com/forms/d/e/1FAIpQLSfHHf-ixnm_ej1KKgZUmUb6opoGqwmY3j8XLe-jT7zpTPXJAg/viewform?usp=sharing&ouid=117566611305738243195",
     },
   },
   {
@@ -372,7 +380,8 @@ export const EVENTS = [
         },
       ],
       registration: "Click Register to continue to the registration section.",
-      registerTo: "/#register",
+      registerTo:
+        "https://docs.google.com/forms/d/e/1FAIpQLSfHHf-ixnm_ej1KKgZUmUb6opoGqwmY3j8XLe-jT7zpTPXJAg/viewform?usp=sharing&ouid=117566611305738243195",
     },
   },
   {
@@ -411,7 +420,8 @@ export const EVENTS = [
         },
       ],
       registration: "Click Register to continue to the registration section.",
-      registerTo: "/#register",
+      registerTo:
+        "https://docs.google.com/forms/d/e/1FAIpQLSfHHf-ixnm_ej1KKgZUmUb6opoGqwmY3j8XLe-jT7zpTPXJAg/viewform?usp=sharing&ouid=117566611305738243195",
     },
   },
   {
@@ -473,7 +483,8 @@ export const EVENTS = [
       ],
       registration:
         "Registration details will be shared through the official announcement link.",
-      registerTo: "/#register",
+      registerTo:
+        "https://docs.google.com/forms/d/e/1FAIpQLSfHHf-ixnm_ej1KKgZUmUb6opoGqwmY3j8XLe-jT7zpTPXJAg/viewform?usp=sharing&ouid=117566611305738243195",
     },
   },
 ].map((event) => ({

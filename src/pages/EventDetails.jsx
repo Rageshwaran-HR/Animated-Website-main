@@ -104,7 +104,7 @@ const EventDetails = () => {
     const activateVideoAudio = async () => {
       if (!videoEl || disposed) return;
       videoEl.muted = false;
-      videoEl.volume = 0.5;
+      videoEl.volume = 0.9;
       await tryPlay(videoEl);
     };
 
@@ -168,7 +168,9 @@ const EventDetails = () => {
     };
 
     // Always allow first interaction to start whichever audio is active.
-    window.addEventListener("pointerdown", onFirstInteraction, { passive: true });
+    window.addEventListener("pointerdown", onFirstInteraction, {
+      passive: true,
+    });
 
     // Decide once the media is ready.
     if (videoEl.readyState >= 2) {
@@ -287,7 +289,10 @@ const EventDetails = () => {
     .slice(0, 2);
 
   return (
-    <section ref={pageRef} className="min-h-dvh w-screen bg-slate-950 text-blue-50">
+    <section
+      ref={pageRef}
+      className="min-h-dvh w-screen bg-slate-950 text-blue-50"
+    >
       <div className="relative">
         <div className="absolute inset-0">
           <video
@@ -295,7 +300,6 @@ const EventDetails = () => {
             ref={videoRef}
             src={event.videoSrc}
             autoPlay
-            loop
             muted
             playsInline
             className="h-[46vh] w-full object-cover"
@@ -321,7 +325,6 @@ const EventDetails = () => {
             {event.short}
           </p>
 
-
           {metaItems.length ? (
             <div
               data-animate="card"
@@ -329,7 +332,11 @@ const EventDetails = () => {
             >
               <div className="grid gap-6 sm:grid-cols-3">
                 {metaItems.map((item) => (
-                  <MetaItem key={item.label} label={item.label} value={item.value} />
+                  <MetaItem
+                    key={item.label}
+                    label={item.label}
+                    value={item.value}
+                  />
                 ))}
               </div>
             </div>
@@ -346,14 +353,18 @@ const EventDetails = () => {
                 </p>
               ) : null}
 
-              {Array.isArray(event.details?.rounds) && event.details.rounds.length ? (
+              {Array.isArray(event.details?.rounds) &&
+              event.details.rounds.length ? (
                 <>
                   <p className="mt-10 text-xs uppercase tracking-widest text-blue-50">
                     Rounds
                   </p>
                   <div className="mt-4 space-y-6">
                     {event.details.rounds.map((round) => (
-                      <div key={round.name} className="border-l border-white/10 pl-4">
+                      <div
+                        key={round.name}
+                        className="border-l border-white/10 pl-4"
+                      >
                         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
                           <p className="font-zentry text-xl leading-[0.95] text-blue-50">
                             {round.name}
@@ -371,7 +382,8 @@ const EventDetails = () => {
                           </p>
                         ) : null}
 
-                        {Array.isArray(round.judging) && round.judging.length ? (
+                        {Array.isArray(round.judging) &&
+                        round.judging.length ? (
                           <ul className="mt-3 space-y-2 font-circular-web text-sm text-blue-50/70">
                             {round.judging.map((line) => (
                               <li key={line} className="flex gap-3">
@@ -387,7 +399,8 @@ const EventDetails = () => {
                 </>
               ) : null}
 
-              {Array.isArray(event.details?.format) && event.details.format.length ? (
+              {Array.isArray(event.details?.format) &&
+              event.details.format.length ? (
                 <>
                   <p className="mt-10 text-xs uppercase tracking-widest text-blue-50">
                     Format
@@ -427,7 +440,8 @@ const EventDetails = () => {
             </div>
 
             <div>
-              {Array.isArray(event.details?.rules) && event.details.rules.length ? (
+              {Array.isArray(event.details?.rules) &&
+              event.details.rules.length ? (
                 <>
                   <p className="text-xs uppercase tracking-widest text-blue-50">
                     Rules
@@ -443,7 +457,8 @@ const EventDetails = () => {
                 </>
               ) : null}
 
-              {Array.isArray(event.details?.judging) && event.details.judging.length ? (
+              {Array.isArray(event.details?.judging) &&
+              event.details.judging.length ? (
                 <>
                   <p className="mt-10 text-xs uppercase tracking-widest text-blue-50">
                     Judging
