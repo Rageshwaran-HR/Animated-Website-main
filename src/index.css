@@ -53,6 +53,15 @@ body {
     @apply border border-blue-300/30;
   }
 
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
   .nav-hover-btn {
     @apply relative ms-10 font-general text-xs uppercase text-blue-300 after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-blue-300 after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100 dark:after:bg-blue-300 cursor-pointer;
   }
@@ -170,8 +179,7 @@ body {
     inset: 0;
     opacity: 0;
     pointer-events: none;
-    background:
-      repeating-linear-gradient(
+    background: repeating-linear-gradient(
         to bottom,
         rgba(255, 255, 255, 0.08) 0px,
         rgba(255, 255, 255, 0.08) 1px,
@@ -196,13 +204,12 @@ body {
     inset: -20%;
     opacity: 0;
     pointer-events: none;
-    background:
-      linear-gradient(
-        115deg,
-        rgba(0, 0, 0, 0) 35%,
-        rgba(255, 255, 255, 0.85) 50%,
-        rgba(0, 0, 0, 0) 65%
-      );
+    background: linear-gradient(
+      115deg,
+      rgba(0, 0, 0, 0) 35%,
+      rgba(255, 255, 255, 0.85) 50%,
+      rgba(0, 0, 0, 0) 65%
+    );
     mix-blend-mode: screen;
     transform: translate3d(-20%, 0, 0) rotate(0.001deg);
   }

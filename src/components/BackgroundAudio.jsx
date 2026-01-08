@@ -1,11 +1,19 @@
 import { useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 
 const BackgroundAudio = () => {
   const audioRef = useRef(null);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const audioEl = audioRef.current;
     if (!audioEl) return;
+
+    // Don't play audio on registration page
+    if (pathname === "/register") {
+      audioEl.pause();
+      return;
+    }
 
     const tryPlay = async () => {
       try {
@@ -29,7 +37,7 @@ const BackgroundAudio = () => {
     return () => {
       window.removeEventListener("pointerdown", onFirstInteraction);
     };
-  }, []);
+  }, [pathname]);
 
   return (
     <audio
