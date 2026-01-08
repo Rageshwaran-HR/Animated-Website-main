@@ -15,7 +15,7 @@ const Contact = () => {
   };
   return (
     <div id="register" className="my-20 min-h-96 w-screen px-5 sm:px-10">
-      <div className="relative rounded-lg bg-slate-950 py-16 sm:py-24 text-blue-50 sm:overflow-hidden">
+      <div className="relative rounded-lg bg-slate-950 py-16 sm:py-24 text-blue-50">
         <div className="absolute -left-10 top-0 hidden h-full w-72 overflow-hidden sm:block lg:left-10 lg:w-96">
           <ImageClipBox
             clipClass="contact-clip-path-1"
@@ -34,7 +34,7 @@ const Contact = () => {
           />
         </div>
 
-        <div className="flex flex-col items-center text-center">
+        <div className="flex flex-col items-center text-center relative z-20">
           <p className="font-general text-[15px] uppercase">
             Join Ozmenta&apos;26
           </p>
@@ -44,11 +44,15 @@ const Contact = () => {
             <b>u</b>ting toge<b>t</b>her
           </p>
 
-          <Button
-            title="Register Now"
-            containerClass="mt-10 cursor-pointer"
-            onClick={handleRegisterClick}
-          />
+          <Button 
+          title="Register Now" 
+          containerClass="mt-10 cursor-pointer pointer-events-auto" 
+          onClick={() => {
+            console.log('Button clicked!');
+            const url = 'https://docs.google.com/forms/d/e/1FAIpQLSfHHf-ixnm_ej1KKgZUmUb6opoGqwmY3j8XLe-jT7zpTPXJAg/viewform?usp=sharing&ouid=117566611305738243195';
+            window.location.href = url;
+          }
+          }/>
         </div>
       </div>
     </div>

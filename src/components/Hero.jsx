@@ -93,17 +93,64 @@ const Hero = () => {
                 Ozm<b>e</b>nta&apos;26
               </h1>
 
-              <div className="mt-3 flex max-w-xl flex-col gap-5">
-                <div className="w-fit rounded-md border-hsla bg-slate-950/30 px-3 py-2 backdrop-blur-sm">
-                  <div className="mb-2 inline-flex rounded-full border-hsla bg-slate-950/35 px-3 py-1 font-general text-[10px] uppercase tracking-widest text-blue-300">
-                    National Level Symposium
-                  </div>
-                  <p className="special-font font-zentry font-black uppercase leading-[0.95] text-blue-50 sm:text-xl md:text-2xl">
-                    Velammal Engineering College
-                  </p>
-                  <p className="mt-1 font-general text-xs uppercase tracking-widest text-blue-50/85 sm:text-sm">
-                    Department of CSE · Feb 21, 2026
-                  </p>
+                            <div className='mt-3 flex max-w-xl flex-col gap-5'>
+                                <div className='w-fit rounded-md border-hsla bg-slate-950/30 px-3 py-2 backdrop-blur-sm'>
+                                    <div className='mb-2 inline-flex rounded-full border-hsla bg-slate-950/35 px-3 py-1 font-general text-[10px] uppercase tracking-widest text-blue-300'>
+                                        National Level Symposium
+                                    </div>
+                                    <p className='special-font font-zentry font-black uppercase leading-[0.95] text-blue-50 sm:text-xl md:text-2xl'>
+                                        Velammal Engineering College 
+                                    </p>
+                                    <p className='mt-1 font-general text-xs uppercase tracking-widest text-blue-50/85 sm:text-sm'>
+                                        Department of CSE · Feb 21, 2026
+                                    </p>
+                                </div>
+
+                                <Button
+                                    id="watch-trailer" 
+                                    title="Register Now" 
+                                    leftIcon={<TiLocationArrow />}
+                                    containerClass="!bg-yellow-300 flex-center gap-1"
+                                    onClick={() => {
+                                        window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfHHf-ixnm_ej1KKgZUmUb6opoGqwmY3j8XLe-jT7zpTPXJAg/viewform?usp=sharing&ouid=117566611305738243195';
+                                    }}
+                                />
+
+                                <div className='w-fit rounded-md border-hsla bg-slate-950/35 px-4 py-4 text-blue-50'>
+                                    <p className='font-general text-[10px] uppercase tracking-widest text-blue-50/80'>Event Countdown</p>
+                                    <div className='mt-3 flex items-stretch gap-2'>
+                                        <div className='border-hsla rounded-md bg-slate-950/30 px-4 py-3'>
+                                            <p className='font-zentry text-3xl leading-none text-blue-50 md:text-4xl'>{countdown.days}</p>
+                                        </div>
+
+                                        <div className='flex items-center px-1'>
+                                            <span className='font-zentry text-3xl leading-none text-blue-50/70 md:text-4xl'>:</span>
+                                        </div>
+
+                                        <div className='border-hsla rounded-md bg-slate-950/30 px-4 py-3'>
+                                            <p className='font-zentry text-3xl leading-none text-blue-50 md:text-4xl'>{countdown.hours}</p>
+                                        </div>
+
+                                        <div className='flex items-center px-1'>
+                                            <span className='font-zentry text-3xl leading-none text-blue-50/70 md:text-4xl'>:</span>
+                                        </div>
+
+                                        <div className='border-hsla rounded-md bg-slate-950/30 px-4 py-3'>
+                                            <p className='font-zentry text-3xl leading-none text-blue-50 md:text-4xl'>{countdown.minutes}</p>
+                                        </div>
+
+                                        <div className='flex items-center px-1'>
+                                            <span className='font-zentry text-3xl leading-none text-blue-50/70 md:text-4xl'>:</span>
+                                        </div>
+
+                                        <div className='border-hsla rounded-md bg-slate-950/30 px-4 py-3'>
+                                            <p className='font-zentry text-3xl leading-none text-blue-50 md:text-4xl'>{countdown.seconds}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <Button
