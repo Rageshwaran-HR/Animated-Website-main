@@ -37,7 +37,7 @@ const BackgroundAudio = () => {
       ref={audioRef}
       className="hidden"
       src="/audio/hero-4.mp3"
-      preload="auto"
+      preload="none"
       volume={0.9}
     />
   );

@@ -112,6 +112,7 @@ const Features = () => {
 
   const technicalEvents = EVENTS.filter((e) => e.track === "Technical");
   const nonTechEvents = EVENTS.filter((e) => e.track === "Non-Tech");
+  const featuredEvents = EVENTS.filter((e) => e.track === "Featured");
 
   const techLayout = [
     "md:col-span-7 md:row-span-2",
@@ -134,37 +135,37 @@ const Features = () => {
 
   const renderGrid = (events, layout) => (
     <div className="mt-10 grid grid-cols-1 gap-6 auto-rows-[14rem] sm:grid-cols-2 sm:auto-rows-[16rem] md:grid-cols-12 md:auto-rows-[18rem]">
-      {events.map((event, i) => (
+      {events.map((event, i) =>
         (() => {
           const layoutClass = layout?.[i] ?? "md:col-span-6 md:row-span-1";
 
           return (
-        <BentoTilt
-          key={event.name}
-          className={`border border-white/10 bg-slate-950 ${layoutClass} cursor-pointer`}
-        >
-          <div
-            role="button"
-            tabIndex={0}
-            onClick={() => navigate(`/events/${event.slug}`)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                navigate(`/events/${event.slug}`);
-              }
-            }}
-            className="h-full w-full outline-none focus-visible:ring-2 focus-visible:ring-blue-300/70"
-          >
-            <BentoCard
-              src={event.videoSrc}
-              title={event.name}
-              description={event.short}
-            />
-          </div>
-        </BentoTilt>
+            <BentoTilt
+              key={event.name}
+              className={`border border-white/10 bg-slate-950 ${layoutClass} cursor-pointer`}
+            >
+              <div
+                role="button"
+                tabIndex={0}
+                onClick={() => navigate(`/events/${event.slug}`)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    navigate(`/events/${event.slug}`);
+                  }
+                }}
+                className="h-full w-full outline-none focus-visible:ring-2 focus-visible:ring-blue-300/70"
+              >
+                <BentoCard
+                  src={event.videoSrc}
+                  title={event.name}
+                  description={event.short}
+                />
+              </div>
+            </BentoTilt>
           );
         })()
-      ))}
+      )}
     </div>
   );
 
@@ -178,12 +179,13 @@ const Features = () => {
             containerClass="pointer-events-none relative z-10 !text-blue-50 !px-0 sm:!px-0 !text-5xl md:!text-6xl"
           />
 
-          <p className="features-subtext mt-6 max-w-3xl font-circular-web text-blue-50/70 
-            text-1xl sm:text-2xl md:text-3xl font-bold">
-              Ozmenta&apos;26 brings together intense technical battles and fun
-              non-technical challenges.
-            </p>
-
+          <p
+            className="features-subtext mt-6 max-w-3xl font-circular-web text-blue-50/70 
+            text-1xl sm:text-2xl md:text-3xl font-bold"
+          >
+            Ozmenta&apos;26 brings together intense technical battles and fun
+            non-technical challenges.
+          </p>
 
           {/* Technical */}
           <AnimatedTitle
@@ -199,7 +201,7 @@ const Features = () => {
             align="start"
             containerClass="mt-20 pointer-events-none relative z-10 !text-blue-50 !px-0 sm:!px-0 !text-3xl md:!text-4xl !leading-[.9]"
           />
-          {renderGrid(nonTechEvents.slice(0, 5), nonTechLayout.slice(0, 5))}
+          {renderGrid(nonTechEvents, nonTechLayout)}
 
           {/* Featured Events Section */}
           <AnimatedTitle
@@ -207,7 +209,10 @@ const Features = () => {
             align="start"
             containerClass="mt-20 pointer-events-none relative z-10 !text-blue-50 !px-0 sm:!px-0 !text-3xl md:!text-4xl !leading-[.9]"
           />
-          {renderGrid(nonTechEvents.slice(5, 7), nonTechLayout.slice(5, 7))}
+          {renderGrid(featuredEvents, [
+            "md:col-span-6 md:row-span-2",
+            "md:col-span-6 md:row-span-2",
+          ])}
         </div>
       </div>
     </section>

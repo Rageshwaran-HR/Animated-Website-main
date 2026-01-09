@@ -76,8 +76,7 @@ export const EVENTS = [
         { role: "Coordinator", name: "Vaaheesan S", phone: "9499941994" },
       ],
       registration: "Click Register to continue to the registration section.",
-      registerTo:
-        "https://docs.google.com/forms/d/e/1FAIpQLSfHHf-ixnm_ej1KKgZUmUb6opoGqwmY3j8XLe-jT7zpTPXJAg/viewform?usp=sharing&ouid=117566611305738243195",
+      registerTo: "https://forms.gle/JZgWcGhFr6gM11PD8",
     },
   },
   {
@@ -111,8 +110,7 @@ export const EVENTS = [
       ],
       registration:
         "Click Register to join the marathon and receive updates on the rule-set.",
-      registerTo:
-        "https://docs.google.com/forms/d/e/1FAIpQLSfHHf-ixnm_ej1KKgZUmUb6opoGqwmY3j8XLe-jT7zpTPXJAg/viewform?usp=sharing&ouid=117566611305738243195",
+      registerTo: "https://forms.gle/JZgWcGhFr6gM11PD8",
     },
   },
   {
@@ -158,8 +156,7 @@ export const EVENTS = [
         },
       ],
       registration: "Click Register to continue to the registration section.",
-      registerTo:
-        "https://docs.google.com/forms/d/e/1FAIpQLSfHHf-ixnm_ej1KKgZUmUb6opoGqwmY3j8XLe-jT7zpTPXJAg/viewform?usp=sharing&ouid=117566611305738243195",
+      registerTo: "https://forms.gle/JZgWcGhFr6gM11PD8",
     },
   },
   {
@@ -252,8 +249,7 @@ export const EVENTS = [
         },
       ],
       registration: "Click Register to continue to the registration section.",
-      registerTo:
-        "https://docs.google.com/forms/d/e/1FAIpQLSfHHf-ixnm_ej1KKgZUmUb6opoGqwmY3j8XLe-jT7zpTPXJAg/viewform?usp=sharing&ouid=117566611305738243195",
+      registerTo: "https://forms.gle/h6qmDc3cQtH8nMmT6",
     },
   },
   {
@@ -285,8 +281,7 @@ export const EVENTS = [
         "Completeness",
       ],
       registration: "Click Register to join the sprint and get the brief.",
-      registerTo:
-        "https://docs.google.com/forms/d/e/1FAIpQLSfHHf-ixnm_ej1KKgZUmUb6opoGqwmY3j8XLe-jT7zpTPXJAg/viewform?usp=sharing&ouid=117566611305738243195",
+      registerTo: "https://forms.gle/JZgWcGhFr6gM11PD8",
     },
   },
 
@@ -311,8 +306,7 @@ export const EVENTS = [
       rules: ["Stick to the allocated budget.", "No collusion between teams."],
       judging: ["Final score", "Budget efficiency"],
       registration: "Click Register to join the auction lobby.",
-      registerTo:
-        "https://docs.google.com/forms/d/e/1FAIpQLSfHHf-ixnm_ej1KKgZUmUb6opoGqwmY3j8XLe-jT7zpTPXJAg/viewform?usp=sharing&ouid=117566611305738243195",
+      registerTo: "https://forms.gle/JZgWcGhFr6gM11PD8",
     },
   },
   {
@@ -339,8 +333,7 @@ export const EVENTS = [
       ],
       judging: ["Accuracy", "Speed"],
       registration: "Click Register to enter the connect-tone arena.",
-      registerTo:
-        "https://docs.google.com/forms/d/e/1FAIpQLSfHHf-ixnm_ej1KKgZUmUb6opoGqwmY3j8XLe-jT7zpTPXJAg/viewform?usp=sharing&ouid=117566611305738243195",
+      registerTo: "https://forms.gle/JZgWcGhFr6gM11PD8",
     },
   },
   {
@@ -380,8 +373,7 @@ export const EVENTS = [
         },
       ],
       registration: "Click Register to continue to the registration section.",
-      registerTo:
-        "https://docs.google.com/forms/d/e/1FAIpQLSfHHf-ixnm_ej1KKgZUmUb6opoGqwmY3j8XLe-jT7zpTPXJAg/viewform?usp=sharing&ouid=117566611305738243195",
+      registerTo: "https://forms.gle/JZgWcGhFr6gM11PD8",
     },
   },
   {
@@ -420,8 +412,7 @@ export const EVENTS = [
         },
       ],
       registration: "Click Register to continue to the registration section.",
-      registerTo:
-        "https://docs.google.com/forms/d/e/1FAIpQLSfHHf-ixnm_ej1KKgZUmUb6opoGqwmY3j8XLe-jT7zpTPXJAg/viewform?usp=sharing&ouid=117566611305738243195",
+      registerTo: "https://forms.gle/JZgWcGhFr6gM11PD8",
     },
   },
   {
@@ -483,14 +474,13 @@ export const EVENTS = [
       ],
       registration:
         "Registration details will be shared through the official announcement link.",
-      registerTo:
-        "https://docs.google.com/forms/d/e/1FAIpQLSfHHf-ixnm_ej1KKgZUmUb6opoGqwmY3j8XLe-jT7zpTPXJAg/viewform?usp=sharing&ouid=117566611305738243195",
+      registerTo: "https://forms.gle/JZgWcGhFr6gM11PD8",
     },
   },
   {
     name: "Project Expo",
     slug: "project-expo",
-    track: "Non-Tech",
+    track: "Featured",
     short: "Showcase your innovative projects",
     videoSrc:
       "https://res.cloudinary.com/dbe1m52oz/video/upload/v1767781724/Make_a_animated_1080p_202601071550_anqson.mp4",
@@ -520,16 +510,20 @@ export const EVENTS = [
         "No plagiarism",
       ],
       contacts: [
-        { role: "Coordinator", name: "Project Team", phone: "Contact organizers" },
+        {
+          role: "Coordinator",
+          name: "Project Team",
+          phone: "Contact organizers",
+        },
       ],
       registration: "Click Register to showcase your project.",
-      registerTo: "/#register",
+      registerTo: "https://forms.gle/fyYLNKJ3VRF28Ub19",
     },
   },
   {
     name: "Workshop",
     slug: "workshop",
-    track: "Non-Tech",
+    track: "Featured",
     short: "Hands-on learning sessions",
     videoSrc:
       "https://res.cloudinary.com/dbe1m52oz/video/upload/v1767781652/something_baqfhk.mp4",
@@ -558,7 +552,11 @@ export const EVENTS = [
         "Bring required materials",
       ],
       contacts: [
-        { role: "Instructor", name: "Workshop Lead", phone: "Contact organizers" },
+        {
+          role: "Instructor",
+          name: "Workshop Lead",
+          phone: "Contact organizers",
+        },
       ],
       registration: "Click Register to join the workshop.",
       registerTo: "/#register",

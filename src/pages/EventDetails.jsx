@@ -308,6 +308,15 @@ const EventDetails = () => {
         </div>
 
         <div className="relative mx-auto max-w-5xl px-6 pt-28">
+          <button
+            onClick={() => navigate("/#tracks")}
+            type="button"
+            className="nav-hover-btn mb-6 ms-0 inline-flex items-center gap-2"
+          >
+            <span>←</span>
+            <span>Back to Events</span>
+          </button>
+
           <p className="font-general text-[10px] uppercase tracking-widest text-blue-300">
             {event.track} Event
           </p>
@@ -341,6 +350,22 @@ const EventDetails = () => {
               </div>
             </div>
           ) : null}
+
+          <div className="mt-10 flex flex-wrap gap-4">
+            <button
+              onClick={onRegister}
+              type="button"
+              className="group relative overflow-hidden rounded-lg border-2 border-blue-400 bg-slate-950 px-8 py-3 font-general text-sm uppercase text-blue-300 transition-all duration-300 hover:bg-blue-500 hover:text-black hover:shadow-[0_0_20px_rgba(96,165,250,0.5)]"
+            >
+              <span className="relative z-10 flex items-center gap-2">
+                <span>Register Now</span>
+                <span className="group-hover:translate-x-1 transition-transform">
+                  →
+                </span>
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </button>
+          </div>
 
           <div className="mt-12 grid grid-cols-1 gap-10 pb-24 md:grid-cols-2">
             <div>

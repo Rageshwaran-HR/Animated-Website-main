@@ -1,16 +1,10 @@
-@import url("https://fonts.cdnfonts.com/css/general-sans");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
-}
-
-@media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: no-preference) {
   html {
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
   }
 }
 
@@ -170,8 +164,7 @@ body {
     inset: 0;
     opacity: 0;
     pointer-events: none;
-    background:
-      repeating-linear-gradient(
+    background: repeating-linear-gradient(
         to bottom,
         rgba(255, 255, 255, 0.08) 0px,
         rgba(255, 255, 255, 0.08) 1px,
@@ -196,13 +189,12 @@ body {
     inset: -20%;
     opacity: 0;
     pointer-events: none;
-    background:
-      linear-gradient(
-        115deg,
-        rgba(0, 0, 0, 0) 35%,
-        rgba(255, 255, 255, 0.85) 50%,
-        rgba(0, 0, 0, 0) 65%
-      );
+    background: linear-gradient(
+      115deg,
+      rgba(0, 0, 0, 0) 35%,
+      rgba(255, 255, 255, 0.85) 50%,
+      rgba(0, 0, 0, 0) 65%
+    );
     mix-blend-mode: screen;
     transform: translate3d(-20%, 0, 0) rotate(0.001deg);
   }
