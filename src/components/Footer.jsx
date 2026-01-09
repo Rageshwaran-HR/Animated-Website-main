@@ -232,6 +232,16 @@ const Footer = () => {
             Privacy Policy
           </a>
         </div>
+
+        <div className="mt-4 border-t border-black/10 pt-4 text-center">
+          <p className="font-circular-web text-base text-black/70 md:text-lg">
+            Website developed by{" "}
+            <span className="font-zentry text-black">Rageshwaran R</span> (4th year),{" "}
+            <span className="font-zentry text-black">Vishvaa K</span>,{" "}
+            <span className="font-zentry text-black">James Jacob I</span>,{" "}
+            <span className="font-zentry text-black">Vaaheesan S</span> (3rd years)
+          </p>
+        </div>
       </div>
     </footer>
   );
