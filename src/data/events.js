@@ -70,10 +70,10 @@ export const EVENTS = [
         "No plagiarism",
       ],
       contacts: [
-        { role: "Coordinator", name: "Yokeskumar N", phone: "8056264811" },
-        { role: "Coordinator", name: "Jagan S", phone: "9344561541" },
-        { role: "Coordinator", name: "Lakshmikanthan C", phone: "9344647710" },
-        { role: "Coordinator", name: "Vaaheesan S", phone: "9499941994" },
+        { role: "Student Coordinator", name: "Yokeskumar N", phone: "8056264811" },
+        { role: "Student Coordinator", name: "Jagan S", phone: "9344561541" },
+        { role: "Student Coordinator", name: "Lakshmikanthan C", phone: "9344647710" },
+        { role: "Student Coordinator", name: "Vaaheesan S", phone: "9499941994" },
       ],
       registration: "Click Register to continue to the registration section.",
       registerTo: "https://forms.gle/JZgWcGhFr6gM11PD8",
@@ -91,7 +91,7 @@ export const EVENTS = [
         "An endurance-style challenge with escalating difficulty. Expect unpredictable constraints and a final ‘glitch’ phase that tests debugging and resilience.",
       timings: ["09:00 AM – 10:30 AM"],
       contacts: [
-        { role: "Coordinator", name: "Event Desk", phone: "555-0102" },
+        { role: "Student Coordinator", name: "Event Desk", phone: "555-0102" },
       ],
       format: [
         "Stage 1: Warm-up problems",
@@ -109,8 +109,8 @@ export const EVENTS = [
         "Stability under constraints",
       ],
       contacts: [
-        { role: "Coordinator", name: "Kamil Haasan", phone: "7448447272" },
-        { role: "Coordinator", name: "Mohammed Mustaq Mubeen", phone: "9344534434" },
+        { role: "Student Coordinator", name: "Kamil Haasan", phone: "7448447272" },
+        { role: "Student Coordinator", name: "Mohammed Mustaq Mubeen", phone: "9344534434" },
       ],
       registration:
         "Click Register to join the marathon and receive updates on the rule-set.",
@@ -148,8 +148,8 @@ export const EVENTS = [
         "Event structure revealed one day prior",
       ],
       contacts: [
-        { role: "Coordinator", name: "Shyam Evin Raj", phone: "6385118647" },
-        { role: "Coordinator", name: "Canosa Krucy", phone: "9345705837" },
+        { role: "Student Coordinator", name: "Shyam Evin Raj", phone: "6385118647" },
+        { role: "Student Coordinator", name: "Canosa Krucy", phone: "9345705837" },
       ],
       registration: "Click Register to continue to the registration section.",
       registerTo: "https://forms.gle/JZgWcGhFr6gM11PD8",
@@ -176,11 +176,11 @@ export const EVENTS = [
       judging: ["Accuracy", "Speed", "Strategy", "Lifeline usage"],
       contacts: [
         {
-          role: "Coordinator",
+          role: "Student Coordinator",
           name: "Naveen Kumar S",
           phone: "6381574955",
         },
-        { role: "Coordinator", name: "Tarunikaa B", phone: "9840918520" },
+        { role: "Student Coordinator", name: "Tarunikaa B", phone: "9840918520" },
       ],
       registration: "Click Register to continue to the registration section.",
       registerTo:
@@ -219,11 +219,11 @@ export const EVENTS = [
       ],
       contacts: [
         {
-          role: "Coordinator",
+          role: "Student Coordinator",
           name: "Ashwin Nandagopal",
           phone: "6378914082",
         },
-        { role: "Coordinator", name: "Shyleja S", phone: "9841025250" },
+        { role: "Student Coordinator", name: "Shyleja S", phone: "9841025250" },
       ],
       registration: "Click Register to continue to the registration section.",
       registerTo: "https://forms.gle/h6qmDc3cQtH8nMmT6",
@@ -241,7 +241,7 @@ export const EVENTS = [
         "A 60-minute sprint to design and ship a clean UI. Balance visuals and usability — build something that feels like a product.",
       timings: ["09:00 AM – 10:00 AM"],
       contacts: [
-        { role: "Coordinator", name: "Event Desk", phone: "555-0106" },
+        { role: "Student Coordinator", name: "Event Desk", phone: "555-0106" },
       ],
       format: [
         "Time-boxed sprint (60 minutes).",
@@ -264,8 +264,8 @@ export const EVENTS = [
         "Completeness",
       ],
       contacts: [
-        { role: "Coordinator", name: "Shyam Evin Raj", phone: "6385118647" },
-        { role: "Coordinator", name: "Canosa Krucy", phone: "9345705837" },
+        { role: "Student Coordinator", name: "Shyam Evin Raj", phone: "6385118647" },
+        { role: "Student Coordinator", name: "Canosa Krucy", phone: "9345705837" },
       ],
       registration: "Click Register to join the sprint and get the brief.",
       registerTo: "https://forms.gle/JZgWcGhFr6gM11PD8",
@@ -284,8 +284,8 @@ export const EVENTS = [
         "A strategy and quick-thinking auction event with an IPL-style twist. Build the best squad/stack within your budget.",
       timings: ["01:00 PM – 02:00 PM"],
       contacts: [
-        { role: "Coordinator", name: "Suriya RS", phone: "8870256728" },
-        { role: "Coordinator", name: "Surendran", phone: "6374402965" },
+        { role: "Student Coordinator", name: "Suriya RS", phone: "8870256728" },
+        { role: "Student Coordinator", name: "Surendran", phone: "6374402965" },
       ],
       format: [
         "Budget-based bidding rounds.",
@@ -309,7 +309,7 @@ export const EVENTS = [
         "A fun, gamified connection challenge where patterns and ‘tone’ are everything. Connect clues and react to audio/visual prompts.",
       timings: ["01:00 PM – 02:00 PM"],
       contacts: [
-        { role: "Coordinator", name: "Event Desk", phone: "555-0108" },
+        { role: "Student Coordinator", name: "Event Desk", phone: "555-0108" },
       ],
       format: [
         "Connection round (link the clues).",
@@ -320,8 +320,8 @@ export const EVENTS = [
         "No external help/devices unless allowed.",
       ],
       contacts: [
-        { role: "Coordinator", name: "Sanjay", phone: "8925209953" },
-        { role: "Coordinator", name: "Kamaliga T", phone: "9342857096" },
+        { role: "Student Coordinator", name: "Sanjay", phone: "8925209953" },
+        { role: "Student Coordinator", name: "Kamaliga T", phone: "9342857096" },
       ],
       judging: ["Accuracy", "Speed"],
       registration: "Click Register to enter the connect-tone arena.",
@@ -354,12 +354,12 @@ export const EVENTS = [
       judging: ["Relevance", "Humor & relatability", "Explanation quality"],
       contacts: [
         {
-          role: "Coordinator",
+          role: "Student Coordinator",
           name: "Pranesh S",
           email: "praneshjd2004@gmail.com",
         },
         {
-          role: "Coordinator",
+          role: "Student Coordinator",
           name: "T.S. Nidhelaaa",
           email: "nidhelaavec@gmail.com",
         },
@@ -393,12 +393,12 @@ export const EVENTS = [
       ],
       contacts: [
         {
-          role: "Coordinator",
+          role: "Student Coordinator",
           name: "Cindrella",
           email: "cindrella22cse@gmail.com",
         },
         {
-          role: "Coordinator",
+          role: "Student Coordinator",
           name: "Mahalakshmi",
           email: "mahalakshmi02cse@gmail.com",
         },
@@ -503,7 +503,7 @@ export const EVENTS = [
       ],
       contacts: [
         {
-          role: "Coordinator",
+          role: "Student Coordinator",
           name: "Project Team",
           phone: "Contact organizers",
         },
