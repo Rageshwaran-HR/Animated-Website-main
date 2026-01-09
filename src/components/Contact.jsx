@@ -44,15 +44,15 @@ const Contact = () => {
             <b>u</b>ting toge<b>t</b>her
           </p>
 
-          <Button 
-          title="Register Now" 
-          containerClass="mt-10 cursor-pointer pointer-events-auto" 
-          onClick={() => {
-            console.log('Button clicked!');
-            const url = 'https://docs.google.com/forms/d/e/1FAIpQLSfHHf-ixnm_ej1KKgZUmUb6opoGqwmY3j8XLe-jT7zpTPXJAg/viewform?usp=sharing&ouid=117566611305738243195';
-            window.location.href = url;
-          }
-          }/>
+          <Button
+            title="Register Now"
+            containerClass="mt-10 cursor-pointer pointer-events-auto"
+            onClick={() => {
+              const url =
+                "https://docs.google.com/forms/d/e/1FAIpQLSfHHf-ixnm_ej1KKgZUmUb6opoGqwmY3j8XLe-jT7zpTPXJAg/viewform?usp=sharing&ouid=117566611305738243195";
+              window.open(url, "_blank", "noopener,noreferrer");
+            }}
+          />
         </div>
       </div>
     </div>
