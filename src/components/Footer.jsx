@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { FaInstagram } from "react-icons/fa";
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
@@ -10,6 +10,10 @@ const COLLEGE_MAP_URL = "https://maps.app.goo.gl/NLPRBqJK2xNNX7xFA";
 
 const links = [
   { href: "https://www.instagram.com/ozmenta_26", icon: <FaInstagram /> },
+  {
+    href: "https://www.linkedin.com/in/ozmenta-cse-09971a3a3",
+    icon: <FaLinkedin />,
+  },
 ];
 
 const STUDENT_COORDINATORS = [
