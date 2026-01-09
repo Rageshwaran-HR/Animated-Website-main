@@ -368,170 +368,182 @@ const EventDetails = () => {
           </div>
 
           <div className="mt-12 grid grid-cols-1 gap-10 pb-24 md:grid-cols-2">
-            <div>
-              <p className="text-xs uppercase tracking-widest text-blue-50">
-                Overview
-              </p>
-              {isMeaningfulValue(event.details?.overview) ? (
-                <p className="mt-3 font-circular-web text-blue-50/70">
-                  {event.details?.overview}
+            {event.slug === "workshop" ? (
+              <div className="col-span-1 md:col-span-2 flex items-center justify-center py-20">
+                <p className="special-font font-zentry text-5xl md:text-6xl text-blue-50 text-center">
+                  To be announced
                 </p>
-              ) : null}
-
-              {Array.isArray(event.details?.rounds) &&
-              event.details.rounds.length ? (
-                <>
-                  <p className="mt-10 text-xs uppercase tracking-widest text-blue-50">
-                    Rounds
-                  </p>
-                  <div className="mt-4 space-y-6">
-                    {event.details.rounds.map((round) => (
-                      <div
-                        key={round.name}
-                        className="border-l border-white/10 pl-4"
-                      >
-                        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                          <p className="font-zentry text-xl leading-[0.95] text-blue-50">
-                            {round.name}
-                          </p>
-                          {round.duration ? (
-                            <p className="font-general text-[10px] uppercase tracking-widest text-blue-50/60">
-                              {round.duration}
-                            </p>
-                          ) : null}
-                        </div>
-
-                        {round.objective ? (
-                          <p className="mt-2 font-circular-web text-sm text-blue-50/70">
-                            {round.objective}
-                          </p>
-                        ) : null}
-
-                        {Array.isArray(round.judging) &&
-                        round.judging.length ? (
-                          <ul className="mt-3 space-y-2 font-circular-web text-sm text-blue-50/70">
-                            {round.judging.map((line) => (
-                              <li key={line} className="flex gap-3">
-                                <span className="text-blue-300">▸</span>
-                                <span>{line}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        ) : null}
-                      </div>
-                    ))}
-                  </div>
-                </>
-              ) : null}
-
-              {Array.isArray(event.details?.format) &&
-              event.details.format.length ? (
-                <>
-                  <p className="mt-10 text-xs uppercase tracking-widest text-blue-50">
-                    Format
-                  </p>
-                  <ul className="mt-3 space-y-2 font-circular-web text-blue-50/70">
-                    {event.details.format.map((line) => (
-                      <li key={line} className="flex gap-3">
-                        <span className="text-blue-300">▸</span>
-                        <span>{line}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              ) : null}
-
-              {showTimingsSection ? (
-                <>
-                  <p className="mt-10 text-xs uppercase tracking-widest text-blue-50">
-                    Timings
-                  </p>
-                  {Array.isArray(timings) ? (
-                    <ul className="mt-3 space-y-2 font-circular-web text-blue-50/70">
-                      {timings.filter(isMeaningfulValue).map((line) => (
-                        <li key={line} className="flex gap-3">
-                          <span className="text-blue-300">▸</span>
-                          <span>{line}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <p className="mt-3 font-circular-web text-blue-50/70">
-                      {timings}
-                    </p>
-                  )}
-                </>
-              ) : null}
-            </div>
-
-            <div>
-              {Array.isArray(event.details?.rules) &&
-              event.details.rules.length ? (
-                <>
+              </div>
+            ) : (
+              <>
+                <div>
                   <p className="text-xs uppercase tracking-widest text-blue-50">
-                    Rules
+                    Overview
                   </p>
-                  <ul className="mt-3 space-y-2 font-circular-web text-blue-50/70">
-                    {event.details.rules.map((line) => (
-                      <li key={line} className="flex gap-3">
-                        <span className="text-blue-300">▸</span>
-                        <span>{line}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              ) : null}
+                  {isMeaningfulValue(event.details?.overview) ? (
+                    <p className="mt-3 font-circular-web text-blue-50/70">
+                      {event.details?.overview}
+                    </p>
+                  ) : null}
 
-              {Array.isArray(event.details?.judging) &&
-              event.details.judging.length ? (
-                <>
-                  <p className="mt-10 text-xs uppercase tracking-widest text-blue-50">
-                    Judging
-                  </p>
-                  <ul className="mt-3 space-y-2 font-circular-web text-blue-50/70">
-                    {event.details.judging.map((line) => (
-                      <li key={line} className="flex gap-3">
-                        <span className="text-blue-300">▸</span>
-                        <span>{line}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              ) : null}
+                  {Array.isArray(event.details?.rounds) &&
+                  event.details.rounds.length ? (
+                    <>
+                      <p className="mt-10 text-xs uppercase tracking-widest text-blue-50">
+                        Rounds
+                      </p>
+                      <div className="mt-4 space-y-6">
+                        {event.details.rounds.map((round) => (
+                          <div
+                            key={round.name}
+                            className="border-l border-white/10 pl-4"
+                          >
+                            <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                              <p className="font-zentry text-xl leading-[0.95] text-blue-50">
+                                {round.name}
+                              </p>
+                              {round.duration ? (
+                                <p className="font-general text-[10px] uppercase tracking-widest text-blue-50/60">
+                                  {round.duration}
+                                </p>
+                              ) : null}
+                            </div>
 
-              {displayedContacts.length ? (
-                <>
-                  <p className="mt-10 text-xs uppercase tracking-widest text-blue-50">
-                    Contacts
-                  </p>
-                  <div className="border-hsla mt-3 overflow-hidden rounded-2xl bg-black/20">
-                    <ul className="divide-y divide-white/10">
-                      {displayedContacts.map((c) => (
-                        <li
-                          key={`${c.name}-${c.phone || c.email || "contact"}`}
-                          className="p-4"
-                        >
-                          <p className="font-general text-[10px] uppercase tracking-widest text-blue-50/60">
-                            {c.role || "Coordinator"}
-                          </p>
-                          <p className="mt-2 font-zentry text-xl leading-[0.95] text-blue-50">
-                            {c.name}
-                          </p>
-                          <div className="mt-2 font-circular-web text-sm text-blue-50/70">
-                            {isMeaningfulValue(c.phone) ? (
-                              <p>Phone: {c.phone}</p>
+                            {round.objective ? (
+                              <p className="mt-2 font-circular-web text-sm text-blue-50/70">
+                                {round.objective}
+                              </p>
                             ) : null}
-                            {isMeaningfulValue(c.email) ? (
-                              <p>Email: {c.email}</p>
+
+                            {Array.isArray(round.judging) &&
+                            round.judging.length ? (
+                              <ul className="mt-3 space-y-2 font-circular-web text-sm text-blue-50/70">
+                                {round.judging.map((line) => (
+                                  <li key={line} className="flex gap-3">
+                                    <span className="text-blue-300">▸</span>
+                                    <span>{line}</span>
+                                  </li>
+                                ))}
+                              </ul>
                             ) : null}
                           </div>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </>
-              ) : null}
-            </div>
+                        ))}
+                      </div>
+                    </>
+                  ) : null}
+
+                  {Array.isArray(event.details?.format) &&
+                  event.details.format.length ? (
+                    <>
+                      <p className="mt-10 text-xs uppercase tracking-widest text-blue-50">
+                        Format
+                      </p>
+                      <ul className="mt-3 space-y-2 font-circular-web text-blue-50/70">
+                        {event.details.format.map((line) => (
+                          <li key={line} className="flex gap-3">
+                            <span className="text-blue-300">▸</span>
+                            <span>{line}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  ) : null}
+
+                  {showTimingsSection ? (
+                    <>
+                      <p className="mt-10 text-xs uppercase tracking-widest text-blue-50">
+                        Timings
+                      </p>
+                      {Array.isArray(timings) ? (
+                        <ul className="mt-3 space-y-2 font-circular-web text-blue-50/70">
+                          {timings.filter(isMeaningfulValue).map((line) => (
+                            <li key={line} className="flex gap-3">
+                              <span className="text-blue-300">▸</span>
+                              <span>{line}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <p className="mt-3 font-circular-web text-blue-50/70">
+                          {timings}
+                        </p>
+                      )}
+                    </>
+                  ) : null}
+                </div>
+
+                <div>
+                  {Array.isArray(event.details?.rules) &&
+                  event.details.rules.length ? (
+                    <>
+                      <p className="text-xs uppercase tracking-widest text-blue-50">
+                        Rules
+                      </p>
+                      <ul className="mt-3 space-y-2 font-circular-web text-blue-50/70">
+                        {event.details.rules.map((line) => (
+                          <li key={line} className="flex gap-3">
+                            <span className="text-blue-300">▸</span>
+                            <span>{line}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  ) : null}
+
+                  {Array.isArray(event.details?.judging) &&
+                  event.details.judging.length ? (
+                    <>
+                      <p className="mt-10 text-xs uppercase tracking-widest text-blue-50">
+                        Judging
+                      </p>
+                      <ul className="mt-3 space-y-2 font-circular-web text-blue-50/70">
+                        {event.details.judging.map((line) => (
+                          <li key={line} className="flex gap-3">
+                            <span className="text-blue-300">▸</span>
+                            <span>{line}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  ) : null}
+
+                  {displayedContacts.length ? (
+                    <>
+                      <p className="mt-10 text-xs uppercase tracking-widest text-blue-50">
+                        Contacts
+                      </p>
+                      <div className="border-hsla mt-3 overflow-hidden rounded-2xl bg-black/20">
+                        <ul className="divide-y divide-white/10">
+                          {displayedContacts.map((c) => (
+                            <li
+                              key={`${c.name}-${
+                                c.phone || c.email || "contact"
+                              }`}
+                              className="p-4"
+                            >
+                              <p className="font-general text-[10px] uppercase tracking-widest text-blue-50/60">
+                                {c.role || "Coordinator"}
+                              </p>
+                              <p className="mt-2 font-zentry text-xl leading-[0.95] text-blue-50">
+                                {c.name}
+                              </p>
+                              <div className="mt-2 font-circular-web text-sm text-blue-50/70">
+                                {isMeaningfulValue(c.phone) ? (
+                                  <p>Phone: {c.phone}</p>
+                                ) : null}
+                                {isMeaningfulValue(c.email) ? (
+                                  <p>Email: {c.email}</p>
+                                ) : null}
+                              </div>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </>
+                  ) : null}
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>
