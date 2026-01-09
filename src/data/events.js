@@ -31,7 +31,7 @@ export const EVENTS = [
       rounds: [
         {
           name: "Open Round",
-          duration: "60–90 mins + 2 min demo",
+          duration: "30–45 mins + 2 min demo",
           objective: "Build anything impressive",
           judging: [
             "Creativity (35)",
@@ -42,7 +42,7 @@ export const EVENTS = [
         },
         {
           name: "Topic Round",
-          duration: "60–90 mins + demo + Q&A",
+          duration: "30–45 mins + demo + Q&A",
           objective: "Build under topic constraints",
           judging: [
             "Topic Fit (25)",
@@ -108,6 +108,10 @@ export const EVENTS = [
         "Speed (tie-breakers)",
         "Stability under constraints",
       ],
+      contacts: [
+        { role: "Coordinator", name: "Kamil Haasan", phone: "7448447272" },
+        { role: "Coordinator", name: "Mohammed Mustaq Mubeen", phone: "9344534434" },
+      ],
       registration:
         "Click Register to join the marathon and receive updates on the rule-set.",
       registerTo: "https://forms.gle/JZgWcGhFr6gM11PD8",
@@ -144,16 +148,8 @@ export const EVENTS = [
         "Event structure revealed one day prior",
       ],
       contacts: [
-        {
-          role: "Coordinator",
-          name: "Canosa R Krucy",
-          email: "canosarkrucycse@gmail.com",
-        },
-        {
-          role: "Coordinator",
-          name: "Gladis Keziah",
-          email: "gladiskeziah@gmail.com",
-        },
+        { role: "Coordinator", name: "Shyam Evin Raj", phone: "6385118647" },
+        { role: "Coordinator", name: "Canosa Krucy", phone: "9345705837" },
       ],
       registration: "Click Register to continue to the registration section.",
       registerTo: "https://forms.gle/JZgWcGhFr6gM11PD8",
@@ -181,10 +177,10 @@ export const EVENTS = [
       contacts: [
         {
           role: "Coordinator",
-          name: "Akaash Srinivasan",
-          phone: "73054887743",
+          name: "Naveen Kumar S",
+          phone: "6381574955",
         },
-        { role: "Coordinator", name: "Abinand P", phone: "9445920529" },
+        { role: "Coordinator", name: "Tarunikaa B", phone: "9840918520" },
       ],
       registration: "Click Register to continue to the registration section.",
       registerTo:
@@ -224,36 +220,17 @@ export const EVENTS = [
       contacts: [
         {
           role: "Coordinator",
-          name: "Shyleja S",
-          email: "shyleja.s@gmail.com",
-        },
-        {
-          role: "Coordinator",
           name: "Ashwin Nandagopal",
-          email: "ashwinnandacool@gmail.com",
+          phone: "6378914082",
         },
-        {
-          role: "Coordinator",
-          name: "Yesudoss S",
-          email: "dossyesu54@gmail.com",
-        },
-        {
-          role: "Coordinator",
-          name: "Anuvarshini V",
-          email: "anuvarshiniv139@gmail.com",
-        },
-        {
-          role: "Coordinator",
-          name: "Maheswari M",
-          email: "maheswarimathi2004@gmail.com",
-        },
+        { role: "Coordinator", name: "Shyleja S", phone: "9841025250" },
       ],
       registration: "Click Register to continue to the registration section.",
       registerTo: "https://forms.gle/h6qmDc3cQtH8nMmT6",
     },
   },
   {
-    name: "Build in 60",
+    name: "Build in 60 Minutes",
     slug: "build-in-60",
     track: "Technical",
     short: "UI/UX + Website Sprint",
@@ -262,7 +239,7 @@ export const EVENTS = [
     details: {
       overview:
         "A 60-minute sprint to design and ship a clean UI. Balance visuals and usability — build something that feels like a product.",
-      timings: ["09:00 AM – 10:30 AM"],
+      timings: ["09:00 AM – 10:00 AM"],
       contacts: [
         { role: "Coordinator", name: "Event Desk", phone: "555-0106" },
       ],
@@ -271,14 +248,24 @@ export const EVENTS = [
         "Theme/brief announced at start.",
       ],
       rules: [
-        "Ship a runnable deliverable within the time limit.",
-        "Use frameworks/tools as allowed by organizers.",
+        " Participants must use their own laptops; college systems are not permitted",
+  "Internet access is disabled by default throughout the event",
+  "A one-time internet access window of 5 minutes will be provided during the event",
+  "Internet usage during this window is strictly limited to syntax and official documentation reference",
+  "Accessing tutorials, blogs, GitHub repositories, or solution-related content is prohibited",
+  "Any misuse of internet access will result in immediate disqualification",
+  "All required tools, including Visual Studio Code (VS Code), must be pre-installed",
+  "Judges' decisions are final"
       ],
       judging: [
         "Design clarity",
         "Responsiveness",
         "Usability",
         "Completeness",
+      ],
+      contacts: [
+        { role: "Coordinator", name: "Shyam Evin Raj", phone: "6385118647" },
+        { role: "Coordinator", name: "Canosa Krucy", phone: "9345705837" },
       ],
       registration: "Click Register to join the sprint and get the brief.",
       registerTo: "https://forms.gle/JZgWcGhFr6gM11PD8",
@@ -297,7 +284,8 @@ export const EVENTS = [
         "A strategy and quick-thinking auction event with an IPL-style twist. Build the best squad/stack within your budget.",
       timings: ["01:00 PM – 02:00 PM"],
       contacts: [
-        { role: "Coordinator", name: "Event Desk", phone: "555-0107" },
+        { role: "Coordinator", name: "Suriya RS", phone: "8870256728" },
+        { role: "Coordinator", name: "Surendran", phone: "6374402965" },
       ],
       format: [
         "Budget-based bidding rounds.",
@@ -330,6 +318,10 @@ export const EVENTS = [
       rules: [
         "Follow the facilitator’s instructions for each mini-round.",
         "No external help/devices unless allowed.",
+      ],
+      contacts: [
+        { role: "Coordinator", name: "Sanjay", phone: "8925209953" },
+        { role: "Coordinator", name: "Kamaliga T", phone: "9342857096" },
       ],
       judging: ["Accuracy", "Speed"],
       registration: "Click Register to enter the connect-tone arena.",
