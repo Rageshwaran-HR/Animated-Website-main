@@ -291,15 +291,16 @@ const EventDetails = () => {
   return (
     <section
       ref={pageRef}
-      className="min-h-dvh w-screen bg-slate-950 text-blue-50"
+      className="min-h-dvh w-screen bg-slate-950 text-blue-50 pt-0"
     >
-      <div className="relative">
-        <div className="absolute inset-0 h-[46vh]">
+      <div className="relative w-full">
+        <div className="relative h-[50vh] w-full">
           <video
             id="event-hero-video"
             ref={videoRef}
             src={event.videoSrc}
             autoPlay
+            loop
             muted
             playsInline
             className="h-full w-full object-cover"
@@ -307,7 +308,7 @@ const EventDetails = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/50 to-slate-950" />
         </div>
 
-        <div className="relative mx-auto max-w-5xl px-6 pt-28 mt-[46vh]">
+        <div className="relative mx-auto max-w-5xl px-6 pt-8">
           <button
             onClick={() => navigate("/#tracks")}
             type="button"

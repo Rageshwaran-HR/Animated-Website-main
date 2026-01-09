@@ -17,12 +17,12 @@ const links = [
 ];
 
 const STUDENT_COORDINATORS = [
-  { name: "Shailendra Kumar", phone: "+91 9345356916" },
+  { name: "Shailendra Kumar B", phone: "+91 9345356916" },
   { name: "Vyshhnavi NDD", phone: "+91 8778428081" },
   { name: "Akaash Srinivasan", phone: "+91 7305488743" },
-  { name: "Shree Ranjani", phone: "+91 7305491657" },
-  { name: "Nandha Kumar", phone: "+91 7418168704" },
-  { name: "Monisha", phone: "+91 8270223366" },
+  { name: "Shree Ranjani B", phone: "+91 7305491657" },
+  { name: "Nandha Kumar R", phone: "+91 7418168704" },
+  { name: "Monisha V", phone: "+91 8270223366" },
 ];
 
 const TEACHER_COORDINATORS = [
@@ -124,7 +124,7 @@ const Footer = () => {
                       key={index}
                       className="border-l-2 border-blue-300 pl-4"
                     >
-                      <p className="font-zentry text-lg leading-tight text-blue-50">
+                      <p className="font-audiowide text-lg leading-tight text-blue-50">
                         {coordinator.name}
                       </p>
                       <p className="mt-1 font-circular-web text-sm text-blue-50/70">
@@ -146,7 +146,7 @@ const Footer = () => {
                       key={index}
                       className="border-l-2 border-blue-300 pl-4"
                     >
-                      <p className="font-zentry text-lg leading-tight text-blue-50">
+                      <p className="font-audiowide text-lg leading-tight text-blue-50">
                         {coordinator.name}
                       </p>
                       <p className="mt-1 font-general text-[10px] uppercase tracking-widest text-blue-50/60">
