@@ -170,7 +170,7 @@ const Features = () => {
   );
 
   return (
-    <section ref={sectionRef} id="tracks" className="bg-slate-950 pb-16">
+    <section ref={sectionRef} id="tracks" className="bg-slate-950 pb-6">
       <div className="mx-auto max-w-7xl px-6">
         <div className="py-32">
           <AnimatedTitle
