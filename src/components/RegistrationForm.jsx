@@ -13,6 +13,9 @@ const RegistrationForm = () => {
     collegeName: "",
     year: "",
     events: [],
+    foodPreference: "",
+    transactionId: "",
+    teamName: "",
     transactionScreenshot: null,
   });
 
@@ -51,8 +54,8 @@ const RegistrationForm = () => {
     "Other",
   ];
 
-  // Filter events - exclude Paper Presentation, Workshop, Project Expo
-  const excludeEvents = ["paper-presentation", "workshop", "project-expo"];
+  // Filter events - exclude Workshop, Project Expo
+  const excludeEvents = ["workshop", "project-expo"];
   const filteredEvents = EVENTS.filter(
     (event) => !excludeEvents.includes(event.slug)
   );
@@ -131,6 +134,29 @@ const RegistrationForm = () => {
       newErrors.events = "Select at least one event";
     } else if (formData.events.length > 5) {
       newErrors.events = "You can select a maximum of 5 events";
+    }
+
+    // Food preference validation
+    if (!formData.foodPreference) {
+      newErrors.foodPreference = "Food preference is required";
+    }
+
+    // Paper Presentation validation - only if selected
+    const isPaperPresentationSelected =
+      formData.events.includes("paper-presentation");
+    if (isPaperPresentationSelected) {
+      if (!formData.teamName.trim()) {
+        newErrors.teamName = "Team name is required for paper presentation";
+      } else if (formData.teamName.trim().length < 3) {
+        newErrors.teamName = "Team name must be at least 3 characters";
+      }
+    }
+
+    // Transaction ID validation
+    if (!formData.transactionId.trim()) {
+      newErrors.transactionId = "Transaction ID is required";
+    } else if (formData.transactionId.trim().length < 5) {
+      newErrors.transactionId = "Transaction ID must be at least 5 characters";
     }
 
     // Transaction screenshot validation
@@ -215,25 +241,103 @@ const RegistrationForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("🔴 Form submission started");
 
     if (!validateForm()) {
+      console.log("❌ Form validation failed");
       return;
     }
 
+    console.log("✅ Form validation passed");
     setIsLoading(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Replace with your Google Form ID
+      const GOOGLE_FORM_ID = "1FAIpQLSfHHf-ixnm_ej1KKgZUmUb6opoGqwmY3j8XLe-jT7zpTPXJAg";
+      const GOOGLE_FORM_URL = `https://docs.google.com/forms/d/e/${GOOGLE_FORM_ID}/formResponse`;
+
+      // Map your form fields to Google Form entry IDs
+      const fieldMapping = {
+        fullName: "entry.303847679",
+        phone: "entry.1833960056",
+        email: "entry.1579532468",
+        department: "entry.702491016",
+        collegeName: "entry.659720641",
+        year: "entry.984407084",
+        techEvents: "entry.856598507", // Tech events entry ID
+        nonTechEvents: "entry.544681371", // Non-tech events entry ID
+        foodPreference: "entry.296598486",
+        transactionId: "entry.189943842",
+        teamName: "entry.2092055580",
+        transactionScreenshot: "entry.1870309248",
+      };
+
+      // Separate events by track
+      const techEvents = formData.events
+        .map((id) => eventOptions.find((e) => e.id === id))
+        .filter((event) => event?.track === "Technical")
+        .map((event) => event.name)
+        .join(", ");
+
+      const nonTechEvents = formData.events
+        .map((id) => eventOptions.find((e) => e.id === id))
+        .filter((event) => event?.track !== "Technical")
+        .map((event) => event.name)
+        .join(", ");
+
+      // Create FormData for submission
+      const formDataToSubmit = new FormData();
+
+      // Add text fields
+      formDataToSubmit.append(fieldMapping.fullName, formData.name);
+      formDataToSubmit.append(fieldMapping.phone, formData.phone);
+      formDataToSubmit.append(fieldMapping.email, formData.email);
+      formDataToSubmit.append(fieldMapping.department, formData.department);
+      formDataToSubmit.append(fieldMapping.collegeName, formData.collegeName);
+      formDataToSubmit.append(fieldMapping.year, formData.year);
+      formDataToSubmit.append(fieldMapping.techEvents, techEvents);
+      formDataToSubmit.append(fieldMapping.nonTechEvents, nonTechEvents);
+      formDataToSubmit.append(
+        fieldMapping.foodPreference,
+        formData.foodPreference
+      );
+      formDataToSubmit.append(
+        fieldMapping.transactionId,
+        formData.transactionId
+      );
+
+      // Add team name if paper presentation is selected
+      if (formData.events.includes("paper-presentation")) {
+        formDataToSubmit.append(fieldMapping.teamName, formData.teamName);
+      }
+
+      // Add transaction screenshot
+      if (formData.transactionScreenshot) {
+        formDataToSubmit.append(
+          fieldMapping.transactionScreenshot,
+          formData.transactionScreenshot
+        );
+      }
+
+      console.log("📋 Form data prepared for submission");
+      console.log("🌐 Sending to Google Forms...");
+
+      // Submit to Google Form
+      const response = await fetch(GOOGLE_FORM_URL, {
+        method: "POST",
+        body: formDataToSubmit,
+        mode: "no-cors",
+      });
+
+      console.log("📨 Response status:", response.status);
+      console.log("✅ Form submitted successfully to Google Forms!");
       setSubmitted(true);
       setIsLoading(false);
-      console.log("Form submitted:", {
-        ...formData,
-        events: formData.events.map(
-          (id) => eventOptions.find((e) => e.id === id)?.name
-        ),
-        transactionScreenshot: formData.transactionScreenshot.name,
-      });
-    }, 1500);
+    } catch (error) {
+      console.error("🔴 Error:", error);
+      setErrors({ general: error.message || "Failed to submit registration" });
+      setIsLoading(false);
+    }
   };
 
   const handleReset = () => {
@@ -245,6 +349,12 @@ const RegistrationForm = () => {
       collegeName: "",
       year: "",
       events: [],
+      foodPreference: "",
+      transactionId: "",
+      teamName: "",
+      paperAbstract: null,
+      presentationPDF: null,
+      presentationWord: null,
       transactionScreenshot: null,
     });
     setErrors({});
@@ -299,7 +409,7 @@ const RegistrationForm = () => {
                       {formData.email}
                     </p>
                   </div>
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between pb-3 border-b border-blue-300/10">
                     <p className="text-blue-300/60 font-general text-xs uppercase">
                       Events
                     </p>
@@ -322,6 +432,58 @@ const RegistrationForm = () => {
                       })}
                     </div>
                   </div>
+                  <div className="flex items-center justify-between pb-3 border-b border-blue-300/10">
+                    <p className="text-blue-300/60 font-general text-xs uppercase">
+                      Food Preference
+                    </p>
+                    <p className="text-blue-50 font-general text-sm font-semibold">
+                      {formData.foodPreference}
+                    </p>
+                  </div>
+                  <div className="flex items-center justify-between pb-3 border-b border-blue-300/10">
+                    <p className="text-blue-300/60 font-general text-xs uppercase">
+                      Transaction ID
+                    </p>
+                    <p className="text-blue-50 font-general text-sm font-semibold">
+                      {formData.transactionId}
+                    </p>
+                  </div>
+                  {formData.events.includes("paper-presentation") && (
+                    <>
+                      <div className="flex items-center justify-between pb-3 border-b border-blue-300/10">
+                        <p className="text-blue-300/60 font-general text-xs uppercase">
+                          Team Name
+                        </p>
+                        <p className="text-blue-50 font-general text-sm font-semibold">
+                          {formData.teamName}
+                        </p>
+                      </div>
+                      <div className="flex items-center justify-between pb-3 border-b border-blue-300/10">
+                        <p className="text-blue-300/60 font-general text-xs uppercase">
+                          Paper Abstract
+                        </p>
+                        <p className="text-blue-50 font-general text-sm font-semibold">
+                          {formData.paperAbstract?.name || "Not uploaded"}
+                        </p>
+                      </div>
+                      <div className="flex items-center justify-between pb-3 border-b border-blue-300/10">
+                        <p className="text-blue-300/60 font-general text-xs uppercase">
+                          Presentation (PDF)
+                        </p>
+                        <p className="text-blue-50 font-general text-sm font-semibold">
+                          {formData.presentationPDF?.name || "Not uploaded"}
+                        </p>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <p className="text-blue-300/60 font-general text-xs uppercase">
+                          Presentation (Word)
+                        </p>
+                        <p className="text-blue-50 font-general text-sm font-semibold">
+                          {formData.presentationWord?.name || "Not uploaded"}
+                        </p>
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
 
@@ -596,10 +758,10 @@ const RegistrationForm = () => {
                   }
                 >
                   <option value="">Select Year</option>
-                  <option value="I">Year I</option>
-                  <option value="II">Year II</option>
-                  <option value="III">Year III</option>
-                  <option value="IV">Year IV</option>
+                  <option value="I">I</option>
+                  <option value="II">II</option>
+                  <option value="III">III</option>
+                  <option value="IV">IV</option>
                 </select>
                 {errors.year && (
                   <p className="mt-1.5 font-general text-xs text-red-400">
@@ -666,6 +828,117 @@ const RegistrationForm = () => {
                 )}
               </div>
 
+              {/* Food Preference Field */}
+              <div className="form-field">
+                <label className="block font-general text-xs font-bold text-blue-100 uppercase tracking-wider mb-2">
+                  Food Preference <span className="text-yellow-300">*</span>
+                </label>
+                <div className="grid sm:grid-cols-2 gap-3 sm:gap-5">
+                  <label
+                    className="flex items-center p-3 rounded-lg bg-slate-800/40 border border-blue-300/15 cursor-pointer transition-all group"
+                    style={{ borderColor: "rgba(203, 213, 225, 0.15)" }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor =
+                        "rgba(6, 182, 212, 0.4)";
+                      e.currentTarget.style.backgroundColor =
+                        "rgba(30, 41, 59, 0.6)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor =
+                        "rgba(203, 213, 225, 0.15)";
+                      e.currentTarget.style.backgroundColor =
+                        "rgba(30, 41, 59, 0.4)";
+                    }}
+                  >
+                    <input
+                      type="radio"
+                      name="foodPreference"
+                      value="Veg"
+                      checked={formData.foodPreference === "Veg"}
+                      onChange={handleChange}
+                      className="w-4 h-4 rounded cursor-pointer"
+                      style={{ accentColor: "#06b6d4" }}
+                    />
+                    <span className="ml-3 font-general text-sm text-blue-50 group-hover:text-blue-100 transition-colors">
+                      Veg
+                    </span>
+                  </label>
+                  <label
+                    className="flex items-center p-3 rounded-lg bg-slate-800/40 border border-blue-300/15 cursor-pointer transition-all group"
+                    style={{ borderColor: "rgba(203, 213, 225, 0.15)" }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor =
+                        "rgba(6, 182, 212, 0.4)";
+                      e.currentTarget.style.backgroundColor =
+                        "rgba(30, 41, 59, 0.6)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor =
+                        "rgba(203, 213, 225, 0.15)";
+                      e.currentTarget.style.backgroundColor =
+                        "rgba(30, 41, 59, 0.4)";
+                    }}
+                  >
+                    <input
+                      type="radio"
+                      name="foodPreference"
+                      value="Non Veg"
+                      checked={formData.foodPreference === "Non Veg"}
+                      onChange={handleChange}
+                      className="w-4 h-4 rounded cursor-pointer"
+                      style={{ accentColor: "#06b6d4" }}
+                    />
+                    <span className="ml-3 font-general text-sm text-blue-50 group-hover:text-blue-100 transition-colors">
+                      Non Veg
+                    </span>
+                  </label>
+                </div>
+                {errors.foodPreference && (
+                  <p className="mt-1.5 font-general text-xs text-red-400">
+                    {errors.foodPreference}
+                  </p>
+                )}
+              </div>
+
+              {/* Team Name Field - Conditional for Paper Presentation */}
+              {formData.events.includes("paper-presentation") && (
+                <div className="form-field">
+                  <label className="block font-general text-xs font-bold text-blue-100 uppercase tracking-wider mb-2">
+                    Team Name <span className="text-yellow-300">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="teamName"
+                    value={formData.teamName}
+                    onChange={handleChange}
+                    placeholder="Enter your team name"
+                    className={`w-full px-3 py-2 rounded-lg bg-slate-900/60 border font-general text-sm text-blue-50 placeholder-blue-300/40 outline-none transition-all backdrop-blur-sm ${
+                      errors.teamName
+                        ? "border-red-500/40 focus:border-red-500"
+                        : "border-blue-300/20 focus:bg-slate-900"
+                    }`}
+                    style={
+                      !errors.teamName
+                        ? { borderColor: "rgba(203, 213, 225, 0.2)" }
+                        : {}
+                    }
+                    onFocus={(e) =>
+                      !errors.teamName &&
+                      (e.target.style.borderColor = "rgba(6, 182, 212, 0.6)")
+                    }
+                    onBlur={(e) =>
+                      !errors.teamName &&
+                      (e.target.style.borderColor = "rgba(203, 213, 225, 0.2)")
+                    }
+                  />
+                  {errors.teamName && (
+                    <p className="mt-1.5 font-general text-xs text-red-400">
+                      {errors.teamName}
+                    </p>
+                  )}
+                </div>
+              )}
+
               {/* Registration Fee QR Code - Collapsible */}
               <div className="form-field">
                 <button
@@ -707,6 +980,43 @@ const RegistrationForm = () => {
                       💡 Scan this QR to pay ₹150 registration fee
                     </p>
                   </div>
+                )}
+              </div>
+
+              {/* Transaction ID Field */}
+              <div className="form-field">
+                <label className="block font-general text-xs font-bold text-blue-100 uppercase tracking-wider mb-2">
+                  Transaction ID <span className="text-yellow-300">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="transactionId"
+                  value={formData.transactionId}
+                  onChange={handleChange}
+                  placeholder="Enter transaction ID (from payment gateway)"
+                  className={`w-full px-3 py-2 rounded-lg bg-slate-900/60 border font-general text-sm text-blue-50 placeholder-blue-300/40 outline-none transition-all backdrop-blur-sm ${
+                    errors.transactionId
+                      ? "border-red-500/40 focus:border-red-500"
+                      : "border-blue-300/20 focus:bg-slate-900"
+                  }`}
+                  style={
+                    !errors.transactionId
+                      ? { borderColor: "rgba(203, 213, 225, 0.2)" }
+                      : {}
+                  }
+                  onFocus={(e) =>
+                    !errors.transactionId &&
+                    (e.target.style.borderColor = "rgba(6, 182, 212, 0.6)")
+                  }
+                  onBlur={(e) =>
+                    !errors.transactionId &&
+                    (e.target.style.borderColor = "rgba(203, 213, 225, 0.2)")
+                  }
+                />
+                {errors.transactionId && (
+                  <p className="mt-1.5 font-general text-xs text-red-400">
+                    {errors.transactionId}
+                  </p>
                 )}
               </div>
 
