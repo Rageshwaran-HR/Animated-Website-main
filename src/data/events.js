@@ -206,7 +206,7 @@ export const EVENTS = [
       rounds: [
         {
           name: "Presentation + Q&A",
-          duration: "8–10 mins presentation + 2 mins Q&A",
+          duration: "8 mins presentation + 2 mins Q&A",
         },
       ],
       judging: [
@@ -493,7 +493,7 @@ export const EVENTS = [
       rounds: [
         {
           name: "Project Showcase",
-          duration: "60–90 mins + 2 min demo",
+          duration: "20 mins demo",
           objective: "Display your innovative project",
           judging: [
             "Innovation (35)",
