@@ -294,7 +294,7 @@ const EventDetails = () => {
       className="min-h-dvh w-screen bg-slate-950 text-blue-50"
     >
       <div className="relative">
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 h-[46vh]">
           <video
             id="event-hero-video"
             ref={videoRef}
@@ -302,12 +302,12 @@ const EventDetails = () => {
             autoPlay
             muted
             playsInline
-            className="h-[46vh] w-full object-cover"
+            className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/50 to-slate-950" />
         </div>
 
-        <div className="relative mx-auto max-w-5xl px-6 pt-28">
+        <div className="relative mx-auto max-w-5xl px-6 pt-28 mt-[46vh]">
           <button
             onClick={() => navigate("/#tracks")}
             type="button"
