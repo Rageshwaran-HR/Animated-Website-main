@@ -130,7 +130,7 @@ const Footer = () => {
               {/* Teacher Coordinators */}
               <div>
                 <p className="font-general text-xs uppercase tracking-widest text-blue-300 mb-4 font-bold">
-                  Teacher Coordinators
+                  Staff Coordinators
                 </p>
                 <div className="space-y-4">
                   {TEACHER_COORDINATORS.map((coordinator, index) => (
