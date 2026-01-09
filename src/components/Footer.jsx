@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { FaDiscord, FaGithub, FaTwitch, FaTwitter } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
@@ -9,10 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 const COLLEGE_MAP_URL = "https://maps.app.goo.gl/NLPRBqJK2xNNX7xFA";
 
 const links = [
-  { href: "https://discord.com", icon: <FaDiscord /> },
-  { href: "https://twitter.com", icon: <FaTwitter /> },
-  { href: "https://github.com", icon: <FaGithub /> },
-  { href: "https://twitch.com", icon: <FaTwitch /> },
+  { href: "https://www.instagram.com/ozmenta_26", icon: <FaInstagram /> },
 ];
 
 const STUDENT_COORDINATORS = [
