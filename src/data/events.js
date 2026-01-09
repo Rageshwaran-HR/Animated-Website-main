@@ -285,7 +285,7 @@ export const EVENTS = [
       timings: ["01:00 PM – 02:00 PM"],
       contacts: [
         { role: "Student Coordinator", name: "Suriya RS", phone: "8870256728" },
-        { role: "Student Coordinator", name: "Surendran", phone: "6374402965" },
+        { role: "Student Coordinator", name: "Surendran S", phone: "6374402965" },
       ],
       format: [
         "Budget-based bidding rounds.",

@@ -15,6 +15,10 @@ const links = [
 const STUDENT_COORDINATORS = [
   { name: "Shailendra Kumar", phone: "+91 9345356916" },
   { name: "Vyshhnavi NDD", phone: "+91 8778428081" },
+  { name: "Akaash Srinivasan", phone: "+91 7305488743" },
+  { name: "Shree Ranjani", phone: "+91 7305491657" },
+  { name: "Nandha Kumar", phone: "+91 7418168704" },
+  { name: "Monisha", phone: "+91 8270223366" },
 ];
 
 const TEACHER_COORDINATORS = [
@@ -110,7 +114,7 @@ const Footer = () => {
                 <p className="font-general text-xs uppercase tracking-widest text-blue-300 mb-4 font-bold">
                   Student Coordinators
                 </p>
-                <div className="space-y-4">
+                <div className="grid grid-cols-2 gap-4">
                   {STUDENT_COORDINATORS.map((coordinator, index) => (
                     <div
                       key={index}
