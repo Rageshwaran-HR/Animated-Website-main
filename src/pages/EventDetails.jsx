@@ -284,9 +284,7 @@ const EventDetails = () => {
   const contacts = Array.isArray(event.details?.contacts)
     ? event.details.contacts
     : [];
-  const contactsWithInfo = contacts.filter(
-    (c) => isMeaningfulValue(c?.phone) || isMeaningfulValue(c?.email)
-  );
+  const contactsWithInfo = contacts.filter((c) => isMeaningfulValue(c?.name));
   const displayedContacts = contactsWithInfo.slice(0, 2);
   const remainingContactNames = contactsWithInfo.slice(2).map((c) => c.name).filter(Boolean);
 
@@ -525,9 +523,11 @@ const EventDetails = () => {
                               <p className="font-zentry text-xl leading-[0.95] text-blue-50">
                                 {c.name}
                               </p>
-                              <p className="mt-2 font-circular-web text-sm text-blue-50/70">
-                                {c.phone || c.email}
-                              </p>
+                              {(isMeaningfulValue(c.phone) || isMeaningfulValue(c.email)) && (
+                                <p className="mt-2 font-circular-web text-sm text-blue-50/70">
+                                  {c.phone || c.email}
+                                </p>
+                              )}
                             </li>
                           ))}
 
