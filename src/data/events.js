@@ -507,13 +507,6 @@ export const EVENTS = [
         "Any technology stack, programming language, or hardware platform may be used.",
         "Both completed and partially implemented projects are allowed.",
       ],
-      requirements:[
-        "Laptop (mandatory for presentation)",
-        "Participants must carry their own laptops and hardware components (if required).",
-        "Power supply will be provided (subject to availability).",
-        "Required software tools, IDEs, libraries, and frameworks must be pre-installed.",
-        "Participants are responsible for the safe handling of their hardware models."
-      ],
       contacts: [
         {
           role: "Student Coordinator",
