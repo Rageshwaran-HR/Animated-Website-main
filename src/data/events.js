@@ -478,28 +478,41 @@ export const EVENTS = [
       "https://res.cloudinary.com/dbe1m52oz/video/upload/v1767781724/Make_a_animated_1080p_202601071550_anqson.mp4",
     details: {
       date: "21-02-2026",
-      time: "10:30 AM – 12:00 PM",
-      teamSize: "2–3",
+      time: "9:30 AM – 3:00 PM",
+      teamSize: "1–4",
       overview:
-        "Showcase your innovative projects in a creative exhibition. Present your work, demonstrate functionality, and inspire others with your innovative solutions.",
+        "Project Expo serves as a platform for students to present their innovative hardware and software projects, developed through academic coursework, self-directed learning, or independent exploration. Participants present their ideas through PPT presentations, live demonstrations, prototypes, or models, focusing on problem-solving ability, technical understanding, and real-world applicability.",
       rounds: [
         {
           name: "Project Showcase",
           duration: "20 mins demo",
           objective: "Display your innovative project",
           judging: [
-            "Innovation (35)",
-            "Presentation (25)",
-            "Functionality (30)",
-            "Impact Clarity (10)",
+            "Relevance in real world",
+            "Presentation Skills ",
+            "Technical Depth & Implementation",
+            "Innovation and Creativity",
+            "System Design / Architecture",
+            "Practical Impact and Feasibility"
           ],
         },
       ],
       rules: [
-        "Projects must be original",
-        "Live demo or interactive display required",
-        "Clear documentation preferred",
-        "No plagiarism",
+        "Presentation time: 8-10 minutes",
+        "PPT is mandatory",
+        "Plagiarism is strictly prohibited",
+        "Judges’ decision is final",
+        "One project per team",
+        "Projects must be original and developed by the participants",
+        "Any technology stack, programming language, or hardware platform may be used.",
+        "Both completed and partially implemented projects are allowed.",
+      ],
+      requirements:[
+        "Laptop (mandatory for presentation)",
+        "Participants must carry their own laptops and hardware components (if required).",
+        "Power supply will be provided (subject to availability).",
+        "Required software tools, IDEs, libraries, and frameworks must be pre-installed.",
+        "Participants are responsible for the safe handling of their hardware models."
       ],
       contacts: [
         {
