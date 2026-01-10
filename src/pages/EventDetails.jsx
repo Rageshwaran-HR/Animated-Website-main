@@ -284,9 +284,11 @@ const EventDetails = () => {
   const contacts = Array.isArray(event.details?.contacts)
     ? event.details.contacts
     : [];
-  const displayedContacts = contacts
-    .filter((c) => isMeaningfulValue(c?.phone) || isMeaningfulValue(c?.email))
-    .slice(0, 2);
+  const contactsWithInfo = contacts.filter(
+    (c) => isMeaningfulValue(c?.phone) || isMeaningfulValue(c?.email)
+  );
+  const displayedContacts = contactsWithInfo.slice(0, 2);
+  const remainingContactNames = contactsWithInfo.slice(2).map((c) => c.name).filter(Boolean);
 
   return (
     <section
@@ -511,33 +513,35 @@ const EventDetails = () => {
                   {displayedContacts.length ? (
                     <>
                       <p className="mt-10 text-xs uppercase tracking-widest text-blue-50">
-                        Contacts
+                        Student Coordinators
                       </p>
                       <div className="border-hsla mt-3 overflow-hidden rounded-2xl bg-black/20">
                         <ul className="divide-y divide-white/10">
                           {displayedContacts.map((c) => (
                             <li
-                              key={`${c.name}-${
-                                c.phone || c.email || "contact"
-                              }`}
+                              key={`${c.name}-${c.phone || c.email || "contact"}`}
                               className="p-4"
                             >
-                              <p className="font-general text-[10px] uppercase tracking-widest text-blue-50/60">
-                                {c.role || "Coordinator"}
-                              </p>
-                              <p className="mt-2 font-zentry text-xl leading-[0.95] text-blue-50">
+                              <p className="font-zentry text-xl leading-[0.95] text-blue-50">
                                 {c.name}
                               </p>
-                              <div className="mt-2 font-circular-web text-sm text-blue-50/70">
-                                {isMeaningfulValue(c.phone) ? (
-                                  <p>Phone: {c.phone}</p>
-                                ) : null}
-                                {isMeaningfulValue(c.email) ? (
-                                  <p>Email: {c.email}</p>
-                                ) : null}
-                              </div>
+                              <p className="mt-2 font-circular-web text-sm text-blue-50/70">
+                                {c.phone || c.email}
+                              </p>
                             </li>
                           ))}
+
+                          {remainingContactNames.length > 0 ? (
+                            <>
+                              {remainingContactNames.map((name) => (
+                                <li key={name} className="p-4">
+                                  <p className="font-zentry text-xl leading-[0.95] text-blue-50">
+                                    {name}
+                                  </p>
+                                </li>
+                              ))}
+                            </>
+                          ) : null}
                         </ul>
                       </div>
                     </>
