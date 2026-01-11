@@ -308,7 +308,10 @@ const EventDetails = () => {
 
         <div className="relative mx-auto max-w-5xl px-6 pt-8">
           <button
-            onClick={() => navigate("/#tracks")}
+            onClick={() => {
+              sessionStorage.setItem('scrollToSection', 'tracks');
+              navigate("/");
+            }}
             type="button"
             className="nav-hover-btn mb-6 ms-0 inline-flex items-center gap-2"
           >

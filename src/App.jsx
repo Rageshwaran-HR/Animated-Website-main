@@ -13,9 +13,43 @@ const Footer = React.lazy(() => import("./components/Footer"));
 const EventDetails = React.lazy(() => import("./pages/EventDetails"));
 
 const ScrollToHash = () => {
-  const { hash, pathname } = useLocation();
+  const { hash, pathname, state } = useLocation();
 
   React.useEffect(() => {
+    // Check sessionStorage for scroll target (from EventDetails back button)
+    const scrollTarget = sessionStorage.getItem('scrollToSection');
+    if (scrollTarget && pathname === '/') {
+      sessionStorage.removeItem('scrollToSection');
+      
+      // Retry logic to wait for lazy-loaded components
+      let attempts = 0;
+      const maxAttempts = 20;
+      
+      const tryScroll = () => {
+        const el = document.getElementById(scrollTarget);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else if (attempts < maxAttempts) {
+          attempts++;
+          setTimeout(tryScroll, 200);
+        }
+      };
+      
+      setTimeout(tryScroll, 300);
+      return;
+    }
+
+    // Handle state-based scrolling (from EventDetails back button)
+    if (state?.scrollTo) {
+      const timeoutId = setTimeout(() => {
+        const el = document.getElementById(state.scrollTo);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+      return () => clearTimeout(timeoutId);
+    }
+
     if (!hash) {
       window.scrollTo({ top: 0, left: 0, behavior: "instant" });
       return;
@@ -35,7 +69,7 @@ const ScrollToHash = () => {
     }, 50);
 
     return () => clearTimeout(t);
-  }, [hash, pathname]);
+  }, [hash, pathname, state]);
 
   return null;
 };
