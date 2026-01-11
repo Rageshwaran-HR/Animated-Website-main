@@ -282,13 +282,10 @@ const EventDetails = () => {
       isMeaningfulValue(timings));
 
   const contacts = Array.isArray(event.details?.contacts)
-    ? event.details.contacts
+    ? event.details.contacts.filter((c) => isMeaningfulValue(c?.name))
     : [];
-  const contactsWithInfo = contacts.filter(
-    (c) => isMeaningfulValue(c?.phone) || isMeaningfulValue(c?.email)
-  );
-  const displayedContacts = contactsWithInfo.slice(0, 2);
-  const remainingContactNames = contactsWithInfo.slice(2).map((c) => c.name).filter(Boolean);
+  const displayedContacts = contacts.slice(0, 2);
+  const remainingContactNames = contacts.slice(2).map((c) => c.name).filter(Boolean);
 
   return (
     <section
@@ -302,7 +299,6 @@ const EventDetails = () => {
             ref={videoRef}
             src={event.videoSrc}
             autoPlay
-            loop
             muted
             playsInline
             className="h-full w-full object-cover"
