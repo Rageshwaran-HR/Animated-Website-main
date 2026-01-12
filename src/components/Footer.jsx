@@ -100,7 +100,7 @@ const Footer = () => {
   };
 
   return (
-    <footer id="contact" className="w-screen bg-violet-300 py-6 text-black">
+    <footer id="contact" className="w-screen bg-violet-500 py-6 text-black">
       <div className="container mx-auto px-4">
         <div
           ref={locationRef}
