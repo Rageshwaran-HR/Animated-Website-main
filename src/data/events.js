@@ -91,7 +91,9 @@ export const EVENTS = [
     details: {
       overview:
         "An endurance-style challenge with escalating difficulty. Expect unpredictable constraints and a final ‘glitch’ phase that tests debugging and resilience.",
+      date: "21-02-2026",
       timings: ["09:00 AM – 10:30 AM"],
+      teamSize: "Individual",
       contacts: [
         { role: "Student Coordinator", name: "Event Desk", phone: "555-0102" },
       ],
@@ -211,6 +213,7 @@ export const EVENTS = [
       "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445104/feature-2_tbxum9.mp4",
     details: {
       date: "21-02-2026",
+      timings: ["10:30 AM – 12:00 PM"],
       teamSize: "1–3",
       overview:
         "A platform to showcase your ideas, innovation, and technical thinking. Present your paper, defend your concept, and impress the judges with clarity, creativity, and confidence.",
@@ -255,7 +258,9 @@ export const EVENTS = [
     details: {
       overview:
         "A 60-minute sprint to design and ship a clean UI. Balance visuals and usability — build something that feels like a product.",
+        date: "21-02-2026",
       timings: ["09:00 AM – 10:00 AM"],
+      teamSize: "1-3",
       contacts: [
         { role: "Student Coordinator", name: "Event Desk", phone: "555-0106" },
       ],
@@ -302,7 +307,9 @@ export const EVENTS = [
     details: {
       overview:
         "A strategy and quick-thinking auction event with an IPL-style twist. Build the best squad/stack within your budget.",
+      date: "21-02-2026",
       timings: ["01:00 PM – 02:00 PM"],
+      teamSize: "3-5",
       contacts: [
         { role: "Student Coordinator", name: "Suriya RS", phone: "8870256728" },
         { role: "Student Coordinator", name: "Surendran S", phone: "6374402965" },
@@ -331,7 +338,9 @@ export const EVENTS = [
     details: {
       overview:
         "A fun, gamified connection challenge where patterns and ‘tone’ are everything. Connect clues and react to audio/visual prompts.",
+        date: "21-02-2026",
       timings: ["01:00 PM – 02:00 PM"],
+      teamSize: "1-3",
       contacts: [
         { role: "Student Coordinator", name: "Event Desk", phone: "555-0108" },
       ],
