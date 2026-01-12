@@ -24,7 +24,7 @@ export const EVENTS = [
       "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445104/feature-1n_boxizj.mp4",
     details: {
       date: "21-02-2026",
-      time: "10:30 AM – 12:00 PM",
+      time: "from 9:00 AM",
       teamSize: "2–3",
       overview:
         "High-energy coding event focused on creativity, execution, and adaptability. Any tech stack allowed, AI-friendly, judged via live demos.",
@@ -89,26 +89,44 @@ export const EVENTS = [
     videoSrc:
       "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445115/feature-2n_whzlao.mp4",
     details: {
+      date: "21-02-2026",
+      time: "from 9:00 AM",
+      teamSize: "Individual",
       overview:
-        "An endurance-style challenge with escalating difficulty. Expect unpredictable constraints and a final ‘glitch’ phase that tests debugging and resilience.",
-      timings: ["09:00 AM – 10:30 AM"],
-      contacts: [
-        { role: "Student Coordinator", name: "Event Desk", phone: "555-0102" },
-      ],
-      format: [
-        "Stage 1: Warm-up problems",
-        "Stage 2: Constraint mode (time/memory/limits)",
-        "Final: Glitch verse (debug + optimize under pressure)",
+        "An endurance-style challenge with escalating difficulty. Expect unpredictable constraints and a final 'glitch' phase that tests debugging and resilience.",
+      rounds: [
+        {
+          name: "Stage 1: Warm-up",
+          objective: "Warm-up problems",
+          judging: [
+            "Problem solving accuracy",
+            "Speed",
+            "Code quality",
+          ],
+        },
+        {
+          name: "Stage 2: Constraint Mode",
+          objective: "Time/memory/limits constraints",
+          judging: [
+            "Optimization",
+            "Efficiency",
+            "Adaptability",
+          ],
+        },
+        {
+          name: "Final: Glitch Verse",
+          objective: "Debug + optimize under pressure",
+          judging: [
+            "Problem score / test pass rate",
+            "Speed (tie-breakers)",
+            "Stability under constraints",
+          ],
+        },
       ],
       rules: [
-        "Solve within allotted time windows for each stage.",
-        "Use the allowed language set announced by organizers.",
-        "Keep your solutions original during the event window.",
-      ],
-      judging: [
-        "Problem score / test pass rate",
-        "Speed (tie-breakers)",
-        "Stability under constraints",
+        "Solve within allotted time windows for each stage",
+        "Use the allowed language set announced by organizers",
+        "Keep your solutions original during the event window",
       ],
       contacts: [
         { role: "Student Coordinator", name: "Kamil Hassan S", phone: "7448447272" },
@@ -132,7 +150,7 @@ export const EVENTS = [
       "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445093/feature-3_jrqk1k.mp4",
     details: {
       date: "21-02-2026",
-      time: "10:30 AM – 12:00 PM",
+      time: "from 9:00 AM",
       teamSize: "2",
       overview:
         "A teamwork-based coding relay where coordination and speed decide the winner.",
@@ -173,7 +191,7 @@ export const EVENTS = [
       "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445107/feature-12n_wg4xyu.mp4",
     details: {
       date: "21-02-2026",
-      time: "10:30 AM – 12:00 PM",
+      time: "from 9:00 AM",
       teamSize: "1–2",
       overview:
         "In this high-energy Hot Seat challenge, teams race through rapid-fire quiz rounds before the sharpest minds make it to the final spotlight. The finale channels the intensity of a Millionaire-style hot seat, where every answer is a heartbeat, every lifeline is a gamble, and every choice can flip the game. It’s fast, it’s fierce, and it pushes players to balance knowledge, speed, and guts under pressure—turning the entire event into a thrilling showdown of brainpower.",
@@ -211,6 +229,7 @@ export const EVENTS = [
       "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445104/feature-2_tbxum9.mp4",
     details: {
       date: "21-02-2026",
+      time: "from 9:00 AM",
       teamSize: "1–3",
       overview:
         "A platform to showcase your ideas, innovation, and technical thinking. Present your paper, defend your concept, and impress the judges with clarity, creativity, and confidence.",
@@ -253,31 +272,33 @@ export const EVENTS = [
     videoSrc:
       "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445097/feature-10n_indhwt.mp4",
     details: {
+      date: "21-02-2026",
+      time: "from 9:00 AM",
+      teamSize: "1-3",
       overview:
         "A 60-minute sprint to design and ship a clean UI. Balance visuals and usability — build something that feels like a product.",
-      timings: ["09:00 AM – 10:00 AM"],
-      contacts: [
-        { role: "Student Coordinator", name: "Event Desk", phone: "555-0106" },
-      ],
-      format: [
-        "Time-boxed sprint (60 minutes).",
-        "Theme/brief announced at start.",
+      rounds: [
+        {
+          name: "60-Minute Sprint",
+          duration: "60 mins",
+          objective: "Design and build a clean UI based on theme/brief",
+          judging: [
+            "Design clarity (30)",
+            "Responsiveness (25)",
+            "Usability (25)",
+            "Completeness (20)",
+          ],
+        },
       ],
       rules: [
-        " Participants must use their own laptops; college systems are not permitted",
-  "Internet access is disabled by default throughout the event",
-  "A one-time internet access window of 5 minutes will be provided during the event",
-  "Internet usage during this window is strictly limited to syntax and official documentation reference",
-  "Accessing tutorials, blogs, GitHub repositories, or solution-related content is prohibited",
-  "Any misuse of internet access will result in immediate disqualification",
-  "All required tools, including Visual Studio Code (VS Code), must be pre-installed",
-  "Judges' decisions are final"
-      ],
-      judging: [
-        "Design clarity",
-        "Responsiveness",
-        "Usability",
-        "Completeness",
+        "Participants must use their own laptops; college systems are not permitted",
+        "Internet access is disabled by default throughout the event",
+        "A one-time internet access window of 5 minutes will be provided during the event",
+        "Internet usage during this window is strictly limited to syntax and official documentation reference",
+        "Accessing tutorials, blogs, GitHub repositories, or solution-related content is prohibited",
+        "Any misuse of internet access will result in immediate disqualification",
+        "All required tools, including Visual Studio Code (VS Code), must be pre-installed",
+        "Judges' decisions are final",
       ],
       contacts: [
         { role: "Student Coordinator", name: "Udaya Krishna", phone: "8531933830" },
@@ -300,9 +321,28 @@ export const EVENTS = [
     videoSrc:
       "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445577/feature-7n_ee8jru.mp4",
     details: {
+      date: "21-02-2026",
+      time: "from 9:00 AM",
+      teamSize: "3-5",
       overview:
         "A strategy and quick-thinking auction event with an IPL-style twist. Build the best squad/stack within your budget.",
-      timings: ["01:00 PM – 02:00 PM"],
+      rounds: [
+        {
+          name: "Auction Round",
+          duration: "60 mins",
+          objective: "Build the best squad within budget",
+          judging: [
+            "Final score (60)",
+            "Budget efficiency (40)",
+          ],
+        },
+      ],
+      rules: [
+        "Stick to the allocated budget",
+        "No collusion between teams",
+        "Budget-based bidding rounds",
+        "Point system based on your final picks",
+      ],
       contacts: [
         { role: "Student Coordinator", name: "Suriya RS", phone: "8870256728" },
         { role: "Student Coordinator", name: "Surendran S", phone: "6374402965" },
@@ -311,12 +351,6 @@ export const EVENTS = [
         { role: "Student Coordinator", name: "Pramodh Kumar K" },
         { role: "Student Coordinator", name: "Shivanandha P" },
       ],
-      format: [
-        "Budget-based bidding rounds.",
-        "Point system based on your final picks.",
-      ],
-      rules: ["Stick to the allocated budget.", "No collusion between teams."],
-      judging: ["Final score", "Budget efficiency"],
       registration: "Click Register to join the auction lobby.",
       registerTo: "https://forms.gle/JZgWcGhFr6gM11PD8",
     },
@@ -329,21 +363,12 @@ export const EVENTS = [
     videoSrc:
       "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445101/feature-13n_fyshgw.mp4",
     details: {
+      date: "21-02-2026",
+      time: "from 9:00 AM",
+      teamSize: "1–3",
       overview:
-        "A fun, gamified connection challenge where patterns and ‘tone’ are everything. Connect clues and react to audio/visual prompts.",
-      timings: ["01:00 PM – 02:00 PM"],
-      contacts: [
-        { role: "Student Coordinator", name: "Event Desk", phone: "555-0108" },
-      ],
-      format: [
-        "Connection round (link the clues).",
-        "Sonic sense round (identify/react quickly).",
-      ],
-      rules: [
-        "Follow the facilitator’s instructions for each mini-round.",
-        "No external help/devices unless allowed.",
-      ],
-      contacts: [
+        "A fun, gamified connection challenge where patterns and 'tone' are everything. Connect clues and react to audio/visual prompts.",
+      rounds: [{name: "Connection Round",objective: "Link the clues",judging: ["Accuracy (60)","Speed (40)"]},{name: "Sonic Sense Round",objective: "Identify/react quickly to audio/visual prompts",judging: ["Accuracy (60)","Speed (40)"]}],rules: ["Follow the facilitator's instructions for each mini-round","No external help/devices unless allowed"],contacts: [
         { role: "Student Coordinator", name: "Kamaliga", phone: "9342857096" },
         { role: "Student Coordinator", name: "Sanjai Kumar G", phone: "8925209953" },
         { role: "Student Coordinator", name: "Ashok Kumar V" },
@@ -351,7 +376,6 @@ export const EVENTS = [
         { role: "Student Coordinator", name: "Yeswant BV" },
         { role: "Student Coordinator", name: "Vinniammal" },
       ],
-      judging: ["Accuracy", "Speed"],
       registration: "Click Register to enter the connect-tone arena.",
       registerTo: "https://forms.gle/JZgWcGhFr6gM11PD8",
     },
@@ -365,7 +389,7 @@ export const EVENTS = [
       "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445096/feature-11n_jjjgrl.mp4",
     details: {
       date: "21-02-2026",
-      time: "2:00 PM – 3:00 PM",
+      time: "from 9:00 AM",
       teamSize: "1–2",
       overview:
         "Fast-paced meme creation event testing humor, relevance, and explanation skills.",
@@ -397,8 +421,8 @@ export const EVENTS = [
     videoSrc:
       "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445107/feature-14n_ehmj6j.mp4",
     details: {
-      date: "21-03-2026",
-      time: "02:00 PM – 03:00 PM",
+      date: "21-02-2026",
+      time: "from 9:00 AM",
       teamSize: "2–4",
       overview:
         "Speaking event where teams instantly switch viewpoints on a topic.",
@@ -433,7 +457,7 @@ export const EVENTS = [
       "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445097/feature-9n_mt6ajv.mp4",
     details: {
       date: "21-02-2026",
-      time: "02:00 PM – 03:00 PM",
+      time: "from 9:00 AM",
       teamSize: "Individual / Duo",
       overview:
         "Funtrix at OZMENTA ’26 is a high-octane competitive zone combining sports precision and combat intensity. Step in, compete, and prove your dominance in the digital arena.",
@@ -498,7 +522,7 @@ export const EVENTS = [
       "https://res.cloudinary.com/dbe1m52oz/video/upload/v1767781724/Make_a_animated_1080p_202601071550_anqson.mp4",
     details: {
       date: "21-02-2026",
-      time: "9:30 AM – 3:00 PM",
+      time: "from 9:00 AM",
       teamSize: "1–4",
       overview:
         "Project Expo serves as a platform for students to present their innovative hardware and software projects, developed through academic coursework, self-directed learning, or independent exploration. Participants present their ideas through PPT presentations, live demonstrations, prototypes, or models, focusing on problem-solving ability, technical understanding, and real-world applicability.",
@@ -544,7 +568,7 @@ export const EVENTS = [
       "https://res.cloudinary.com/dbe1m52oz/video/upload/v1767781652/something_baqfhk.mp4",
     details: {
       date: "21-02-2026",
-      time: "09:00 AM – 10:30 AM",
+      time: "from 9:00 AM",
       teamSize: "Individual",
       overview:
         "Interactive hands-on workshop designed for practical learning. Build skills through guided sessions and real-world applications.",
@@ -582,3 +606,4 @@ export const EVENTS = [
 
 export const getEventBySlug = (slug) =>
   EVENTS.find((event) => event.slug === slug);
+
