@@ -64,10 +64,12 @@ export const EVENTS = [
         },
       ],
       rules: [
+        "Laptop is mandatory",
         "No pre-done projects",
         "Live demo mandatory",
         "Mention real vs mocked features",
-        "No plagiarism",
+        "Any AI is allowed",
+        "No copying from other teams",
       ],
       contacts: [
         { role: "Student Coordinator", name: "Yokeshkumar N", phone: "8056264811" },
