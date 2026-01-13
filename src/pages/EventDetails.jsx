@@ -370,18 +370,11 @@ const EventDetails = () => {
           </div>
 
           <div className="mt-12 grid grid-cols-1 gap-10 pb-24 md:grid-cols-2">
-            {event.slug === "workshop" ? (
-              <div className="col-span-1 md:col-span-2 flex items-center justify-center py-20">
-                <p className="special-font font-zentry text-5xl md:text-6xl text-blue-50 text-center">
-                  To be announced
+            <>
+              <div>
+                <p className="text-xs uppercase tracking-widest text-blue-50">
+                  Overview
                 </p>
-              </div>
-            ) : (
-              <>
-                <div>
-                  <p className="text-xs uppercase tracking-widest text-blue-50">
-                    Overview
-                  </p>
                   {isMeaningfulValue(event.details?.overview) ? (
                     <p className="mt-3 font-circular-web text-blue-50/70">
                       {event.details?.overview}
@@ -546,8 +539,7 @@ const EventDetails = () => {
                     </>
                   ) : null}
                 </div>
-              </>
-            )}
+            </>
           </div>
         </div>
       </div>
