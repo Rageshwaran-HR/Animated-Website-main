@@ -198,6 +198,12 @@ const Navbar = () => {
                   </Link>
                 ))
               }
+              <Link
+                className='nav-hover-btn'
+                to="/developers"
+              >
+                Developers
+              </Link>
             </div>
 
             <button className='ml-10 flex items-center space-x-0.5' onClick={toggleAudioIndicator} aria-label='Toggle music'>

@@ -11,6 +11,7 @@ const Story = React.lazy(() => import("./components/Story"));
 const Contact = React.lazy(() => import("./components/Contact"));
 const Footer = React.lazy(() => import("./components/Footer"));
 const EventDetails = React.lazy(() => import("./pages/EventDetails"));
+const Developers = React.lazy(() => import("./pages/Developers"));
 
 const ScrollToHash = () => {
   const { hash, pathname, state } = useLocation();
@@ -171,15 +172,19 @@ const Home = () => {
 };
 
 const App = () => {
+  const location = useLocation();
+  const isDevelopersPage = location.pathname === '/developers';
+
   return (
     <main className="relative min-h-screen w-screen overflow-x-hidden">
       <BackgroundAudio />
-      <Navbar />
+      {!isDevelopersPage && <Navbar />}
       <ScrollToHash />
       <Suspense fallback={<div className="h-screen" />}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/events/:slug" element={<EventDetails />} />
+          <Route path="/developers" element={<Developers />} />
         </Routes>
       </Suspense>
     </main>
