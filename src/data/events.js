@@ -205,7 +205,7 @@ export const EVENTS = [
           objective: "The qualified teams tackle tougher questions. All five teams advance, but their speed and score determine the order in which they enter the finale. Still no lifelines—just grit and quick thinking.",
           duration: "20 mins" },
         { name: "Hot Seat Finale", 
-          objective: "nspired by the iconic Millionaire format, teams take the hotseat one by one. With three lifelines—50:50, Phone-a-Friend, and Pass—they must climb the levels without slipping. One wrong answer knocks them down and out. Smart strategy and calm under pressure decide who claims the crown.",
+          objective: "Inspired by the iconic Millionaire format, teams take the hotseat one by one. With three lifelines—50:50, Phone-a-Friend, and Pass—they must climb the levels without slipping. One wrong answer knocks them down and out. Smart strategy and calm under pressure decide who claims the crown.",
           duration: "20 mins" },
       ],
       judging: ["Any form of copying, collusion, or unfair collaboration with other teams.", "Using any unauthorized external help or communication", "Exceeding time limits or violating event rules", "Manipulating scoring, submissions, or the judging system"],
