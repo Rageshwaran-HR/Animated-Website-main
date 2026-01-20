@@ -565,7 +565,7 @@ export const EVENTS = [
     name: "Workshop",
     slug: "workshop",
     track: "Featured",
-    short: "Hands-on Robotics Workshop - Build Your Own Robot",
+    short: "Agentic AI for Business: From Products to Real-Time Simulation",
     videoSrc:
       "https://res.cloudinary.com/dbe1m52oz/video/upload/v1767781652/something_baqfhk.mp4",
     details: {
@@ -573,13 +573,15 @@ export const EVENTS = [
       time: "from 9:00 AM",
       teamSize: "Individual",
       overview:
-        "The Spinabot Workshop is an intensive hands-on robotics and electronics workshop conducted by experienced robotics professionals and IoT specialists. This workshop is designed to introduce students to sensor integration, motion control, and wireless communication using Bluetooth connectivity. Participants will build a Bluetooth-controlled spinning robot from scratch under expert guidance, integrating MPU6050 (gyroscope and accelerometer) sensors to enable motion-based control and stability feedback. Led by industry mentors and technical experts, this engaging workshop combines practical learning with real-world applications in robotics and IoT, making it perfect for beginners interested in electronics, programming, and automation.",
+        "Experience an immersive workshop conducted by Spinabot that transforms how you understand Agentic AI systems in real business scenarios. Unlike traditional AI workshops focused on theory, this product-driven, simulation-based session leverages Spinabot's core platforms—Chatbot Builder, Voice Agent Builder, Workflow Automation, Cognitive Products, and Small Language Models (SLMs). Participants will learn how intelligent agents are designed, orchestrated, and applied in real-world companies through interactive product demonstrations and a hands-on company simulation. Working in scrum teams, you'll take on roles like Product Manager, Chatbot Developer, Voice Agent Developer, and Workflow Automation Developer to design agent-driven business solutions. Perfect for students, startup founders, and developers looking to move beyond basic automation and understand how AI agents operate as intelligent systems inside real businesses.",
       rules: [
-        "All participants must bring their own laptops with Arduino IDE pre-installed",
-        "Participants are encouraged to work individually but can collaborate during troubleshooting",
-        "Handle all electronic components with care to avoid damage",
-        "Follow safety guidelines while working with electrical circuits",
-        "Active participation and engagement throughout the workshop is mandatory",
+        "Bring your own laptop with internet access",
+        "Participate actively in team-based simulation exercises",
+        "Collaborate with your assigned scrum team (4 members per team)",
+        "Complete the interactive quiz and business Q&A sessions",
+        "Engage in the real-time AI company simulation challenge",
+        "Present your team's agentic workflow solution during demos",
+        "Internship opportunities available for the winning team (4 people interviewed and selected)",
       ],
       contacts: [
         { role: "Workshop Coordinator", name: "Akshayasree S", phone: "9445575579" },
