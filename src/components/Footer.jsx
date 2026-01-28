@@ -241,7 +241,7 @@ const Footer = () => {
               to="/developers"
               className="font-zentry text-black transition-colors hover:text-white hover:underline"
             >
-              our amazing team
+              our ozmenta website team
             </Link>
           </p>
         </div>
