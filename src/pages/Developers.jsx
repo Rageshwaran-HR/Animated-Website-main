@@ -10,7 +10,7 @@ const developers = [
     image:
       "https://res.cloudinary.com/dm0vwe5cw/image/upload/v1769679524/WhatsApp_Image_2026-01-29_at_3.08.09_PM_hz3uyy.jpg",
     social: {
-      email: "rageshwaran@example.com",
+      email: "rageshwaranhr@gmail.com",
       github: "https://github.com/Rageshwaran-HR",
       linkedin: "https://www.linkedin.com/in/rageshwaranhr/",
     },
@@ -43,7 +43,7 @@ const developers = [
     image:
       "https://res.cloudinary.com/dm0vwe5cw/image/upload/v1769676204/WhatsApp_Image_2026-01-29_at_2.11.50_PM_hdfb8r.jpg",
     social: {
-      email: "vaaheesan@example.com",
+      email: "vaahee21@gmail.com",
       github: "https://github.com/vacmar",
       linkedin: "https://www.linkedin.com/in/vaaheesan-s/",
     },
