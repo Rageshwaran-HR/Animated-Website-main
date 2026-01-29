@@ -7,7 +7,8 @@ const developers = [
   {
     name: "Rageshwaran R",
     year: "4th Year, CSE",
-    image: "/img/developers/rageshwaran.jpg",
+    image:
+      "https://res.cloudinary.com/dm0vwe5cw/image/upload/YOUR_CLOUDINARY_URL_HERE",
     social: {
       email: "rageshwaran@example.com",
       github: "https://github.com/Rageshwaran-HR",
@@ -17,7 +18,8 @@ const developers = [
   {
     name: "Vishvaa K",
     year: "3rd Year, CSE",
-    image: "/img/developers/vishvaa.jpg",
+    image:
+      "https://res.cloudinary.com/dm0vwe5cw/image/upload/YOUR_CLOUDINARY_URL_HERE",
     social: {
       email: "kvishvaa6@gmail.com",
       github: "https://github.com/vishvaa-vsk",
@@ -27,7 +29,8 @@ const developers = [
   {
     name: "James Jacob I",
     year: "3rd Year, CSE",
-    image: "https://res.cloudinary.com/dm0vwe5cw/image/upload/v1769507311/IMG-20260112-WA0009_ixfupz.jpg",
+    image:
+      "https://res.cloudinary.com/dm0vwe5cw/image/upload/v1769507311/IMG-20260112-WA0009_ixfupz.jpg",
     social: {
       email: "jamesjacob819i@gmail.com",
       github: "https://github.com/jamesjacob819i",
@@ -37,7 +40,8 @@ const developers = [
   {
     name: "Vaaheesan S",
     year: "3rd Year, CSE",
-    image: "/img/developers/vaaheesan.jpg",
+    image:
+      "https://res.cloudinary.com/dm0vwe5cw/image/upload/YOUR_CLOUDINARY_URL_HERE",
     social: {
       email: "vaaheesan@example.com",
       github: "https://github.com/vacmar",
@@ -63,7 +67,9 @@ const Developers = () => {
         ← Back to Home
       </button>
       <div className="relative">
-        <section className={`developers-header ${isLoading ? "is--loading" : ""}`}>
+        <section
+          className={`developers-header ${isLoading ? "is--loading" : ""}`}
+        >
           {isLoading && (
             <div className="developers-loader">
               <div className="developers__h1">
@@ -84,25 +90,22 @@ const Developers = () => {
                   <div className="relative rounded-card">
                     <div className="minimal-card">
                       <div className="minimal-image-container">
-                        <img 
-                          src="/img/404.gif" 
-                          alt="Developer Avatar" 
+                        <img
+                          src={dev.image}
+                          alt="Developer Avatar"
                           className="minimal-image"
                           onError={(e) => {
-                            e.target.style.display = 'none';
-                            e.target.parentElement.style.background = 'linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%)';
+                            e.target.style.display = "none";
+                            e.target.parentElement.style.background =
+                              "linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%)";
                           }}
                         />
                       </div>
                       <div className="minimal-content">
                         <div className="minimal-header">
-                          <h3 className="minimal-name">
-                            {dev.name}
-                          </h3>
+                          <h3 className="minimal-name">{dev.name}</h3>
                         </div>
-                        <p className="minimal-title">
-                          {dev.year}
-                        </p>
+                        <p className="minimal-title">{dev.year}</p>
                         <div className="minimal-footer">
                           <div className="minimal-social-links">
                             {dev.social.email && (
