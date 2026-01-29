@@ -41,7 +41,7 @@ const developers = [
     name: "Vaaheesan S",
     year: "3rd Year, CSE",
     image:
-      "https://res.cloudinary.com/dm0vwe5cw/image/upload/v1769675718/WhatsApp_Image_2026-01-29_at_2.02.57_PM_z9gmvm.jpg",
+      "https://res.cloudinary.com/dm0vwe5cw/image/upload/v1769676204/WhatsApp_Image_2026-01-29_at_2.11.50_PM_hdfb8r.jpg",
     social: {
       email: "vaaheesan@example.com",
       github: "https://github.com/vacmar",
