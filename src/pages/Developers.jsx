@@ -27,9 +27,9 @@ const developers = [
   {
     name: "James Jacob I",
     year: "3rd Year, CSE",
-    image: "https://res.cloudinary.com/dbe1m52oz/image/upload/v1768898626/wallhaven-qz2oqq_1920x1080_cdgvgq.png",
+    image: "/img/developers/james.jpg",
     social: {
-      email: "jamesjofcl1@example.com",
+      email: "james@example.com",
       github: "https://github.com/jamesjacob819i",
       linkedin: "https://www.linkedin.com/in/james-jacob-i/",
     },
@@ -49,7 +49,6 @@ const developers = [
 const Developers = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
-  const [failedImages, setFailedImages] = useState(new Set());
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -57,19 +56,6 @@ const Developers = () => {
     }, 2000);
     return () => clearTimeout(timer);
   }, []);
-
-  const handleImageError = (index) => {
-    setFailedImages((prev) => new Set([...prev, index]));
-  };
-
-  const handleMouseMove = (e) => {
-    const card = e.currentTarget;
-    const rect = card.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
-    card.style.setProperty('--mouse-x', `${x}%`);
-    card.style.setProperty('--mouse-y', `${y}%`);
-  };
 
   return (
     <main className="developers-main">
@@ -94,19 +80,18 @@ const Developers = () => {
             <h1 className="developers-page-title">Developers</h1>
             <div className="comet-cards-container">
               {developers.map((dev, index) => (
-                <div 
-                  key={index} 
-                  className="perspective-distant transform-3d"
-                  onMouseMove={handleMouseMove}
-                >
+                <div key={index} className="perspective-distant transform-3d">
                   <div className="relative rounded-card">
                     <div className="minimal-card">
                       <div className="minimal-image-container">
                         <img 
-                          src={failedImages.has(index) ? '/img/404.gif' : dev.image} 
-                          alt={dev.name} 
+                          src="/img/404.gif" 
+                          alt="Developer Avatar" 
                           className="minimal-image"
-                          onError={() => handleImageError(index)}
+                          onError={(e) => {
+                            e.target.style.display = 'none';
+                            e.target.parentElement.style.background = 'linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%)';
+                          }}
                         />
                       </div>
                       <div className="minimal-content">
