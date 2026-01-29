@@ -19,7 +19,7 @@ const developers = [
     name: "Vishvaa K",
     year: "3rd Year, CSE",
     image:
-      "https://res.cloudinary.com/dm0vwe5cw/image/upload/YOUR_CLOUDINARY_URL_HERE",
+      "https://res.cloudinary.com/dm0vwe5cw/image/upload/v1769676315/WhatsApp_Image_2026-01-20_at_1.15.11_PM_tsvnvc.jpg",
     social: {
       email: "kvishvaa6@gmail.com",
       github: "https://github.com/vishvaa-vsk",
