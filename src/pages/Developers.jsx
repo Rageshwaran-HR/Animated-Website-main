@@ -27,9 +27,9 @@ const developers = [
   {
     name: "James Jacob I",
     year: "3rd Year, CSE",
-    image: "/img/developers/james.jpg",
+    image: "https://res.cloudinary.com/dm0vwe5cw/image/upload/v1769507311/IMG-20260112-WA0009_ixfupz.jpg",
     social: {
-      email: "james@example.com",
+      email: "jamesjacob819i@gmail.com",
       github: "https://github.com/jamesjacob819i",
       linkedin: "https://www.linkedin.com/in/james-jacob-i/",
     },
