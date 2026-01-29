@@ -8,7 +8,7 @@ const developers = [
     name: "Rageshwaran R",
     year: "4th Year, CSE",
     image:
-      "https://res.cloudinary.com/dm0vwe5cw/image/upload/YOUR_CLOUDINARY_URL_HERE",
+      "https://res.cloudinary.com/dm0vwe5cw/image/upload/v1769679524/WhatsApp_Image_2026-01-29_at_3.08.09_PM_hz3uyy.jpg",
     social: {
       email: "rageshwaran@example.com",
       github: "https://github.com/Rageshwaran-HR",
