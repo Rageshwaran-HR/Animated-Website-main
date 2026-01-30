@@ -21,7 +21,7 @@ export const EVENTS = [
     track: "Technical",
     short: "Creativity-first rapid coding showdown",
     videoSrc:
-      "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445104/feature-1n_boxizj.mp4",
+      "https://res.cloudinary.com/dm0vwe5cw/video/upload/v1769794095/feature-1n_vau3sz.mp4",
     details: {
       date: "21-02-2026",
       time: "from 9:00 AM",
@@ -149,7 +149,7 @@ export const EVENTS = [
     track: "Technical",
     short: "Two-player code relay challenge",
     videoSrc:
-      "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445093/feature-3_jrqk1k.mp4",
+      "https://res.cloudinary.com/dm0vwe5cw/video/upload/v1769794127/feature-3_mkmgf7.mp4",
     details: {
       date: "21-02-2026",
       time: "from 9:00 AM",
@@ -190,7 +190,7 @@ export const EVENTS = [
     track: "Technical",
     short: "High-pressure quiz showdown",
     videoSrc:
-      "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445107/feature-12n_wg4xyu.mp4",
+      "https://res.cloudinary.com/dm0vwe5cw/video/upload/v1769794181/feature-12n_nmn9to.mp4",
     details: {
       date: "21-02-2026",
       time: "from 9:00 AM",
@@ -228,7 +228,7 @@ export const EVENTS = [
     track: "Technical",
     short: "Innovation & originality in research ideas",
     videoSrc:
-      "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445104/feature-2_tbxum9.mp4",
+      "https://res.cloudinary.com/dm0vwe5cw/video/upload/v1769794112/feature-2_fasq1a.mp4",
     details: {
       date: "21-02-2026",
       time: "from 9:00 AM",
@@ -272,7 +272,7 @@ export const EVENTS = [
     track: "Technical",
     short: "UI/UX + Website Sprint",
     videoSrc:
-      "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445097/feature-10n_indhwt.mp4",
+      "https://res.cloudinary.com/dm0vwe5cw/video/upload/v1769794143/feature-10n_qb8zvp.mp4",
     details: {
       date: "21-02-2026",
       time: "from 9:00 AM",
