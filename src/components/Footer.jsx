@@ -103,7 +103,7 @@ const Footer = () => {
   return (
     <footer
       id="contact"
-      className="w-screen bg-gradient-to-r from-blue-300 to-blue-400 py-6 text-black"
+      className="w-screen bg-gradient-to-r from-slate-950 to-blue-300 py-6 text-white"
     >
       <div className="container mx-auto px-4">
         <div
