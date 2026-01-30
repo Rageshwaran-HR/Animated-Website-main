@@ -222,7 +222,7 @@ const Footer = () => {
                 key={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-black transition-colors duration-500 ease-in-out hover:text-white"
+                className="text-white transition-colors duration-500 ease-in-out hover:text-blue-300"
               >
                 {link.icon}
               </a>
@@ -237,12 +237,12 @@ const Footer = () => {
           </a>
         </div>
 
-        <div className="mt-4 border-t border-black/10 pt-4 text-center">
-          <p className="font-circular-web text-base text-black/70 md:text-lg">
+        <div className="mt-4 border-t border-white/10 pt-4 text-center">
+          <p className="font-circular-web text-base text-white md:text-lg">
             Website developed by{" "}
             <Link
               to="/developers"
-              className="font-zentry text-black transition-colors hover:text-white hover:underline"
+              className="font-zentry text-white transition-colors hover:text-blue-300 hover:underline"
             >
               our ozmenta website team
             </Link>
