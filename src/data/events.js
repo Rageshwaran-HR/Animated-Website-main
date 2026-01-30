@@ -89,7 +89,7 @@ export const EVENTS = [
     track: "Technical",
     short: "Coding From Hell → Glitch Verse",
     videoSrc:
-      "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445115/feature-2n_whzlao.mp4",
+      "https://res.cloudinary.com/dm0vwe5cw/video/upload/v1769793706/feature-2n_qugb2g.mp4",
     details: {
       date: "21-02-2026",
       time: "from 9:00 AM",
@@ -321,7 +321,7 @@ export const EVENTS = [
     track: "Non-Tech",
     short: "IPL Style Auction",
     videoSrc:
-      "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445577/feature-7n_ee8jru.mp4",
+      "https://res.cloudinary.com/dm0vwe5cw/video/upload/v1769793892/feature-7n_xgpjte.mp4",
     details: {
       date: "21-02-2026",
       time: "from 9:00 AM",
@@ -363,7 +363,7 @@ export const EVENTS = [
     track: "Non-Tech",
     short: "Connection → Sonic Sense",
     videoSrc:
-      "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445101/feature-13n_fyshgw.mp4",
+      "https://res.cloudinary.com/dm0vwe5cw/video/upload/v1769793592/feature-13n_szp5yq.mp4",
     details: {
       date: "21-02-2026",
       time: "from 9:00 AM",
@@ -388,7 +388,7 @@ export const EVENTS = [
     track: "Non-Tech",
     short: "Humor meets creativity",
     videoSrc:
-      "https://res.cloudinary.com/domxvnuqp/video/upload/v1767445096/feature-11n_jjjgrl.mp4",
+      "https://res.cloudinary.com/dm0vwe5cw/video/upload/v1769793343/feature-11n_zwx7xo.mp4",
     details: {
       date: "21-02-2026",
       time: "from 9:00 AM",

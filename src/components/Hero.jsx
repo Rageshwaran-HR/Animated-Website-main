@@ -70,7 +70,7 @@ const Hero = () => {
         className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75"
       >
         <video
-          src="https://res.cloudinary.com/domxvnuqp/video/upload/q_auto,f_auto/v1767445104/heron_fq37uh.mp4"
+          src="https://res.cloudinary.com/dm0vwe5cw/video/upload/v1769792351/heron_ueqkav.mp4"
           autoPlay
           loop
           muted
