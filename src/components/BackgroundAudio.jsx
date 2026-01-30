@@ -1,7 +1,8 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const BackgroundAudio = () => {
   const audioRef = useRef(null);
+  const [isPlayAttempted, setIsPlayAttempted] = useState(false);
 
   useEffect(() => {
     const audioEl = audioRef.current;
@@ -9,27 +10,44 @@ const BackgroundAudio = () => {
 
     const tryPlay = async () => {
       try {
+        // Ensure audio is loaded before playing
+        if (audioEl.readyState < 2) {
+          // readyState < 2 means not enough data
+          audioEl.load();
+        }
         await audioEl.play();
-      } catch {
-        // Autoplay may be blocked until a user gesture.
+        setIsPlayAttempted(true);
+      } catch (error) {
+        // Autoplay blocked - will play on first user interaction
+        console.log("Autoplay blocked, waiting for user interaction");
       }
     };
 
-    const onFirstInteraction = () => {
-      tryPlay();
-      window.removeEventListener("pointerdown", onFirstInteraction);
+    const onFirstInteraction = async () => {
+      if (!isPlayAttempted) {
+        await tryPlay();
+        window.removeEventListener("pointerdown", onFirstInteraction);
+        window.removeEventListener("click", onFirstInteraction);
+      }
     };
 
-    // Attempt immediate play; if blocked, play on first click/tap.
-    tryPlay();
+    // Small delay to ensure audio element is ready
+    const playTimer = setTimeout(() => {
+      tryPlay();
+    }, 500);
+
+    // Fallback: play on first user interaction
     window.addEventListener("pointerdown", onFirstInteraction, {
       passive: true,
     });
+    window.addEventListener("click", onFirstInteraction, { passive: true });
 
     return () => {
+      clearTimeout(playTimer);
       window.removeEventListener("pointerdown", onFirstInteraction);
+      window.removeEventListener("click", onFirstInteraction);
     };
-  }, []);
+  }, [isPlayAttempted]);
 
   return (
     <audio
@@ -37,8 +55,9 @@ const BackgroundAudio = () => {
       ref={audioRef}
       className="hidden"
       src="/audio/hero-4.mp3"
-      preload="none"
-      volume={0.9}
+      preload="auto"
+      volume="0.9"
+      autoPlay={false}
     />
   );
 };
