@@ -456,7 +456,7 @@ export const EVENTS = [
     track: "Non-Tech",
     short: "Sports precision × combat intensity",
     videoSrc:
-      "https://res.cloudinary.com/dm0vwe5cw/video/upload/v1769794188/feature-14n_gsiove.mp4",
+      "https://res.cloudinary.com/dm0vwe5cw/video/upload/v1769794637/feature-9n_gbgn5j.mp4",
     details: {
       date: "21-02-2026",
       time: "from 9:00 AM",
