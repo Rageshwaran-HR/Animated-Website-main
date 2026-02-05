@@ -72,10 +72,22 @@ export const EVENTS = [
         "No copying from other teams",
       ],
       contacts: [
-        { role: "Student Coordinator", name: "Yokeshkumar N", phone: "8056264811" },
+        {
+          role: "Student Coordinator",
+          name: "Yokeshkumar N",
+          phone: "8056264811",
+        },
         { role: "Student Coordinator", name: "Jagan S", phone: "9344561541" },
-        { role: "Student Coordinator", name: "Vaaheesan S", phone: "9499941994" },
-        { role: "Student Coordinator", name: "Lakshmikanthan", phone: "9344647710" },
+        {
+          role: "Student Coordinator",
+          name: "Vaaheesan S",
+          phone: "9499941994",
+        },
+        {
+          role: "Student Coordinator",
+          name: "Lakshmikanthan",
+          phone: "9344647710",
+        },
         { role: "Student Coordinator", name: "Sujhan S" },
         { role: "Student Coordinator", name: "Nikhil S" },
       ],
@@ -99,43 +111,54 @@ export const EVENTS = [
       rounds: [
         {
           name: "Stage 1: Glitch Verse",
-          objective: "Identify and fix logical, runtime, and semantic bugs in pre-written programs within a limited time.",
+          objective:
+            "Identify and fix logical, runtime, and semantic bugs in pre-written programs within a limited time.",
           judging: [
-          "Bug identification accuracy",
-          "Correctness of fixes",
-          "Successful execution against test cases",
-        ],
+            "Bug identification accuracy",
+            "Correctness of fixes",
+            "Successful execution against test cases",
+          ],
         },
         {
           name: "Stage 2: Code From Hell",
-          objective: "Solve extremely simple programming problems using intentionally inefficient, over-engineered, and non-optimal logic while still producing correct output.",
+          objective:
+            "Solve extremely simple programming problems using intentionally inefficient, over-engineered, and non-optimal logic while still producing correct output.",
           judging: [
-          "Correctness of output",
-          "Creativity in inefficient logic",
-          "Degree of intentional over-engineering",
-        ],
+            "Correctness of output",
+            "Creativity in inefficient logic",
+            "Degree of intentional over-engineering",
+          ],
         },
         {
           name: "Final Stage: Deciphering",
-          objective: "Decode hidden logic, patterns, or algorithmic intent from problem statements and implement a working solution under pressure.",
+          objective:
+            "Decode hidden logic, patterns, or algorithmic intent from problem statements and implement a working solution under pressure.",
           judging: [
-          "Logical interpretation",
-          "Algorithmic correctness",
-          "Handling of edge cases",
-          "Speed (tie-breaker)",
-        ],
+            "Logical interpretation",
+            "Algorithmic correctness",
+            "Handling of edge cases",
+            "Speed (tie-breaker)",
+          ],
         },
       ],
       rules: [
-      "This is an individual event; team participation is not allowed",
-      "Internet access and AI-based tools are strictly prohibited",
-      "Participants must use only the systems and IDEs provided by the organizers",
-      "Programming languages allowed will be announced prior to the event",
-      "Any form of malpractice or external assistance will result in disqualification",
-    ],
+        "This is an individual event; team participation is not allowed",
+        "Internet access and AI-based tools are strictly prohibited",
+        "Participants must use only the systems and IDEs provided by the organizers",
+        "Programming languages allowed will be announced prior to the event",
+        "Any form of malpractice or external assistance will result in disqualification",
+      ],
       contacts: [
-        { role: "Student Coordinator", name: "Kamil Hassan S", phone: "7448447272" },
-        { role: "Student Coordinator", name: "Mohammed Mustaq Mubeen", phone: "9344534434" },
+        {
+          role: "Student Coordinator",
+          name: "Kamil Hassan S",
+          phone: "7448447272",
+        },
+        {
+          role: "Student Coordinator",
+          name: "Mohammed Mustaq Mubeen",
+          phone: "9344534434",
+        },
         { role: "Student Coordinator", name: "Vishvaa K" },
         { role: "Student Coordinator", name: "James Jacob I" },
         { role: "Student Coordinator", name: "Akhil D" },
@@ -177,11 +200,31 @@ export const EVENTS = [
         "Event structure revealed one day prior",
       ],
       contacts: [
-        { role: "Student Coordinator", name: "Praveen Ram", phone: "9150290204" },
-        { role: "Student Coordinator", name: "Shyam Evin Raj", phone: "6385118647" },
-        { role: "Student Coordinator", name: "Gladis Keziah", phone: "8270089542" },
-        { role: "Student Coordinator", name: "Canosa R Krucy", phone: "9345705837" },
-        { role: "Student Coordinator", name: "Tarakeshwaran", phone: "8870982120" },
+        {
+          role: "Student Coordinator",
+          name: "Praveen Ram",
+          phone: "9150290204",
+        },
+        {
+          role: "Student Coordinator",
+          name: "Shyam Evin Raj",
+          phone: "6385118647",
+        },
+        {
+          role: "Student Coordinator",
+          name: "Gladis Keziah",
+          phone: "8270089542",
+        },
+        {
+          role: "Student Coordinator",
+          name: "Canosa R Krucy",
+          phone: "9345705837",
+        },
+        {
+          role: "Student Coordinator",
+          name: "Tarakeshwaran",
+          phone: "8870982120",
+        },
       ],
       registration: "Click Register to continue to the registration section.",
       registerTo: "https://forms.gle/JZgWcGhFr6gM11PD8",
@@ -201,24 +244,58 @@ export const EVENTS = [
       overview:
         "In this high-energy Hot Seat challenge, teams race through rapid-fire quiz rounds before the sharpest minds make it to the final spotlight. The finale channels the intensity of a Millionaire-style hot seat, where every answer is a heartbeat, every lifeline is a gamble, and every choice can flip the game. It’s fast, it’s fierce, and it pushes players to balance knowledge, speed, and guts under pressure—turning the entire event into a thrilling showdown of brainpower.",
       rounds: [
-        { name: "Elite 5",
-          objective:"All teams face fifteen timed questions. Accuracy + speed decide the top five teams. No lifelines. Pure adrenaline.",
-          duration: "20 mins" },
-        { name: "Fastest Finger First", 
-          objective: "The qualified teams tackle tougher questions. All five teams advance, but their speed and score determine the order in which they enter the finale. Still no lifelines—just grit and quick thinking.",
-          duration: "20 mins" },
-        { name: "Hot Seat Finale", 
-          objective: "Inspired by the iconic Millionaire format, teams take the hotseat one by one. With three lifelines—50:50, Phone-a-Friend, and Pass—they must climb the levels without slipping. One wrong answer knocks them down and out. Smart strategy and calm under pressure decide who claims the crown.",
-          duration: "20 mins" },
+        {
+          name: "Elite 5",
+          objective:
+            "All teams face fifteen timed questions. Accuracy + speed decide the top five teams. No lifelines. Pure adrenaline.",
+          duration: "20 mins",
+        },
+        {
+          name: "Fastest Finger First",
+          objective:
+            "The qualified teams tackle tougher questions. All five teams advance, but their speed and score determine the order in which they enter the finale. Still no lifelines—just grit and quick thinking.",
+          duration: "20 mins",
+        },
+        {
+          name: "Hot Seat Finale",
+          objective:
+            "Inspired by the iconic Millionaire format, teams take the hotseat one by one. With three lifelines—50:50, Phone-a-Friend, and Pass—they must climb the levels without slipping. One wrong answer knocks them down and out. Smart strategy and calm under pressure decide who claims the crown.",
+          duration: "20 mins",
+        },
       ],
-      judging: ["Any form of copying, collusion, or unfair collaboration with other teams.", "Using any unauthorized external help or communication", "Exceeding time limits or violating event rules", "Manipulating scoring, submissions, or the judging system"],
+      judging: [
+        "Any form of copying, collusion, or unfair collaboration with other teams.",
+        "Using any unauthorized external help or communication",
+        "Exceeding time limits or violating event rules",
+        "Manipulating scoring, submissions, or the judging system",
+      ],
       contacts: [
-        { role: "Student Coordinator", name: "Naveen Kumar S", phone: "6381574955" },
-        { role: "Student Coordinator", name: "Tarunikaa B", phone: "9840918520" },
-        { role: "Student Coordinator", name: "Akaash Srinivasan", phone: "7305488743" },
+        {
+          role: "Student Coordinator",
+          name: "Naveen Kumar S",
+          phone: "6381574955",
+        },
+        {
+          role: "Student Coordinator",
+          name: "Tarunikaa B",
+          phone: "9840918520",
+        },
+        {
+          role: "Student Coordinator",
+          name: "Akaash Srinivasan",
+          phone: "7305488743",
+        },
         { role: "Student Coordinator", name: "Abinand P", phone: "9445920529" },
-        { role: "Student Coordinator", name: "Sharon Jessica S", phone: "7418777315" },
-        { role: "Student Coordinator", name: "Shree Ranjani B", phone: "7305491657" },
+        {
+          role: "Student Coordinator",
+          name: "Sharon Jessica S",
+          phone: "7418777315",
+        },
+        {
+          role: "Student Coordinator",
+          name: "Shree Ranjani B",
+          phone: "7305491657",
+        },
       ],
       registration: "Click Register to continue to the registration section.",
       registerTo:
@@ -267,7 +344,8 @@ export const EVENTS = [
         { role: "Student Coordinator", name: "Balaji S" },
       ],
       registration: "Click Register to continue to the registration section.",
-      registerTo: "https://unstop.com/conferences/paper-presentation-velammal-engineering-college-vec-chennai-tamil-nadu-1629156",
+      registerTo:
+        "https://unstop.com/conferences/paper-presentation-velammal-engineering-college-vec-chennai-tamil-nadu-1629156",
     },
   },
   {
@@ -307,7 +385,11 @@ export const EVENTS = [
         "Judges' decisions are final",
       ],
       contacts: [
-        { role: "Student Coordinator", name: "Udaya Krishna", phone: "8531933830" },
+        {
+          role: "Student Coordinator",
+          name: "Udaya Krishna",
+          phone: "8531933830",
+        },
         { role: "Student Coordinator", name: "Ragul KB", phone: "7448765530" },
         { role: "Student Coordinator", name: "Preetham" },
         { role: "Student Coordinator", name: "Prasath" },
@@ -337,10 +419,7 @@ export const EVENTS = [
           name: "Auction Round",
           duration: "60 mins",
           objective: "Build the best squad within budget",
-          judging: [
-            "Final score (60)",
-            "Budget efficiency (40)",
-          ],
+          judging: ["Final score (60)", "Budget efficiency (40)"],
         },
       ],
       rules: [
@@ -351,7 +430,11 @@ export const EVENTS = [
       ],
       contacts: [
         { role: "Student Coordinator", name: "Suriya RS", phone: "8870256728" },
-        { role: "Student Coordinator", name: "Surendran S", phone: "6374402965" },
+        {
+          role: "Student Coordinator",
+          name: "Surendran S",
+          phone: "6374402965",
+        },
         { role: "Student Coordinator", name: "Pragadesh Kumar G S" },
         { role: "Student Coordinator", name: "Vinayaganand S" },
         { role: "Student Coordinator", name: "Pramodh Kumar K" },
@@ -374,9 +457,29 @@ export const EVENTS = [
       teamSize: "1–3",
       overview:
         "A fun, gamified connection challenge where patterns and 'tone' are everything. Connect clues and react to audio/visual prompts.",
-      rounds: [{name: "Connection Round",objective: "Link the clues",judging: ["Accuracy (60)","Speed (40)"]},{name: "Sonic Sense Round",objective: "Identify/react quickly to audio/visual prompts",judging: ["Accuracy (60)","Speed (40)"]}],rules: ["Follow the facilitator's instructions for each mini-round","No external help/devices unless allowed"],contacts: [
+      rounds: [
+        {
+          name: "Connection Round",
+          objective: "Link the clues",
+          judging: ["Accuracy (60)", "Speed (40)"],
+        },
+        {
+          name: "Sonic Sense Round",
+          objective: "Identify/react quickly to audio/visual prompts",
+          judging: ["Accuracy (60)", "Speed (40)"],
+        },
+      ],
+      rules: [
+        "Follow the facilitator's instructions for each mini-round",
+        "No external help/devices unless allowed",
+      ],
+      contacts: [
         { role: "Student Coordinator", name: "Kamaliga", phone: "9342857096" },
-        { role: "Student Coordinator", name: "Sanjai Kumar G", phone: "8925209953" },
+        {
+          role: "Student Coordinator",
+          name: "Sanjai Kumar G",
+          phone: "8925209953",
+        },
         { role: "Student Coordinator", name: "Ashok Kumar V" },
         { role: "Student Coordinator", name: "Deepak S" },
         { role: "Student Coordinator", name: "Yeswant BV" },
@@ -412,7 +515,11 @@ export const EVENTS = [
       judging: ["Relevance", "Humor & relatability", "Explanation quality"],
       contacts: [
         { role: "Student Coordinator", name: "Pranesh S", phone: "7094752140" },
-        { role: "Student Coordinator", name: "Nidhelaa TS", phone: "8056146898" },
+        {
+          role: "Student Coordinator",
+          name: "Nidhelaa TS",
+          phone: "8056146898",
+        },
         { role: "Student Coordinator", name: "Hinduja KP" },
       ],
       registration: "Click Register to continue to the registration section.",
@@ -444,7 +551,11 @@ export const EVENTS = [
       ],
       contacts: [
         { role: "Student Coordinator", name: "Sanjay RK", phone: "8248934356" },
-        { role: "Student Coordinator", name: "Venkatesh R", phone: "6369528501" },
+        {
+          role: "Student Coordinator",
+          name: "Venkatesh R",
+          phone: "6369528501",
+        },
         { role: "Student Coordinator", name: "Cindrella" },
         { role: "Student Coordinator", name: "Mahalakshmi M" },
         { role: "Student Coordinator", name: "Manju Priya J" },
@@ -509,8 +620,16 @@ export const EVENTS = [
         "Organizer’s decision is final and binding",
       ],
       contacts: [
-        { role: "Student Coordinator", name: "Mugunthan Kennedy K", phone: "9047389144" },
-        { role: "Student Coordinator", name: "Rageshwaran HR", phone: "8838919136" },
+        {
+          role: "Student Coordinator",
+          name: "Mugunthan Kennedy K",
+          phone: "9047389144",
+        },
+        {
+          role: "Student Coordinator",
+          name: "Rageshwaran HR",
+          phone: "8838919136",
+        },
         { role: "Student Coordinator", name: "Sharan D" },
         { role: "Student Coordinator", name: "Jefrin Jijo SR" },
       ],
@@ -544,7 +663,7 @@ export const EVENTS = [
             "Technical Depth & Implementation",
             "Innovation and Creativity",
             "System Design / Architecture",
-            "Practical Impact and Feasibility"
+            "Practical Impact and Feasibility",
           ],
         },
       ],
@@ -559,11 +678,16 @@ export const EVENTS = [
         "Both completed and partially implemented projects are allowed.",
       ],
       contacts: [
-        { role: "Student Coordinator", name: "Merlyne Margarate Christinal D", phone: "9840952078" },
+        {
+          role: "Student Coordinator",
+          name: "Merlyne Margarate Christinal D",
+          phone: "9840952078",
+        },
         { role: "Student Coordinator", name: "Chandn S", phone: "9360468653" },
       ],
       registration: "Click Register to showcase your project.",
-      registerTo: "https://unstop.com/conferences/project-expo-velammal-engineering-college-vec-chennai-tamil-nadu-1631453",
+      registerTo:
+        "https://unstop.com/conferences/project-expo-velammal-engineering-college-vec-chennai-tamil-nadu-1631453",
     },
   },
   {
@@ -589,10 +713,19 @@ export const EVENTS = [
         "Internship opportunities available for the winning team (4 people interviewed and selected)",
       ],
       contacts: [
-        { role: "Workshop Coordinator", name: "Akshayasree S", phone: "9445575579" },
-        { role: "Technical Lead", name: "Lakshmi Narasimman A", phone: "8122880841" },
+        {
+          role: "Workshop Coordinator",
+          name: "Akshayasree S",
+          phone: "9445575579",
+        },
+        {
+          role: "Technical Lead",
+          name: "Lakshmi Narasimman A",
+          phone: "8122880841",
+        },
       ],
-      registration: "Register now to secure your spot in this exciting robotics workshop! Limited seats available.",
+      registration:
+        "Register now to secure your spot in this exciting robotics workshop! Limited seats available.",
       registerTo: "https://forms.gle/CDWw5SmcBbzujtSr7",
     },
   },
@@ -604,4 +737,3 @@ export const EVENTS = [
 
 export const getEventBySlug = (slug) =>
   EVENTS.find((event) => event.slug === slug);
-
