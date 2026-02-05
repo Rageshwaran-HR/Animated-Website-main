@@ -230,6 +230,7 @@ export const EVENTS = [
     slug: "paper-presentation",
     track: "Technical",
     short: "Innovation & originality in research ideas",
+    poweredBy: "Unstop",
     videoSrc:
       "https://res.cloudinary.com/dm0vwe5cw/video/upload/v1769794112/feature-2_fasq1a.mp4",
     details: {
@@ -266,7 +267,7 @@ export const EVENTS = [
         { role: "Student Coordinator", name: "Balaji S" },
       ],
       registration: "Click Register to continue to the registration section.",
-      registerTo: "https://forms.gle/h6qmDc3cQtH8nMmT6",
+      registerTo: "https://unstop.com/conferences/paper-presentation-velammal-engineering-college-vec-chennai-tamil-nadu-1629156",
     },
   },
   {
@@ -523,6 +524,7 @@ export const EVENTS = [
     slug: "project-expo",
     track: "Featured",
     short: "Showcase your innovative projects",
+    poweredBy: "Unstop",
     videoSrc:
       "https://res.cloudinary.com/dbe1m52oz/video/upload/v1767781724/Make_a_animated_1080p_202601071550_anqson.mp4",
     details: {
@@ -561,7 +563,7 @@ export const EVENTS = [
         { role: "Student Coordinator", name: "Chandn S", phone: "9360468653" },
       ],
       registration: "Click Register to showcase your project.",
-      registerTo: "https://forms.gle/fyYLNKJ3VRF28Ub19",
+      registerTo: "https://unstop.com/conferences/project-expo-velammal-engineering-college-vec-chennai-tamil-nadu-1631453",
     },
   },
   {
