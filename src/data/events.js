@@ -569,7 +569,7 @@ export const EVENTS = [
     name: "Funtrix",
     slug: "funtrix",
     track: "Non-Tech",
-    short: "Sports precision × combat intensity",
+    short: "Free Fire and Tekken",
     videoSrc:
       "https://res.cloudinary.com/dm0vwe5cw/video/upload/v1769794637/feature-9n_gbgn5j.mp4",
     details: {
@@ -577,47 +577,60 @@ export const EVENTS = [
       time: "from 9:00 AM",
       teamSize: "Individual / Duo",
       overview:
-        "Funtrix at OZMENTA ’26 is a high-octane competitive zone combining sports precision and combat intensity. Step in, compete, and prove your dominance in the digital arena.",
-      rounds: [
+        "Funtrix at OZMENTA '26 is a high-octane competitive zone combining sports precision and combat intensity. Step in, compete, and prove your dominance in the digital arena.",
+      sections: [
         {
-          name: "Open Qualifiers",
-          duration: "Varies per match",
-          objective: "Shortlist top contenders through knockout matches",
-          judging: [
-            "Match performance",
-            "Basic strategy",
-            "Rule adherence",
-            "Fair play",
+          name: "Free Fire",
+          imageSrc: "https://res.cloudinary.com/dbe1m52oz/image/upload/v1770655658/GPH_Free_Fire_Marketing_Banners_-_Jerome_Alcantara_ixqzwu.jpg",
+          overview:
+            "A fast-paced, online battle royale competition where teams of two players must showcase tactical teamwork, survival skills, and combat precision.",
+          rounds: [
+            {
+              name: "Round 1",
+              objective: "Battle royale mode for all the duo participants.",
+              description: "Shortlisted participants will progress to next round.",
+            },
+            {
+              name: "Round 2",
+              objective: "Clash Squad mode for the shortlisted duo participants.",
+              description: "Shortlisted participants will progress to next round.",
+            },
+            {
+              name: "Final Round",
+              objective: "Final Clash Squad for the top two teams.",
+            },
+          ],
+          rules: [
+            "Each team must consist of 2 players (Duo only).",
+            "The total event duration is approximately 2–3 hours, depending on match progress.",
+            "Participants must bring their own mobile device, stable internet connection, earphones, and a fully charged phone.",
+            "The event will be conducted online using Free Fire.",
+            "The event consists of multiple knockout rounds, with top-performing duos advancing to the final match.",
+            "Teams are evaluated based on kills, survival time, teamwork, and overall match performance.",
+            "Any use of hacks, cheats, abusive behavior, or unfair play will result in immediate disqualification.",
           ],
         },
         {
-          name: "Semi-Finals",
-          duration: "Varies per match",
-          objective: "Test advanced gameplay under higher competitive pressure",
-          judging: [
-            "Advanced strategy",
-            "Technical skill",
-            "Consistency",
-            "Discipline",
+          name: "Tekken",
+          imageSrc: "https://res.cloudinary.com/dbe1m52oz/image/upload/v1770655646/TGA_2022___un_trailer_explosif_pour_le_nouveau_Tekken_ailwbc.jpg",
+          overview:
+            "An offline, one-on-one fighting game tournament where individual players battle it out using technical skills, strategy, and reflexes.",
+          rounds: [
+            {
+              name: "Solo Format",
+              objective: "The event follows a solo format with one-on-one battles.",
+              description: "Winners advance through knockout rounds until the finals.",
+            },
+          ],
+          rules: [
+            "Each match will be played between two individual participants (Solo competition only).",
+            "The total event duration is approximately 2–3 hours, depending on the number of participants and match progression.",
+            "The event will be conducted offline using Tekken on standardized settings.",
+            "The event consists of multiple knockout rounds, with winners advancing to the next stage until the final match.",
+            "Players are evaluated based on match victories, gameplay skills, strategy, and fair play.",
+            "Any use of cheats or unsportsmanlike behavior will result in immediate disqualification.",
           ],
         },
-        {
-          name: "Championship Showdown",
-          duration: "Final match",
-          objective: "Compete for the Funtrix Ultimate Arena Champion title",
-          judging: [
-            "Overall dominance",
-            "Decision making",
-            "Composure under pressure",
-            "Rule compliance",
-          ],
-        },
-      ],
-      rules: [
-        "Matches will follow standardized game settings decided by the organizers",
-        "Strictly no cheating, hacking, or unfair gameplay",
-        "Participants must be present at the venue before match call-out",
-        "Organizer’s decision is final and binding",
       ],
       contacts: [
         {
@@ -627,17 +640,18 @@ export const EVENTS = [
         },
         {
           role: "Student Coordinator",
-          name: "Rageshwaran HR",
+          name: "Jefrin Jijo SR",
           phone: "8838919136",
         },
         { role: "Student Coordinator", name: "Sharan D" },
-        { role: "Student Coordinator", name: "Jefrin Jijo SR" },
+        { role: "Student Coordinator", name: "Rageshwaran HR" },
       ],
       registration:
         "Registration details will be shared through the official announcement link.",
       registerTo: "https://forms.gle/JZgWcGhFr6gM11PD8",
     },
   },
+
   {
     name: "Project Expo",
     slug: "project-expo",

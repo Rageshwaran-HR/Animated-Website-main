@@ -383,7 +383,7 @@ const EventDetails = () => {
             </button>
           </div>
 
-          <div className="mt-12 grid grid-cols-1 gap-10 pb-24 md:grid-cols-2">
+          <div className={`mt-12 grid gap-10 pb-24 ${event.name === "Funtrix" ? "grid-cols-1" : "grid-cols-1 md:grid-cols-2"}`}>
             <>
               <div>
                 <p className="text-xs uppercase tracking-widest text-blue-50">
@@ -395,7 +395,195 @@ const EventDetails = () => {
                   </p>
                 ) : null}
 
-                {Array.isArray(event.details?.rounds) &&
+                {event.name === "Funtrix" && Array.isArray(event.details?.sections) && event.details.sections.length ? (
+                  // Funtrix: 2-column layout for Free Fire and Tekken
+                  <div className="mt-12">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                      {event.details.sections.map((section) => (
+                        <div key={section.name} className="flex flex-col">
+                          {/* Section Image Placeholder */}
+                          {section.imageSrc ? (
+                            <img 
+                              src={section.imageSrc}
+                              alt={section.name}
+                              className="w-full h-64 object-cover rounded-2xl border border-white/10 mb-6"
+                            />
+                          ) : (
+                            <div className="w-full h-64 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 rounded-2xl border border-white/10 flex items-center justify-center mb-6">
+                              <div className="text-center">
+                                <p className="text-sm font-zentry text-blue-300 uppercase tracking-widest">
+                                  {section.name} Section
+                                </p>
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Section Title */}
+                          <p className="text-xs uppercase tracking-widest text-blue-50">
+                            {section.name}
+                          </p>
+                          
+                          {/* Section Overview */}
+                          {isMeaningfulValue(section.overview) ? (
+                            <p className="mt-3 font-circular-web text-blue-50/70 text-sm">
+                              {section.overview}
+                            </p>
+                          ) : null}
+
+                          {/* Rounds */}
+                          {Array.isArray(section.rounds) && section.rounds.length ? (
+                            <>
+                              <p className="mt-6 text-xs uppercase tracking-widest text-blue-50">
+                                Rounds
+                              </p>
+                              <div className="mt-4 space-y-4">
+                                {section.rounds.map((round) => (
+                                  <div
+                                    key={round.name}
+                                    className="border-l border-white/10 pl-4"
+                                  >
+                                    <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                                      <p className="font-zentry text-base leading-[0.95] text-blue-50">
+                                        {round.name}
+                                      </p>
+                                      {round.duration ? (
+                                        <p className="font-general text-[10px] uppercase tracking-widest text-blue-50/60">
+                                          {round.duration}
+                                        </p>
+                                      ) : null}
+                                    </div>
+
+                                    {round.objective ? (
+                                      <p className="mt-2 font-circular-web text-xs text-blue-50/70">
+                                        {round.objective}
+                                      </p>
+                                    ) : null}
+
+                                    {round.description ? (
+                                      <p className="mt-1 font-circular-web text-xs text-blue-50/70">
+                                        {round.description}
+                                      </p>
+                                    ) : null}
+
+                                    {Array.isArray(round.judging) &&
+                                    round.judging.length ? (
+                                      <ul className="mt-2 space-y-1 font-circular-web text-xs text-blue-50/70">
+                                        {round.judging.map((line) => (
+                                          <li key={line} className="flex gap-2">
+                                            <span className="text-blue-300">▸</span>
+                                            <span>{line}</span>
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    ) : null}
+                                  </div>
+                                ))}
+                              </div>
+                            </>
+                          ) : null}
+
+                          {/* Rules */}
+                          {Array.isArray(section.rules) && section.rules.length ? (
+                            <>
+                              <p className="mt-8 text-xs uppercase tracking-widest text-blue-50">
+                                Rules
+                              </p>
+                              <ul className="mt-3 space-y-2 font-circular-web text-blue-50/70 text-sm">
+                                {section.rules.map((line) => (
+                                  <li key={line} className="flex gap-3">
+                                    <span className="text-blue-300 flex-shrink-0">▸</span>
+                                    <span>{line}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </>
+                          ) : null}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ) : Array.isArray(event.details?.sections) && event.details.sections.length ? (
+                  // Other events with sections: original layout
+                  <>
+                    {event.details.sections.map((section, sectionIdx) => (
+                      <div key={section.name}>
+                        <p className={`${sectionIdx > 0 ? 'mt-12' : 'mt-10'} text-xs uppercase tracking-widest text-blue-50`}>
+                          {section.name}
+                        </p>
+                        
+                        {isMeaningfulValue(section.overview) ? (
+                          <p className="mt-3 font-circular-web text-blue-50/70">
+                            {section.overview}
+                          </p>
+                        ) : null}
+
+                        {Array.isArray(section.rounds) && section.rounds.length ? (
+                          <>
+                            <p className="mt-6 text-xs uppercase tracking-widest text-blue-50">
+                              Rounds
+                            </p>
+                            <div className="mt-4 space-y-6">
+                              {section.rounds.map((round) => (
+                                <div
+                                  key={round.name}
+                                  className="border-l border-white/10 pl-4"
+                                >
+                                  <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                                    <p className="font-zentry text-lg leading-[0.95] text-blue-50">
+                                      {round.name}
+                                    </p>
+                                    {round.duration ? (
+                                      <p className="font-general text-[10px] uppercase tracking-widest text-blue-50/60">
+                                        {round.duration}
+                                      </p>
+                                    ) : null}
+                                  </div>
+
+                                  {round.objective ? (
+                                    <p className="mt-2 font-circular-web text-sm text-blue-50/70">
+                                      {round.objective}
+                                    </p>
+                                  ) : null}
+
+                                  {Array.isArray(round.judging) &&
+                                  round.judging.length ? (
+                                    <ul className="mt-3 space-y-2 font-circular-web text-sm text-blue-50/70">
+                                      {round.judging.map((line) => (
+                                        <li key={line} className="flex gap-3">
+                                          <span className="text-blue-300">▸</span>
+                                          <span>{line}</span>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  ) : null}
+                                </div>
+                              ))}
+                            </div>
+                          </>
+                        ) : null}
+
+                        {Array.isArray(section.rules) && section.rules.length ? (
+                          <>
+                            <p className="mt-6 text-xs uppercase tracking-widest text-blue-50">
+                              Rules
+                            </p>
+                            <ul className="mt-3 space-y-2 font-circular-web text-blue-50/70">
+                              {section.rules.map((line) => (
+                                <li key={line} className="flex gap-3">
+                                  <span className="text-blue-300">▸</span>
+                                  <span>{line}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </>
+                        ) : null}
+                      </div>
+                    ))}
+                  </>
+                ) : null}
+
+                {!Array.isArray(event.details?.sections) &&
+                Array.isArray(event.details?.rounds) &&
                 event.details.rounds.length ? (
                   <>
                     <p className="mt-10 text-xs uppercase tracking-widest text-blue-50">
@@ -481,6 +669,7 @@ const EventDetails = () => {
                 ) : null}
               </div>
 
+              {event.name !== "Funtrix" && (
               <div>
                 {Array.isArray(event.details?.rules) &&
                 event.details.rules.length ? (
@@ -553,6 +742,7 @@ const EventDetails = () => {
                   </>
                 ) : null}
               </div>
+              )}
             </>
           </div>
         </div>

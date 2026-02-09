@@ -106,19 +106,6 @@ const Hero = () => {
                   </p>
                 </div>
 
-                <Button
-                  id="watch-trailer"
-                  title="Register Now"
-                  leftIcon={<TiLocationArrow />}
-                  containerClass="!bg-yellow-300 flex-center gap-1"
-                  onClick={() => {
-                    window.open(
-                      "https://docs.google.com/forms/d/e/1FAIpQLSfHHf-ixnm_ej1KKgZUmUb6opoGqwmY3j8XLe-jT7zpTPXJAg/viewform?usp=sharing&ouid=117566611305738243195",
-                      "_blank"
-                    );
-                  }}
-                />
-
                 <div className="w-fit rounded-md border-hsla bg-slate-950/35 px-4 py-4 text-blue-50">
                   <p className="font-general text-[10px] uppercase tracking-widest text-blue-50/80">
                     Event Countdown
