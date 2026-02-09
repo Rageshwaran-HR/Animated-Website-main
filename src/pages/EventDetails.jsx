@@ -399,8 +399,47 @@ const EventDetails = () => {
                   // Funtrix: 2-column layout for Free Fire and Tekken
                   <div className="mt-12">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                      {event.details.sections.map((section) => (
+                      {event.details.sections.map((section, idx) => (
                         <div key={section.name} className="flex flex-col">
+                          {idx === 1 && displayedContacts.length ? (
+                            <>
+                              {/* Student Coordinators in right column */}
+                              <div className="flex flex-col md:hidden mb-8">
+                                <p className="text-xs uppercase tracking-widest text-blue-50">
+                                  Student Coordinators
+                                </p>
+                                <div className="border-hsla mt-3 overflow-hidden rounded-2xl bg-black/20">
+                                  <ul className="divide-y divide-white/10">
+                                    {displayedContacts.map((c) => (
+                                      <li
+                                        key={`${c.name}-${c.phone || c.email || "contact"}`}
+                                        className="p-4"
+                                      >
+                                        <p className="font-zentry text-xl leading-[0.95] text-blue-50">
+                                          {c.name}
+                                        </p>
+                                        <p className="mt-2 font-circular-web text-sm text-blue-50/70">
+                                          {c.phone || c.email}
+                                        </p>
+                                      </li>
+                                    ))}
+
+                                    {remainingContactNames.length > 0 ? (
+                                      <>
+                                        {remainingContactNames.map((name) => (
+                                          <li key={name} className="p-4">
+                                            <p className="font-zentry text-xl leading-[0.95] text-blue-50">
+                                              {name}
+                                            </p>
+                                          </li>
+                                        ))}
+                                      </>
+                                    ) : null}
+                                  </ul>
+                                </div>
+                              </div>
+                            </>
+                          ) : null}
                           {/* Section Image Placeholder */}
                           {section.imageSrc ? (
                             <img 
@@ -500,6 +539,44 @@ const EventDetails = () => {
                           ) : null}
                         </div>
                       ))}
+                      
+                      {/* Student Coordinators in right column on desktop */}
+                      {displayedContacts.length ? (
+                        <div className="flex flex-col hidden md:flex ml-auto w-full justify-end">
+                          <p className="text-xs uppercase tracking-widest text-blue-50">
+                            Student Coordinators
+                          </p>
+                          <div className="border-hsla mt-3 overflow-hidden rounded-2xl bg-black/20">
+                            <ul className="divide-y divide-white/10">
+                              {displayedContacts.map((c) => (
+                                <li
+                                  key={`${c.name}-${c.phone || c.email || "contact"}`}
+                                  className="p-4"
+                                >
+                                  <p className="font-zentry text-xl leading-[0.95] text-blue-50">
+                                    {c.name}
+                                  </p>
+                                  <p className="mt-2 font-circular-web text-sm text-blue-50/70">
+                                    {c.phone || c.email}
+                                  </p>
+                                </li>
+                              ))}
+
+                              {remainingContactNames.length > 0 ? (
+                                <>
+                                  {remainingContactNames.map((name) => (
+                                    <li key={name} className="p-4">
+                                      <p className="font-zentry text-xl leading-[0.95] text-blue-50">
+                                        {name}
+                                      </p>
+                                    </li>
+                                  ))}
+                                </>
+                              ) : null}
+                            </ul>
+                          </div>
+                        </div>
+                      ) : null}
                     </div>
                   </div>
                 ) : Array.isArray(event.details?.sections) && event.details.sections.length ? (
@@ -669,80 +746,82 @@ const EventDetails = () => {
                 ) : null}
               </div>
 
-              {event.name !== "Funtrix" && (
               <div>
-                {Array.isArray(event.details?.rules) &&
-                event.details.rules.length ? (
+                {event.name !== "Funtrix" && (
                   <>
-                    <p className="text-xs uppercase tracking-widest text-blue-50">
-                      Rules
-                    </p>
-                    <ul className="mt-3 space-y-2 font-circular-web text-blue-50/70">
-                      {event.details.rules.map((line) => (
-                        <li key={line} className="flex gap-3">
-                          <span className="text-blue-300">▸</span>
-                          <span>{line}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </>
-                ) : null}
+                    {Array.isArray(event.details?.rules) &&
+                    event.details.rules.length ? (
+                      <>
+                        <p className="text-xs uppercase tracking-widest text-blue-50">
+                          Rules
+                        </p>
+                        <ul className="mt-3 space-y-2 font-circular-web text-blue-50/70">
+                          {event.details.rules.map((line) => (
+                            <li key={line} className="flex gap-3">
+                              <span className="text-blue-300">▸</span>
+                              <span>{line}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </>
+                    ) : null}
 
-                {Array.isArray(event.details?.judging) &&
-                event.details.judging.length ? (
-                  <>
-                    <p className="mt-10 text-xs uppercase tracking-widest text-blue-50">
-                      Judging
-                    </p>
-                    <ul className="mt-3 space-y-2 font-circular-web text-blue-50/70">
-                      {event.details.judging.map((line) => (
-                        <li key={line} className="flex gap-3">
-                          <span className="text-blue-300">▸</span>
-                          <span>{line}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </>
-                ) : null}
+                    {Array.isArray(event.details?.judging) &&
+                    event.details.judging.length ? (
+                      <>
+                        <p className="mt-10 text-xs uppercase tracking-widest text-blue-50">
+                          Judging
+                        </p>
+                        <ul className="mt-3 space-y-2 font-circular-web text-blue-50/70">
+                          {event.details.judging.map((line) => (
+                            <li key={line} className="flex gap-3">
+                              <span className="text-blue-300">▸</span>
+                              <span>{line}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </>
+                    ) : null}
 
-                {displayedContacts.length ? (
-                  <>
-                    <p className="mt-10 text-xs uppercase tracking-widest text-blue-50">
-                      Student Coordinators
-                    </p>
-                    <div className="border-hsla mt-3 overflow-hidden rounded-2xl bg-black/20">
-                      <ul className="divide-y divide-white/10">
-                        {displayedContacts.map((c) => (
-                          <li
-                            key={`${c.name}-${c.phone || c.email || "contact"}`}
-                            className="p-4"
-                          >
-                            <p className="font-zentry text-xl leading-[0.95] text-blue-50">
-                              {c.name}
-                            </p>
-                            <p className="mt-2 font-circular-web text-sm text-blue-50/70">
-                              {c.phone || c.email}
-                            </p>
-                          </li>
-                        ))}
-
-                        {remainingContactNames.length > 0 ? (
-                          <>
-                            {remainingContactNames.map((name) => (
-                              <li key={name} className="p-4">
+                    {event.name !== "Funtrix" && displayedContacts.length ? (
+                      <>
+                        <p className="mt-10 text-xs uppercase tracking-widest text-blue-50">
+                          Student Coordinators
+                        </p>
+                        <div className="border-hsla mt-3 overflow-hidden rounded-2xl bg-black/20">
+                          <ul className="divide-y divide-white/10">
+                            {displayedContacts.map((c) => (
+                              <li
+                                key={`${c.name}-${c.phone || c.email || "contact"}`}
+                                className="p-4"
+                              >
                                 <p className="font-zentry text-xl leading-[0.95] text-blue-50">
-                                  {name}
+                                  {c.name}
+                                </p>
+                                <p className="mt-2 font-circular-web text-sm text-blue-50/70">
+                                  {c.phone || c.email}
                                 </p>
                               </li>
                             ))}
-                          </>
-                        ) : null}
-                      </ul>
-                    </div>
+
+                            {remainingContactNames.length > 0 ? (
+                              <>
+                                {remainingContactNames.map((name) => (
+                                  <li key={name} className="p-4">
+                                    <p className="font-zentry text-xl leading-[0.95] text-blue-50">
+                                      {name}
+                                    </p>
+                                  </li>
+                                ))}
+                              </>
+                            ) : null}
+                          </ul>
+                        </div>
+                      </>
+                    ) : null}
                   </>
-                ) : null}
+                )}
               </div>
-              )}
             </>
           </div>
         </div>
