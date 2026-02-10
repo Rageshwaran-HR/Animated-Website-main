@@ -641,7 +641,7 @@ export const EVENTS = [
         {
           role: "Student Coordinator",
           name: "Jefrin Jijo SR",
-          phone: "8838919136",
+          phone: "9500518791",
         },
         { role: "Student Coordinator", name: "Sharan D" },
         { role: "Student Coordinator", name: "Rageshwaran HR" },
