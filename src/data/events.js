@@ -345,7 +345,7 @@ export const EVENTS = [
       ],
       registration: "Click Register to continue to the registration section.",
       registerTo:
-        "https://unstop.com/conferences/paper-presentation-velammal-engineering-college-vec-chennai-tamil-nadu-1629156",
+        "https://forms.gle/Tr5yaqGTu7TjnZ6N6",
     },
   },
   {
