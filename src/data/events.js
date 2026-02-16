@@ -701,7 +701,7 @@ export const EVENTS = [
       ],
       registration: "Click Register to showcase your project.",
       registerTo:
-        "https://unstop.com/conferences/project-expo-velammal-engineering-college-vec-chennai-tamil-nadu-1631453",
+        "https://forms.gle/SfyQN3w3oQgzUUdSA",
     },
   },
   {
