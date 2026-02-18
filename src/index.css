@@ -403,3 +403,43 @@ body {
     opacity: 0.8;
   }
 }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+/* Scrolling notification banner */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+.scrolling-text-wrapper-full {
+  width: 100%;
+  overflow: hidden;
+}
+
+.scrolling-text {
+  display: inline-flex;
+  animation: scroll-left 20s linear infinite;
+  will-change: transform;
+}
+
+.scrolling-text:hover {
+  animation-play-state: paused;
+}

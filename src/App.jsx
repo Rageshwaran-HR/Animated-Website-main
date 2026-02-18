@@ -1,6 +1,7 @@
 import React, { Suspense, useEffect, useRef, useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import NotificationBanner from "./components/NotificationBanner";
 import BackgroundAudio from "./components/BackgroundAudio";
 
 // Lazy load heavy components
@@ -177,6 +178,7 @@ const App = () => {
 
   return (
     <main className="relative min-h-screen w-screen overflow-x-hidden">
+      {!isDevelopersPage && <NotificationBanner />}
       {!isDevelopersPage && <BackgroundAudio />}
       {!isDevelopersPage && <Navbar />}
       <ScrollToHash />
