@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const NotificationBanner = () => {
   const [isVisible, setIsVisible] = useState(true);
-  const message = "⚠️ Important Notice: On spot registration is available and the fee is ₹100 · Food will not be provided";
+  const message = "⚠️ Important Notice: On-spot registration is available for ₹100, and can purchase food from the mess.";
 
   useEffect(() => {
     const handleScroll = () => {
