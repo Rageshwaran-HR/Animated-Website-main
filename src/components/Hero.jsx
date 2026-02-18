@@ -87,7 +87,7 @@ const Hero = () => {
         </h1>
 
         <div className="absolute left-0 top-0 z-40 size-full">
-          <div className="pt-24 px-5 sm:pt-28 sm:px-10">
+          <div className="pt-32 px-5 sm:pt-36 sm:px-10">
             <div className="max-w-xl">
               <h1 className="special-font hero-heading text-blue-100">
                 Ozm<b>e</b>nta&apos;26
