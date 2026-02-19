@@ -308,6 +308,7 @@ export const EVENTS = [
     track: "Technical",
     short: "Innovation & originality in research ideas",
     poweredBy: "Unstop",
+    isClosed: true,
     videoSrc:
       "https://res.cloudinary.com/dm0vwe5cw/video/upload/v1769794112/feature-2_fasq1a.mp4",
     details: {
@@ -709,6 +710,7 @@ export const EVENTS = [
     slug: "workshop",
     track: "Featured",
     short: "Agentic AI for Business: From Products to Real-Time Simulation",
+    isClosed: true,
     videoSrc:
       "https://res.cloudinary.com/dbe1m52oz/video/upload/v1767781652/something_baqfhk.mp4",
     details: {

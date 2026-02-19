@@ -368,19 +368,47 @@ const EventDetails = () => {
           ) : null}
 
           <div className="mt-10 flex flex-wrap gap-4">
-            <button
-              onClick={onRegister}
-              type="button"
-              className="group relative overflow-hidden rounded-lg border-2 border-blue-400 bg-slate-950 px-8 py-3 font-general text-sm uppercase text-blue-300 transition-all duration-300 hover:bg-blue-500 hover:text-black hover:shadow-[0_0_20px_rgba(96,165,250,0.5)]"
-            >
-              <span className="relative z-10 flex items-center gap-2">
-                <span>Register Now</span>
-                <span className="group-hover:translate-x-1 transition-transform">
-                  →
+            {event.isClosed ? (
+              <div className="rounded-lg border-2 border-red-500/50 bg-red-950/30 px-8 py-4">
+                <div className="flex items-center gap-3">
+                  <svg
+                    className="h-6 w-6 text-red-400 flex-shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="2"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+                    />
+                  </svg>
+                  <div>
+                    <p className="font-general text-xl font-bold uppercase text-red-400">
+                      Closed
+                    </p>
+                    <p className="mt-1 font-circular-web text-sm text-red-300/80">
+                      Registration Limit Reached
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <button
+                onClick={onRegister}
+                type="button"
+                className="group relative overflow-hidden rounded-lg border-2 border-blue-400 bg-slate-950 px-8 py-3 font-general text-sm uppercase text-blue-300 transition-all duration-300 hover:bg-blue-500 hover:text-black hover:shadow-[0_0_20px_rgba(96,165,250,0.5)]"
+              >
+                <span className="relative z-10 flex items-center gap-2">
+                  <span>Register Now</span>
+                  <span className="group-hover:translate-x-1 transition-transform">
+                    →
+                  </span>
                 </span>
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </button>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </button>
+            )}
           </div>
 
           <div className={`mt-12 grid gap-10 pb-24 ${event.name === "Funtrix" ? "grid-cols-1" : "grid-cols-1 md:grid-cols-2"}`}>
