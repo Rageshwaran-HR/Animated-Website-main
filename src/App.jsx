@@ -13,20 +13,21 @@ const Contact = React.lazy(() => import("./components/Contact"));
 const Footer = React.lazy(() => import("./components/Footer"));
 const EventDetails = React.lazy(() => import("./pages/EventDetails"));
 const Developers = React.lazy(() => import("./pages/Developers"));
+const Transport = React.lazy(() => import("./pages/Transport"));
 
 const ScrollToHash = () => {
   const { hash, pathname, state } = useLocation();
 
   React.useEffect(() => {
     // Check sessionStorage for scroll target (from EventDetails back button)
-    const scrollTarget = sessionStorage.getItem('scrollToSection');
-    if (scrollTarget && pathname === '/') {
-      sessionStorage.removeItem('scrollToSection');
-      
+    const scrollTarget = sessionStorage.getItem("scrollToSection");
+    if (scrollTarget && pathname === "/") {
+      sessionStorage.removeItem("scrollToSection");
+
       // Retry logic to wait for lazy-loaded components
       let attempts = 0;
       const maxAttempts = 20;
-      
+
       const tryScroll = () => {
         const el = document.getElementById(scrollTarget);
         if (el) {
@@ -36,7 +37,7 @@ const ScrollToHash = () => {
           setTimeout(tryScroll, 200);
         }
       };
-      
+
       setTimeout(tryScroll, 300);
       return;
     }
@@ -85,7 +86,7 @@ const Home = () => {
     if (!root) return;
 
     const prefersReduced = window.matchMedia?.(
-      "(prefers-reduced-motion: reduce)"
+      "(prefers-reduced-motion: reduce)",
     )?.matches;
 
     const tracked = new Set();
@@ -174,19 +175,21 @@ const Home = () => {
 
 const App = () => {
   const location = useLocation();
-  const isDevelopersPage = location.pathname === '/developers';
+  const isDevelopersPage = location.pathname === "/developers";
+  const isTransportPage = location.pathname === "/transport";
 
   return (
     <main className="relative min-h-screen w-screen overflow-x-hidden">
-      {!isDevelopersPage && <NotificationBanner />}
-      {!isDevelopersPage && <BackgroundAudio />}
-      {!isDevelopersPage && <Navbar />}
+      {!isDevelopersPage && !isTransportPage && <NotificationBanner />}
+      {!isDevelopersPage && !isTransportPage && <BackgroundAudio />}
+      {!isDevelopersPage && !isTransportPage && <Navbar />}
       <ScrollToHash />
       <Suspense fallback={<div className="h-screen" />}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/events/:slug" element={<EventDetails />} />
           <Route path="/developers" element={<Developers />} />
+          <Route path="/transport" element={<Transport />} />
         </Routes>
       </Suspense>
     </main>
