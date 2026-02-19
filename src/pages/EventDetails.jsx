@@ -369,13 +369,13 @@ const EventDetails = () => {
 
           <div className="mt-10 flex flex-wrap gap-4">
             {event.isClosed ? (
-              <div className="rounded-lg border-2 border-red-500/50 bg-red-950/30 px-8 py-4">
-                <div className="flex items-center gap-3">
+              <div className="inline-block rounded-xl border-2 border-red-500 bg-gradient-to-br from-red-950 to-red-900 px-10 py-6 shadow-xl shadow-red-500/20">
+                <div className="flex items-center gap-4">
                   <svg
-                    className="h-6 w-6 text-red-400 flex-shrink-0"
+                    className="h-10 w-10 text-red-400 flex-shrink-0"
                     fill="none"
                     viewBox="0 0 24 24"
-                    strokeWidth="2"
+                    strokeWidth="2.5"
                     stroke="currentColor"
                   >
                     <path
@@ -385,10 +385,10 @@ const EventDetails = () => {
                     />
                   </svg>
                   <div>
-                    <p className="font-general text-xl font-bold uppercase text-red-400">
+                    <p className="font-general text-2xl font-black uppercase tracking-wider text-red-300">
                       Closed
                     </p>
-                    <p className="mt-1 font-circular-web text-sm text-red-300/80">
+                    <p className="mt-1.5 font-circular-web text-base font-medium text-red-200">
                       Registration Limit Reached
                     </p>
                   </div>
