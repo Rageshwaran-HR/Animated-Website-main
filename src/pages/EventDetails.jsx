@@ -369,30 +369,35 @@ const EventDetails = () => {
 
           <div className="mt-10 flex flex-wrap gap-4">
             {event.isClosed ? (
-              <div className="inline-block rounded-xl border-2 border-red-500 bg-gradient-to-br from-red-950 to-red-900 px-10 py-6 shadow-xl shadow-red-500/20">
-                <div className="flex items-center gap-4">
-                  <svg
-                    className="h-10 w-10 text-red-400 flex-shrink-0"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="2.5"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
-                    />
-                  </svg>
-                  <div>
-                    <p className="font-general text-2xl font-black uppercase tracking-wider text-red-300">
-                      Closed
-                    </p>
-                    <p className="mt-1.5 font-circular-web text-base font-medium text-red-200">
-                      Registration Limit Reached
-                    </p>
+              <div>
+                <div className="inline-block rounded-xl border-2 border-red-500 bg-gradient-to-br from-red-950 to-red-900 px-10 py-6 shadow-xl shadow-red-500/20">
+                  <div className="flex items-center gap-4">
+                    <svg
+                      className="h-10 w-10 text-red-400 flex-shrink-0"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="2.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+                      />
+                    </svg>
+                    <div>
+                      <p className="font-general text-2xl font-black uppercase tracking-wider text-red-300">
+                        Closed
+                      </p>
+                      <p className="mt-1.5 font-circular-web text-base font-medium text-red-200">
+                        Registration Limit Reached
+                      </p>
+                    </div>
                   </div>
                 </div>
+                <p className="mt-4 font-circular-web text-blue-50/70">
+                  You can register for other events.
+                </p>
               </div>
             ) : (
               <button

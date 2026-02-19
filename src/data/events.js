@@ -710,7 +710,6 @@ export const EVENTS = [
     slug: "workshop",
     track: "Featured",
     short: "Agentic AI for Business: From Products to Real-Time Simulation",
-    isClosed: true,
     videoSrc:
       "https://res.cloudinary.com/dbe1m52oz/video/upload/v1767781652/something_baqfhk.mp4",
     details: {
@@ -742,7 +741,7 @@ export const EVENTS = [
       ],
       registration:
         "Register now to secure your spot in this exciting robotics workshop! Limited seats available.",
-      registerTo: "",
+      registerTo: "https://forms.gle/LA4VAh5vbt7zDacS6",
     },
   },
 ].map((event) => ({
