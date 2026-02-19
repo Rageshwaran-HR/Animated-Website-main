@@ -1,9 +1,16 @@
-.transport-container {
-  min-height: 100vh;
-  background: #0f172a;
-  padding: 2rem 1rem;
-  color: #f1f5f9;
-}
+/* 
+ * Transport.css - DEPRECATED
+ * 
+ * This file is no longer in use.
+ * The Transport component now uses Tailwind CSS utilities inline
+ * to match the website's design system and theme.
+ * 
+ * All styling is now handled via Tailwind classes in Transport.jsx
+ * using the site's custom color palette (blue-300, blue-50, blue-100),
+ * font families (font-zentry, font-general, font-circular-web),
+ * and utility classes (border-hsla, hero-heading, etc.)
+ */
+
 
 .transport-header {
   text-align: center;

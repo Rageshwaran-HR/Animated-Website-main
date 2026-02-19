@@ -121,7 +121,7 @@ const Footer = () => {
               <div className="mb-6">
                 <Link
                   to="/transport"
-                  className="inline-flex items-center gap-2 rounded-lg border border-blue-300/40 bg-blue-500/10 px-6 py-3 font-audiowide text-base font-bold text-blue-300 transition-all duration-300 hover:bg-blue-500/20 hover:border-blue-300/60 hover:scale-105"
+                  className="inline-flex w-fit items-center gap-2 rounded-md border-hsla bg-slate-950/35 px-6 py-3 font-general text-sm uppercase tracking-widest text-blue-50 transition-colors duration-300 hover:bg-slate-950/45"
                 >
                   🚌 View Bus Routes & Transport Details
                 </Link>

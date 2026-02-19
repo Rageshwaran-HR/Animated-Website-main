@@ -1,31 +1,40 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import { useWindowScroll } from "react-use";
+import gsap from "gsap";
 
 const NotificationBanner = () => {
-  const [isVisible, setIsVisible] = useState(true);
   const message = "⚠️ Important Notice: On-spot registration is available for ₹100, and can purchase food from the mess.";
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isBannerVisible, setIsBannerVisible] = useState(true);
+  const bannerRef = useRef(null);
+
+  const { y: currentScrollY } = useWindowScroll();
 
   useEffect(() => {
-    const handleScroll = () => {
-      // Get the hero section height (viewport height)
-      const heroHeight = window.innerHeight;
-      const scrollY = window.scrollY;
+    if (currentScrollY === 0) {
+      setIsBannerVisible(true);
+    } else if (currentScrollY > lastScrollY) {
+      setIsBannerVisible(false);
+    } else if (currentScrollY < lastScrollY) {
+      setIsBannerVisible(true);
+    }
 
-      // Hide when scrolled past hero section
-      if (scrollY > heroHeight) {
-        setIsVisible(false);
-      } else {
-        setIsVisible(true);
-      }
-    };
+    setLastScrollY(currentScrollY);
+  }, [currentScrollY, lastScrollY]);
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  if (!isVisible) return null;
+  useEffect(() => {
+    gsap.to(bannerRef.current, {
+      y: isBannerVisible ? 0 : -100,
+      opacity: isBannerVisible ? 1 : 0,
+      duration: 0.2,
+    });
+  }, [isBannerVisible]);
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-[100] bg-gradient-to-r from-red-600 via-orange-600 to-red-600 shadow-lg overflow-hidden">
+    <div 
+      ref={bannerRef}
+      className="fixed top-0 left-0 right-0 z-[100] bg-gradient-to-r from-red-600 via-orange-600 to-red-600 shadow-lg overflow-hidden"
+    >
       <div className="relative flex items-center py-3">
         {/* Scrolling Text Container */}
         <div className="scrolling-text-wrapper-full">

@@ -1,5 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 import {
   FaBus,
   FaPhoneAlt,
@@ -7,7 +10,9 @@ import {
   FaClock,
   FaMapMarkerAlt,
 } from "react-icons/fa";
-import "./Transport.css";
+import Button from "../components/Button";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const busRoutes = [
   {
@@ -100,7 +105,7 @@ const busRoutes = [
     routeNo: 4,
     name: "KUMANAN CHAVADI",
     stops: [
-      { place: "Kumanan chavad", time: "6:45" },
+      { place: "Kumanan chavadi", time: "6:45" },
       { place: "Kattupakkam", time: "6:48" },
       { place: "Durgai Amman Koil", time: "6:52" },
       { place: "Iyyappanthangal", time: "6:53" },
@@ -299,69 +304,142 @@ const Transport = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  // Temporarily disabled animations for debugging
+  // useGSAP(() => {
+  //   const ctx = gsap.context(() => {
+  //     gsap.from(".transport-header-content", {
+  //       y: 50,
+  //       opacity: 0,
+  //       duration: 1,
+  //       ease: "power3.out",
+  //       delay: 0.2,
+  //     });
+
+  //     gsap.from(".route-card", {
+  //       y: 100,
+  //       opacity: 0,
+  //       duration: 0.8,
+  //       stagger: 0.1,
+  //       ease: "power3.out",
+  //       delay: 0.5,
+  //       scrollTrigger: {
+  //         trigger: ".routes-grid",
+  //         start: "top 80%",
+  //         toggleActions: "play none none none",
+  //       },
+  //     });
+  //   });
+
+  //   return () => ctx.revert();
+  // }, []);
+
   const handleBack = () => {
     navigate("/");
   };
 
   return (
-    <div className="transport-container">
-      <div className="transport-header">
-        <button
-          onClick={handleBack}
-          className="back-button"
-          aria-label="Go back"
-        >
-          <FaArrowLeft />
-        </button>
-        <h1 className="transport-title">Bus Routes</h1>
-        <p className="transport-subtitle">
-          VELAMMAL ENGINEERING COLLEGE, CHENNAI-66
-        </p>
-      </div>
+    <div className="min-h-screen bg-slate-950 px-5 py-12 sm:px-10 sm:py-16">
+      <div className="transport-header-content mx-auto max-w-7xl">
+        <div className="mb-8 flex items-center gap-4">
+          <Button
+            title="Back"
+            leftIcon={<FaArrowLeft className="mr-2" />}
+            onClick={handleBack}
+            containerClass="text-sm"
+          />
+        </div>
 
-      <div className="transport-contact-banner">
-        <FaPhoneAlt className="contact-icon" />
-        <div>
-          <p className="contact-label">Transport Incharge</p>
-          <p className="contact-info">Mr. M. Manimaran - 9087240706</p>
+        <div className="mb-12 text-center">
+          <h1 className="special-font hero-heading mb-4 text-blue-100">
+            Bus R<b>o</b>utes
+          </h1>
+          <p className="font-circular-web text-lg text-blue-50/85 sm:text-xl">
+            VELAMMAL ENGINEERING COLLEGE, CHENNAI-66
+          </p>
+        </div>
+
+        <div className="mx-auto mb-16 max-w-2xl rounded-md border-hsla bg-slate-950/30 px-6 py-6 backdrop-blur-sm">
+          <p className="mb-2 font-general text-[10px] uppercase tracking-widest text-blue-50/80">
+            Transport Incharge
+          </p>
+          <div className="flex items-center gap-3">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full border-hsla bg-slate-950/50">
+              <FaPhoneAlt className="text-xl text-blue-300" />
+            </div>
+            <div>
+              <p className="font-zentry text-xl text-blue-50 sm:text-2xl">
+                Mr. M. Manimaran
+              </p>
+              <a
+                href="tel:9087240706"
+                className="font-general text-sm uppercase tracking-wider text-blue-300 transition-colors hover:text-blue-100"
+              >
+                9087240706
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="routes-grid">
+      <div className="routes-grid mx-auto grid max-w-7xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {busRoutes.map((route) => (
           <div
             key={route.routeNo}
-            className={`route-card ${selectedRoute === route.routeNo ? "route-card-expanded" : ""}`}
+            className={`route-card cursor-pointer overflow-hidden rounded-lg border-hsla bg-slate-950 p-6 shadow-xl transition-all duration-300 hover:border-blue-300/50 hover:shadow-2xl hover:shadow-blue-300/10 ${
+              selectedRoute === route.routeNo ? "col-span-full" : ""
+            }`}
             onClick={() =>
               setSelectedRoute(
                 selectedRoute === route.routeNo ? null : route.routeNo,
               )
             }
           >
-            <div className="route-header">
-              <div className="route-number">
-                <FaBus className="bus-icon" />
-                <span>Route {route.routeNo}</span>
+            <div className="mb-4 flex items-center gap-3">
+              <div className="inline-flex items-center gap-2 rounded-full border-hsla bg-slate-950/50 px-3 py-1.5">
+                <FaBus className="text-blue-300" />
+                <span className="font-general text-[10px] uppercase tracking-widest text-blue-300">
+                  Route {route.routeNo}
+                </span>
               </div>
-              <h3 className="route-name">{route.name}</h3>
             </div>
 
+            <h3 className="special-font mb-4 font-zentry font-black uppercase leading-tight text-blue-50 sm:text-2xl md:text-3xl">
+              {route.name}
+            </h3>
+
+            {selectedRoute !== route.routeNo && (
+              <div className="rounded-md border-hsla bg-slate-950/20 p-4 backdrop-blur-sm">
+                <p className="font-circular-web text-base text-blue-50/90">
+                  {route.stops[0].place} → VEC
+                </p>
+                <p className="mt-2 flex items-center gap-2 font-general text-xs uppercase tracking-wider text-blue-300">
+                  <FaClock className="text-sm" />
+                  Starts at {route.stops[0].time} AM
+                </p>
+              </div>
+            )}
+
             {selectedRoute === route.routeNo && (
-              <div className="route-details">
-                <div className="stops-container">
-                  <h4 className="stops-title">
+              <div className="mt-6 grid gap-6 md:grid-cols-[2fr_1fr]">
+                <div className="rounded-md border-hsla bg-slate-950/20 p-5 backdrop-blur-sm">
+                  <h4 className="mb-4 flex items-center gap-2 font-general text-[10px] uppercase tracking-widest text-blue-300">
                     <FaMapMarkerAlt /> Bus Stops & Timings
                   </h4>
-                  <div className="stops-list">
+                  <div className="max-h-[500px] space-y-3 overflow-y-auto pr-2">
                     {route.stops.map((stop, idx) => (
-                      <div key={idx} className="stop-item">
-                        <div className="stop-marker"></div>
-                        <div className="stop-info">
-                          <span className="stop-place">{stop.place}</span>
+                      <div
+                        key={idx}
+                        className="flex items-start gap-4 rounded-md bg-slate-950/30 p-3 transition-colors hover:bg-slate-950/50"
+                      >
+                        <div className="mt-1.5 h-3 w-3 flex-shrink-0 rounded-full bg-blue-300 shadow-lg shadow-blue-300/50"></div>
+                        <div className="flex-1">
+                          <p className="font-circular-web text-sm leading-relaxed text-blue-50 sm:text-base">
+                            {stop.place}
+                          </p>
                           {stop.time && (
-                            <span className="stop-time">
-                              <FaClock /> {stop.time} AM
-                            </span>
+                            <p className="mt-1 flex items-center gap-1.5 font-general text-xs font-semibold uppercase tracking-wider text-blue-300">
+                              <FaClock className="text-[10px]" /> {stop.time} AM
+                            </p>
                           )}
                         </div>
                       </div>
@@ -369,27 +447,21 @@ const Transport = () => {
                   </div>
                 </div>
 
-                <div className="conductor-info">
-                  <h4 className="conductor-title">Contact</h4>
-                  <p className="conductor-name">{route.conductor.name}</p>
+                <div className="rounded-md border-hsla bg-slate-950/30 p-6 backdrop-blur-sm">
+                  <h4 className="mb-4 font-general text-[10px] uppercase tracking-widest text-blue-300">
+                    Contact
+                  </h4>
+                  <p className="mb-3 font-zentry text-lg text-blue-50 sm:text-xl">
+                    {route.conductor.name}
+                  </p>
                   <a
                     href={`tel:${route.conductor.phone}`}
-                    className="conductor-phone"
+                    className="inline-flex items-center gap-2 rounded-full bg-violet-50 px-5 py-3 text-sm font-medium text-black transition-all hover:bg-violet-300 hover:shadow-lg"
+                    onClick={(e) => e.stopPropagation()}
                   >
                     <FaPhoneAlt /> {route.conductor.phone}
                   </a>
                 </div>
-              </div>
-            )}
-
-            {selectedRoute !== route.routeNo && (
-              <div className="route-preview">
-                <p className="route-preview-text">
-                  {route.stops[0].place} → VEC
-                </p>
-                <p className="route-preview-time">
-                  Starts at {route.stops[0].time} AM
-                </p>
               </div>
             )}
           </div>
