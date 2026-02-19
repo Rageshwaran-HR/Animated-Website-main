@@ -20,6 +20,7 @@ export const EVENTS = [
     slug: "vibe-coding",
     track: "Technical",
     short: "Creativity-first rapid coding showdown",
+    isClosed: true,
     videoSrc:
       "https://res.cloudinary.com/dm0vwe5cw/video/upload/v1769794095/feature-1n_vau3sz.mp4",
     details: {
@@ -407,6 +408,7 @@ export const EVENTS = [
     slug: "bid-war",
     track: "Non-Tech",
     short: "IPL Style Auction",
+    isClosed: true,
     videoSrc:
       "https://res.cloudinary.com/dm0vwe5cw/video/upload/v1769793892/feature-7n_xgpjte.mp4",
     details: {
@@ -450,6 +452,7 @@ export const EVENTS = [
     slug: "connect-tone",
     track: "Non-Tech",
     short: "Connection → Sonic Sense",
+    isClosed: true,
     videoSrc:
       "https://res.cloudinary.com/dm0vwe5cw/video/upload/v1769793592/feature-13n_szp5yq.mp4",
     details: {
