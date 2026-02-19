@@ -740,7 +740,7 @@ export const EVENTS = [
       ],
       registration:
         "Register now to secure your spot in this exciting robotics workshop! Limited seats available.",
-      registerTo: "https://forms.gle/CDWw5SmcBbzujtSr7",
+      registerTo: "",
     },
   },
 ].map((event) => ({
