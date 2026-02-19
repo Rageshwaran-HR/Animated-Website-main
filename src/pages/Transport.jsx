@@ -230,7 +230,7 @@ const busRoutes = [
       { place: "Don bosco Periyar statue", time: "7:50" },
       { place: "Welding Shop", time: "7:51" },
       { place: "Moogambikai", time: "7:55" },
-      { place: "Kulathur", time: "8:01" },
+      { place: "Kolathur", time: "8:01" },
       {
         place:
           "Poombhukar nagar – Srinivasan Nagar – Rajamangalam Police station",
