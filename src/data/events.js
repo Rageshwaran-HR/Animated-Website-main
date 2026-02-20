@@ -92,7 +92,7 @@ export const EVENTS = [
         { role: "Student Coordinator", name: "Sujhan S" },
         { role: "Student Coordinator", name: "Nikhil S" },
       ],
-      registration: "Click Register to continue to the registration section.",
+      registration: "On-spot is available.",
       registerTo: "https://forms.gle/JZgWcGhFr6gM11PD8",
     },
   },
@@ -101,6 +101,7 @@ export const EVENTS = [
     slug: "tech-marathon",
     track: "Technical",
     short: "Glitch Verse → Code From Hell → Deciphering",
+    isClosed: true,
     videoSrc:
       "https://res.cloudinary.com/dm0vwe5cw/video/upload/v1769793706/feature-2n_qugb2g.mp4",
     details: {
@@ -166,7 +167,7 @@ export const EVENTS = [
         { role: "Student Coordinator", name: "Sriram A" },
       ],
       registration:
-        "Register to participate in the Tech Marathon and test your endurance in debugging, logic, and creative coding.",
+        "On-spot is available.",
       registerTo: "https://forms.gle/JZgWcGhFr6gM11PD8",
     },
   },
@@ -175,6 +176,7 @@ export const EVENTS = [
     slug: "it-takes-two",
     track: "Technical",
     short: "Two-player code relay challenge",
+    isClosed: true,
     videoSrc:
       "https://res.cloudinary.com/dm0vwe5cw/video/upload/v1769794127/feature-3_mkmgf7.mp4",
     details: {
@@ -227,7 +229,7 @@ export const EVENTS = [
           phone: "8870982120",
         },
       ],
-      registration: "Click Register to continue to the registration section.",
+      registration: "On-spot is available.",
       registerTo: "https://forms.gle/JZgWcGhFr6gM11PD8",
     },
   },
@@ -299,7 +301,7 @@ export const EVENTS = [
           phone: "7305491657",
         },
       ],
-      registration: "Click Register to continue to the registration section.",
+      registration: "On-spot is available.",
       registerTo:
         "https://docs.google.com/forms/d/e/1FAIpQLSfHHf-ixnm_ej1KKgZUmUb6opoGqwmY3j8XLe-jT7zpTPXJAg/viewform?usp=sharing&ouid=117566611305738243195",
     },
@@ -346,7 +348,7 @@ export const EVENTS = [
         { role: "Student Coordinator", name: "Sanjeev Kumar" },
         { role: "Student Coordinator", name: "Balaji S" },
       ],
-      registration: "Click Register to continue to the registration section.",
+      registration: "No on-spot registration.",
       registerTo:
         "https://forms.gle/Tr5yaqGTu7TjnZ6N6",
     },
@@ -356,6 +358,7 @@ export const EVENTS = [
     slug: "build-in-60",
     track: "Technical",
     short: "UI/UX + Website Sprint",
+    isClosed: true,
     videoSrc:
       "https://res.cloudinary.com/dm0vwe5cw/video/upload/v1769794143/feature-10n_qb8zvp.mp4",
     details: {
@@ -399,7 +402,7 @@ export const EVENTS = [
         { role: "Student Coordinator", name: "Divyasree S" },
         { role: "Student Coordinator", name: "Krishanth K" },
       ],
-      registration: "Click Register to join the sprint and get the brief.",
+      registration: "On-spot is available.",
       registerTo: "https://forms.gle/JZgWcGhFr6gM11PD8",
     },
   },
@@ -444,7 +447,7 @@ export const EVENTS = [
         { role: "Student Coordinator", name: "Pramodh Kumar K" },
         { role: "Student Coordinator", name: "Shivanandha P" },
       ],
-      registration: "Click Register to join the auction lobby.",
+      registration: "On-spot is available.",
       registerTo: "https://forms.gle/JZgWcGhFr6gM11PD8",
     },
   },
@@ -490,7 +493,7 @@ export const EVENTS = [
         { role: "Student Coordinator", name: "Yeswant BV" },
         { role: "Student Coordinator", name: "Vinniammal" },
       ],
-      registration: "Click Register to enter the connect-tone arena.",
+      registration: "On-spot is available.",
       registerTo: "https://forms.gle/JZgWcGhFr6gM11PD8",
     },
   },
@@ -499,6 +502,7 @@ export const EVENTS = [
     slug: "meme-relay",
     track: "Non-Tech",
     short: "Humor meets creativity",
+    isClosed: true,
     videoSrc:
       "https://res.cloudinary.com/dm0vwe5cw/video/upload/v1769793343/feature-11n_zwx7xo.mp4",
     details: {
@@ -527,7 +531,7 @@ export const EVENTS = [
         },
         { role: "Student Coordinator", name: "Hinduja KP" },
       ],
-      registration: "Click Register to continue to the registration section.",
+      registration: "On-spot is available.",
       registerTo: "https://forms.gle/JZgWcGhFr6gM11PD8",
     },
   },
@@ -536,6 +540,7 @@ export const EVENTS = [
     slug: "switch-saga",
     track: "Non-Tech",
     short: "Positive ↔ Negative Switch",
+    isClosed: true,
     videoSrc:
       "https://res.cloudinary.com/dm0vwe5cw/video/upload/v1769794188/feature-14n_gsiove.mp4",
     details: {
@@ -566,7 +571,7 @@ export const EVENTS = [
         { role: "Student Coordinator", name: "Manju Priya J" },
         { role: "Student Coordinator", name: "Vishnu K" },
       ],
-      registration: "Click Register to continue to the registration section.",
+      registration: "On-spot is available.",
       registerTo: "https://forms.gle/JZgWcGhFr6gM11PD8",
     },
   },
@@ -575,6 +580,7 @@ export const EVENTS = [
     slug: "funtrix",
     track: "Non-Tech",
     short: "Free Fire and Tekken",
+    isClosed: true,
     videoSrc:
       "https://res.cloudinary.com/dm0vwe5cw/video/upload/v1769794637/feature-9n_gbgn5j.mp4",
     details: {
@@ -652,7 +658,7 @@ export const EVENTS = [
         { role: "Student Coordinator", name: "Rageshwaran HR" },
       ],
       registration:
-        "Registration details will be shared through the official announcement link.",
+        "On-spot is available.",
       registerTo: "https://forms.gle/JZgWcGhFr6gM11PD8",
     },
   },
@@ -662,8 +668,7 @@ export const EVENTS = [
     slug: "project-expo",
     track: "Featured",
     short: "Showcase your innovative projects",
-    poweredBy: "Unstop",
-    videoSrc:
+    poweredBy: "Unstop",    isClosed: true,    videoSrc:
       "https://res.cloudinary.com/dbe1m52oz/video/upload/v1767781724/Make_a_animated_1080p_202601071550_anqson.mp4",
     details: {
       date: "21-02-2026",
@@ -704,7 +709,7 @@ export const EVENTS = [
         },
         { role: "Student Coordinator", name: "Chandn S", phone: "9360468653" },
       ],
-      registration: "Click Register to showcase your project.",
+      registration: "On-spot is available.",
       registerTo:
         "https://forms.gle/SfyQN3w3oQgzUUdSA",
     },
@@ -745,7 +750,7 @@ export const EVENTS = [
         },
       ],
       registration:
-        "Register now to secure your spot in this exciting robotics workshop! Limited seats available.",
+        "On-spot is available.",
       registerTo: "https://forms.gle/LA4VAh5vbt7zDacS6",
     },
   },

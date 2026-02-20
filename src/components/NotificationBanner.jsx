@@ -3,7 +3,7 @@ import { useWindowScroll } from "react-use";
 import gsap from "gsap";
 
 const NotificationBanner = () => {
-  const message = "⚠️ Important Notice: On-spot registration is available for ₹100, and can purchase food from the mess.";
+  const message = "⚠️ Important Notice: On-spot registration is available for ₹100, and you can purchase food from the mess.";
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isBannerVisible, setIsBannerVisible] = useState(true);
   const bannerRef = useRef(null);

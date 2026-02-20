@@ -396,7 +396,9 @@ const EventDetails = () => {
                   </div>
                 </div>
                 <p className="mt-4 font-circular-web text-blue-50/70">
-                  You can register for other events.
+                  {event.slug === "paper-presentation" || event.slug === "workshop" 
+                    ? "You can register for other events." 
+                    : "On-spot is available (excluding Paper Presentation and Workshop)."}
                 </p>
               </div>
             ) : (
