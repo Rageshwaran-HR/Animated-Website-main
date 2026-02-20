@@ -713,6 +713,7 @@ export const EVENTS = [
     slug: "workshop",
     track: "Featured",
     short: "Agentic AI for Business: From Products to Real-Time Simulation",
+    isClosed: true,
     videoSrc:
       "https://res.cloudinary.com/dbe1m52oz/video/upload/v1767781652/something_baqfhk.mp4",
     details: {
