@@ -236,6 +236,7 @@ export const EVENTS = [
     slug: "hot-seat",
     track: "Technical",
     short: "High-pressure quiz showdown",
+    isClosed: true,
     videoSrc:
       "https://res.cloudinary.com/dm0vwe5cw/video/upload/v1769794181/feature-12n_nmn9to.mp4",
     details: {
